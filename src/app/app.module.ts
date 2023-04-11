@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonToastrService } from './CommonService/CommonToastrService';
 import { LoaderService } from './CommonService/LoaderService';
+import { PrivatemovingComponent } from './views/privatemoving/privatemoving.component';
+import { CompanymovingComponent } from './views/companymoving/companymoving.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { LoaderService } from './CommonService/LoaderService';
     FilterComponent,AdvancefilterComponent,
     HomeComponent,FooterComponent,RentalPersonalCarComponent,CardetailpageComponent,
     OurservicesComponent, RentalvansComponent, VansdetailComponent,LongTermRentalComponent,
-    ServicepackingComponent
+    ServicepackingComponent,
+    PrivatemovingComponent,
+    CompanymovingComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+.feature_item{
+    background:#f7f8fb;
+    .card{
+        padding: 4px;
+        border-radius: 16px;
+        border: 2px solid #0A2640;
+    }
+}
+
+
+
+.Rental-personal-car{
+    background: #f7f8fb;
+}
+
+.filter-pos {
+    position: relative;
+    top: 50px;
+}
+
+
+
+.packing-baner{
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('../../../assets/imgs/private-baner.png');
+   // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

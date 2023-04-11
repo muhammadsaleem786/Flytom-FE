@@ -7,6 +7,8 @@ import { RentalvansComponent } from './views/RentalVans/rentalvans/rentalvans.co
 import { VansdetailComponent } from './views/RentalVans/vansdetail/vansdetail.component';
 import { LongTermRentalComponent } from './views/LongTermRental/longtermrental/longtermrental.component';
 import { ServicepackingComponent } from './views/ServicePacking/servicepacking/servicepacking.component';
+import { PrivatemovingComponent } from './views/privatemoving/privatemoving.component';
+import { CompanymovingComponent } from './views/companymoving/companymoving.component';
 
 
 const routes: Routes = [];
@@ -26,7 +28,10 @@ const routes: Routes = [];
       { path: 'LongTermRental', component: LongTermRentalComponent},
       
       { path: 'ServicePacking', component: ServicepackingComponent},
-
+      
+      { path: 'Privatemoving', component: PrivatemovingComponent},
+      { path: 'Companymoving', component: CompanymovingComponent},
+      
       
       { path: 'details:id', component: CardetailpageComponent },
       { path: 'details', component: CardetailpageComponent },
