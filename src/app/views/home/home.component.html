@@ -1,0 +1,95 @@
+<div class="home-baner">
+    <div class="container py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-8 text-center text-lg-start text-white">
+            <h1 class="display-4 fw-bold lh-1 mb-3">A little introduction of 
+                the services you provide</h1>
+            <p class="col-lg-10 fs-5 mt-3 mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+          </div>
+          
+        </div>
+   </div>
+
+   
+
+   <app-filter></app-filter>
+
+
+</div> 
+
+
+
+<section class="feature_item py-5">
+  <div class="container pt-5 mb-3">
+    <h1 class="text-center mt-5 mb-4">Velg Tjeneste</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img class="card-img-top" src="assets/imgs/feature/feature-1.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title">Warehouse hotel</h4>
+                  <p class="card-text">Write an amazing description in this dedicated card section. Each word counts. </p>
+                  <a href="#" class="btn btn-danger mb-2">See more</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img class="card-img-top" src="assets/imgs/feature/feature-2.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title">Car rental</h4>
+                  <p class="card-text">Write an amazing description in this dedicated card section. Each word counts. </p>
+                  <a href="#" class="btn btn-danger mb-2">See more</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img class="card-img-top" src="assets/imgs/feature/feature-3.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title">Moving</h4>
+                  <p class="card-text">Write an amazing description in this dedicated card section. Each word counts. </p>
+                  <a href="#" class="btn btn-danger mb-2">See more</a>
+                </div>
+              </div>
+        </div>
+    </div></div>
+</section> 
+
+
+
+<!-- <div>Some tags before</div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>Slide 1</ng-template>  
+    <ng-template carouselSlide>Slide 2</ng-template>  
+    <ng-template carouselSlide>Slide 3</ng-template>  
+  </owl-carousel-o>
+  <div>Some tags after</div> -->
+
+  
+<section class="customer_reviews">
+  <div class="container pt-2 pb-5">
+    <h2 class="text-white mb-5 mt-5">What do customers say?</h2>
+    <owl-carousel-o [options]="carouselOptions">
+      <ng-container *ngFor="let p of products">
+        <ng-template carouselSlide>
+          <div class="customer-review" [ngClass]="p.class">
+            <p class="description mb-4">
+              {{p.description}}
+            </p>
+           <div class="row">
+              <div class="col img-col pe-0">
+                <img src="assets/imgs/users/{{p.img}}">
+              </div>
+              <div class="col">
+                <h6 class="mb-1 mt-1">{{p.title}}</h6>
+                <p>{{p.designation}}</p>
+              </div>
+           </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</section>

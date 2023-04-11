@@ -1,0 +1,278 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+.pos-rel{
+    position: relative;
+}
+li.breadcrumb-item a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.card{
+    .fa-heart{
+        color: #90A3BF;
+    }
+}
+.gray{
+    color:#90A3BF;
+}
+.icon-sm{
+    width: 22px;
+}
+.font-14{
+    font-size: 14px;
+}
+.font-12{
+    font-size: 12px;
+}
+// .border-gradient {
+//     border: 2px solid;
+//     border-image-slice: 1;
+//     border-width: 2px;
+//   }
+//   .border-gradient-theme {
+//     border-image-source: linear-gradient(to bottom, #fff, #092C4C);
+//   }
+
+//header
+.link-w-icon{
+    
+    padding-left: 64px;
+    background-repeat: no-repeat;
+    background-position: 17px center;
+    background-size: 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 15px;
+
+    &.PersonalCars{
+        background-image: url('assets/imgs/icons/sedan.svg');
+        background-size: 30px;
+    }
+    &.Vans{
+
+        background-image: url('assets/imgs/icons/delivery-van.svg');
+            
+        background-size: 32px;
+        background-position: 11px center;
+
+    }
+    &.LongTermRent{
+        
+        background-image: url('assets/imgs/icons/rent.svg');
+    }
+
+    &.Dodsbo{
+
+        background-image: url('assets/imgs/icons/movingtruck.svg');
+    }
+    &.CompanyMoving{
+
+        background-image: url('assets/imgs/icons/position.svg');
+    }
+    &.PrivateMoving{
+
+        background-image: url('assets/imgs/icons/moving-truck.svg');
+    }
+    &.Packing{
+        background-image: url('assets/imgs/icons/package.svg');
+
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,-30%,0);
+        transform: translate3d(0,-30%,0)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+.text-muted{
+    color:#677489;
+}
+.home-baner{
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('assets/imgs/Hero-BG.png');
+   // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.baner-rounded{
+    border-radius: 16px;
+}
+.search_area {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px rgb(0 0 0);
+    border-radius: 8px;
+    &.pos-rev{
+        top: 80px;
+        position: relative;
+    }
+}
+
+// customer review
+
+.customer_reviews{
+    background: #0A2640;
+    .owl-carousel .owl-item img {
+      
+        max-width: 56px;
+        border-radius: 100%;
+    }
+    .img-col{
+        max-width: 70px;
+    }
+    .owl-theme {
+        margin-top: 70px;
+        .owl-nav [class*=owl-] {
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 100%;
+            width: 72px;
+            height: 72px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+           img{
+            width: 40px;
+           }
+
+           &:hover{
+               background: #f7f8fb;
+           }
+           
+        }
+       .owl-nav {
+            margin-top: 10px;
+            position: absolute;
+            top: -140px;
+            right: 0;
+            .owl-next{
+                img{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}
+
+.input-icon{
+    position: absolute;
+    top: 36px;
+    left: 24px;
+}
+
+
+// filter
+
+
+ngb-datepicker.dropdown-menu.show {
+    margin-left: -41px !important;
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    .search-input-row{
+        .col {
+            flex: auto;
+            margin-bottom: 20px;
+        }
+    }
+
+    .feature_item .card{
+        margin-bottom: 20px;
+    }
+}
+
+.advanceFilter{
+    .btn-dark{
+        background: #092C4C;
+        
+    }
+}
+
+.favriout.active {
+    .fa{
+        color: #dc3545;
+    }
+}
+
+.breadcrumb-item.active {
+    font-weight: 600;
+}
+
+
+.longtermbaner, .van-baner{
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('assets/imgs/Hero-BG-van.png');
+   // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.form-card{
+    .form-control, .form-select{
+        height: 46px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+        border:1px solid #D2D5DA;
+    }
+    .form-label{
+            
+            position: relative;
+            top: 18px;
+            left: 9px;
+            font-weight: 600;
+            font-size: 12px;
+            background: #fff;
+            padding: 2px 5px;
+    }
+}
+.toast-top-right {
+    top: 12px;
+    right: 12px;
+}
+
+@media (max-width: 575.98px) {
+    .toast-top-right {
+        top: unset;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .toast-container.toast-top-right .toast {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#toast-container.toast-top-center > div,
+#toast-container.toast-bottom-center > div {
+    width: 800px !important;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+}
+
+#toast-container > div {
+    opacity: 1;
+}

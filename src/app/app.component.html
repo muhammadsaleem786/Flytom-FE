@@ -1,0 +1,98 @@
+
+  <nav class="py-2 bg-dark border-bottom">
+      <div class="container d-flex flex-wrap">
+        <ul class="nav me-auto">
+          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Home</a></li>
+          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">About Us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-white px-2">Contact</a></li>
+        
+        </ul>
+        <ul class="nav">
+          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Read Help</a></li>
+          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Insurance</a></li>
+          
+          <li class="nav-item"><span  class="phone-block">+51 54 24 00 000</span></li>
+        </ul>
+      </div>
+    </nav>
+
+<nav class="navbar navbar-expand-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <!-- javascript:void(0) -->
+      <img src="../assets/imgs/logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown me-3">
+              <a class="nav-link dropdown-toggle"  routerLinkActive="active" href="#" role="button" data-bs-toggle="dropdown">
+                <img class="me-2" src="../assets/imgs/icons/sedan.svg"> Car Rental </a>
+              <ul class="animate__animated animate__fadeInDown dropdown-menu dropdown-menu-end">
+                <li>
+                  <a  class="dropdown-item text-muted">Car Rental</a>
+                </li>
+                <li class=""><a routerLinkActive="active" routerLink="/RentalPersonalCar" class="link-w-icon PersonalCars dropdown-item">
+                  Personal Cars
+                  <span class="d-block text-muted">Dummy Text</span>
+                </a></li>
+                <li class=""><a routerLinkActive="active" routerLink="/RentalVans"  class="link-w-icon Vans dropdown-item" href="#">
+                  Vans
+                  <span class="d-block text-muted">Dummy Text</span>
+                </a></li>
+                <li class=""><a routerLinkActive="active" routerLink="/LongTermRental"   class="link-w-icon LongTermRent dropdown-item" href="#">
+                  Long Term Rent
+                  <span class="d-block text-muted">Dummy Text</span>
+                </a></li>
+              </ul>
+          </li>
+        <li class="nav-item dropdown me-3">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <img class="me-2"  src="../assets/imgs/icons/delivery-van.svg"> Moving Services </a>
+          <ul class="animate__animated animate__fadeInDown dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item text-muted">Car Rental</a>
+            </li>
+            <li class=""><a routerLinkActive="active" routerLink="/ServicePacking"  class="link-w-icon Packing dropdown-item" href="#">
+              Packing 
+              <span class="d-block text-muted">Dummy Text</span>
+            </a></li>
+            <li class=""><a class="link-w-icon PrivateMoving dropdown-item" href="#">
+              Private Moving
+              <span class="d-block text-muted">Dummy Text</span>
+            </a></li>
+            <li class=""><a class="link-w-icon CompanyMoving dropdown-item" href="#">
+              Company Moving
+              <span class="d-block text-muted">Dummy Text</span>
+            </a></li>
+            <li class=""><a class="link-w-icon Dodsbo dropdown-item" href="#">
+              Dodsbo
+              <span class="d-block text-muted">Dummy Text</span>
+            </a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <img class="me-2"  src="../assets/imgs/icons/package.svg"> Storage </a>
+          <!-- <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item text-muted">Storage </a>
+            </li>
+            
+          </ul> -->
+        </li>
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+
+
+
+<router-outlet></router-outlet>
+
+
+
+<app-footer></app-footer>

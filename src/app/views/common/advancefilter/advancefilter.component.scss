@@ -1,0 +1,48 @@
+.advanceFilter{
+    padding: 10px 20px;
+    background: #092C4C;
+    border-radius: 100px;
+   
+    .dropdown-menu {
+
+        background: #092C4C;
+        margin-top: 49px !important;
+        min-width: initial;
+        border-radius: 0 0 6px 6px;
+        a{
+            color: #fff;
+            &:hover{
+                background: transparent;
+            }
+        }
+    }
+    
+}
+
+.btn-group {
+    &.no-border{
+        .btn{
+            border:0px;
+        }
+    }
+    
+    & > .btn-dark {
+        border-right: 2px solid #6e6e6e;
+        padding: 2px 20px;
+    }
+
+}
+
+.btn-danger {
+    border-radius: 50px !important;
+    margin-left: 10px;
+    min-width: 100px;
+}
+
+.btn-heading{
+    
+    font-size: 24px;
+    padding: 0 20px;
+    color: #Fff;
+    opacity: 1;
+}

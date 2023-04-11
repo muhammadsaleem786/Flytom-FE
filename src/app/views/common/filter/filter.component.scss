@@ -1,0 +1,43 @@
+.pos-rel select{
+    padding-left: 30px;
+}
+h2{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.btn-filter{
+    max-width: 126px;
+    width: 114px;
+    margin-top: 30px;
+    .btn{
+        min-width: 114px;
+        height: 44px;
+
+    }
+}
+
+.input-group{
+    .form-control, .form-select{
+        border-left: 0px;
+        height: 44px;
+        &:focus{
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .btn, .input-group-text{
+        background: transparent;
+        border-right: 0;
+        border-color: #ced4da ;
+        img{
+            position: relative;
+            top: -1px
+        }
+        &:hover{
+           
+            background: transparent;
+        }
+    }
+}

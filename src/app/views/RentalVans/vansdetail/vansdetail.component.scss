@@ -1,0 +1,61 @@
+.feature_item{
+    background:#f7f8fb;
+    .card{
+        padding: 4px;
+        border-radius: 16px;
+        border: 2px solid #0A2640;
+    }
+}
+
+
+
+.Rental-personal-car{
+    background: #f7f8fb;
+}
+
+.filter-pos {
+    position: relative;
+    top: 50px;
+}
+
+.detail_wraper{
+    .card{
+        min-height: 550px;
+    }
+}
+
+
+.slider-img{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        max-height: 260px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}
+.slidebtn{
+    display: flex;
+    gap: 15px;
+    .button {
+        
+    width: 33%;
+    border-radius: 7px;
+    border: 0px;
+    padding: 0;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    }
+}
+
+
+.descp{
+    min-height: 140px;
+    font-size: 20px;
+    line-height: 36px;
+
+}

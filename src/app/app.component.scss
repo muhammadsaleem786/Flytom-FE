@@ -1,0 +1,44 @@
+.btn-outline-light{
+  &:hover{
+    background: transparent;
+  }
+}
+.navbar {
+  height: 88px;
+  .navbar-brand  img{
+    max-height: 78px;
+  }
+}
+.dropdown-menu{
+  padding: 20px 25px 15px;
+  margin-top: 40px;
+  width: 300px;
+  box-shadow: 0px 24px 32px 4px rgba(167, 174, 186, 0.12);
+}
+ul.dropdown-menu:after {
+  position: absolute;
+  width: 22.5px;
+  height: 22.5px;
+  top: -5px;
+  background: #ffffff;
+  border-radius: 4px;
+  transform: matrix(0.63, -0.78, 0.63, 0.78, 0, 0);
+  content: "";
+  right: 19px;
+}
+.dropdown-item.active, .dropdown-item:active {
+  color: #000;
+  background-color: rgba(210, 44, 62, 0.1);
+}
+
+.phone-block{
+  
+  display: inline-block;
+  color: #fff;
+  padding: 2px 8px;
+  border: 0px solid #fff;
+  border-radius: 14px;
+  box-shadow:0px 0px 0px 1.5px #fff;
+  margin-top: 6px;
+
+}

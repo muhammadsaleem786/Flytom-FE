@@ -1,0 +1,59 @@
+<div class="btn-group advanceFilter" role="group" aria-label="Button group with nested dropdown">
+    <button disabled class="btn btn-dark btn-heading">Filter</button>
+    <div class="btn-group" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Seats
+      </button>
+      <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+        <li *ngFor="let s of SeatList"><a class="dropdown-item">{{s.Name}}</a></li>
+      </ul>
+    </div>
+    <!-- ====== -->
+
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Gear box
+        </button>
+        <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+          <li *ngFor="let s of SteeringTypeList"><a class="dropdown-item">{{s.Name}}</a></li>
+ 
+        </ul>
+      </div>
+
+        <!-- ====== -->
+
+     <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Ant. Dorer
+        </button>
+        <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+          <li><a class="dropdown-item" href="#">1</a></li>
+          <li><a class="dropdown-item" href="#">2 </a></li>
+        </ul>
+      </div>
+
+        <!-- ====== -->
+
+     <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Fuel
+        </button>
+        <ul class="dropdown-menu animate__animated animate__fadeInDown " aria-labelledby="btnGroupDrop1">
+          <li *ngFor="let s of FuelTypeList"><a class="dropdown-item">{{s.Name}}</a></li>
+             </ul>
+      </div>
+
+         <!-- ====== -->
+
+     <div class="btn-group no-border" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Wheel Drive
+        </button>
+        <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+          <li *ngFor="let s of DriveWheelTypeList"><a class="dropdown-item">{{s.Name}}</a></li>
+        </ul>
+      </div>
+
+      <button type="button" class="btn btn-danger">Search</button>
+
+  </div>

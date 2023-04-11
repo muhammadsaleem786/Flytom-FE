@@ -1,0 +1,83 @@
+<div class="container search_area pos-rev border-gradient border-gradient-theme">
+   
+    <h2>Check prices and book</h2>
+    <form>
+     <div class="row search-input-row">
+         <div class="col">
+            <label for="sel1" class="form-label">Pick up location</label>
+            
+            <div class="input-group">
+                <span class="input-group-text">
+                    <img src="../assets/imgs/icons/map.svg">
+                </span>
+                <select class="form-select">
+                    <option>Location</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+              </div>
+            
+         </div>
+         <div class="col">
+            <label for="sel1" class="form-label">Deliver</label>
+            
+            <div class="input-group">
+                <span class="input-group-text">
+                    <img src="../assets/imgs/icons/map.svg">
+                </span>
+                <select class="form-select">
+                    <option>Location</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+              </div>
+            
+         </div>
+         
+       <div class="col">
+           
+            <label class="form-label">Start Date</label>
+             <div class="input-group"  (click)="d.toggle()">
+                <button class="btn btn-outline-secondary bi bi-calendar3" type="button">
+                    <img src="../assets/imgs/icons/calendar.svg">
+                 </button>
+                 <input
+                     class="form-control"
+                     placeholder="yyyy-mm-dd"
+                     name="dp"
+                     [(ngModel)]="model"
+                     ngbDatepicker
+                     #d="ngbDatepicker"
+                 />
+                
+             </div>
+         </div>
+  
+         <div class="col">
+            <label class="form-label">End Date</label>
+             <div class="input-group" (click)="d1.toggle()">
+                <button class="btn btn-outline-secondary bi bi-calendar3"  type="button">
+                    <img src="../assets/imgs/icons/calendar.svg">
+                </button>
+                 <input
+                     class="form-control"
+                     placeholder="yyyy-mm-dd"
+                     name="dp1"
+                     [(ngModel)]="model"
+                     ngbDatepicker
+                     #d1="ngbDatepicker"
+                 />
+                
+             </div>
+         </div> 
+
+         <div class="col btn-filter">
+            <button class="btn btn-danger">Search</button>
+         </div>
+  
+     </div>
+  </form>
+  
+  </div>
