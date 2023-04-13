@@ -18,6 +18,11 @@ export class RentalPersonalCarComponent implements OnInit{
   public PersonalCard :any[]=[];
   public PModel = new PaginationModel();
   public PConfig = new PaginationConfig();
+  public FuelTypeList: any[] = [];
+  public SteeringTypeList: any[] = [];
+  public DriveWheelTypeList:any[]=[];
+public SeatList:any[]=[];
+  public model:any ;
   constructor(public _router: Router,
     public http: HttpService,public loader: LoaderService, public toastr: CommonToastrService,
      ) {
