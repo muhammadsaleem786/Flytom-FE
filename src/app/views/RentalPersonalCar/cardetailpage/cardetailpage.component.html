@@ -32,8 +32,8 @@
                    </div>
                     <div class="btn-group slidebtn">
                         <button *ngFor="let imageButton of imageButtons; let i = index" 
-                    (click)="onClick(imageButton)" class="button" style="background-image:url({{imageButton.Image}});">
-                    {{Baseurl}}
+                    (click)="onClick(imageButton)" class="button">
+                        <img src="{{imageButton.Image}}">
                     </button>
                     </div>
                 </div>

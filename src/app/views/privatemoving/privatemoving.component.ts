@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./privatemoving.component.scss']
 })
 export class PrivatemovingComponent {
-
+  sliderValue = 0;
+  ShowSliderTow = false;
+  updateSliderValue(){
+    this.sliderValue= 1;
+    this.ShowSliderTow = true;
+  }
 }

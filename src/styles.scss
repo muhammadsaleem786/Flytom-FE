@@ -121,6 +121,13 @@ li.breadcrumb-item a {
     }
 }
 
+// Feature SEction
+
+.feature_item .card-img-top{
+    height: 250px;
+    object-fit: contain;
+    background: #f0f0f0;
+}
 // customer review
 
 .customer_reviews{

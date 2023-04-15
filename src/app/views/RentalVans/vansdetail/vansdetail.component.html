@@ -31,9 +31,9 @@
                     <img class="card-img-top text-center" src="{{imageSrc}}" alt="Card image" style="width:100%">
                    </div>
                     <div class="btn-group slidebtn">
-                        <button *ngFor="let imageButton of imageButtons; let i = index" 
-                    (click)="onClick(imageButton)" class="button" style="background-image:url({{imageButton.Image}});">
-                   
+                                         <button *ngFor="let imageButton of imageButtons; let i = index" 
+                    (click)="onClick(imageButton)" class="button">
+                        <img src="{{imageButton.Image}}">
                     </button>
                     </div>
                 </div>

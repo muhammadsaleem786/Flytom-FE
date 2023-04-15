@@ -15,6 +15,7 @@ export class VansdetailComponent implements OnInit{
   public PersonalCard :any;
   public imageButtons:any[]=[];
   public sub: any;
+  public imageSrc:any;
   constructor(public _router: Router, public route: ActivatedRoute,
     public http: HttpService
     //, public toastr: CommonToastrService,
@@ -37,11 +38,16 @@ ngOnInit(): void {
 this.PersonalCard=data.Data;
 this.imageButtons=data.Data.VehicleImage;
 this.imageButtons.forEach((item, index) => {
-  if(item.Image != null)
+  if(item.Image != null){
+    if(index==0)
+    this.imageSrc=GlobalVariable.BASE_Temp_File_URL + '' + item.Image;
   this.imageButtons[index].Image= GlobalVariable.BASE_Temp_File_URL + '' + item.Image;
-  else
+  }
+  else{
+    if(index==0)
+    this.imageSrc="assets/imgs/feature/van.png";
   this.imageButtons[index].Image="assets/imgs/feature/van.png";
-  
+  }
   });
 
     }
@@ -52,12 +58,7 @@ this.imageButtons.forEach((item, index) => {
     );
   });
 }
- 
-
-  // For Left side car images
-  imageSrc = 'assets/imgs/feature/van.png';
-  // object
   onClick(imageNameObject:any) {
-    this.imageSrc = imageNameObject.src;
+    this.imageSrc = imageNameObject.Image;
   }
 }

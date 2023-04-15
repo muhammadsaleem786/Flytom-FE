@@ -15,6 +15,7 @@ export class CardetailpageComponent implements OnInit{
   public PersonalCard :any;
   public imageButtons:any[]=[];
   public sub: any;
+  public imageSrc:any;
   constructor(public _router: Router, public route: ActivatedRoute,
     public http: HttpService
     //, public toastr: CommonToastrService,
@@ -37,11 +38,17 @@ ngOnInit(): void {
 this.PersonalCard=data.Data;
 this.imageButtons=data.Data.VehicleImage;
 this.imageButtons.forEach((item, index) => {
-  if(item.Image != null)
+  if(item.Image != null){
+    if(index==0)
+    this.imageSrc=GlobalVariable.BASE_Temp_File_URL + '' + item.Image;
   this.imageButtons[index].Image= GlobalVariable.BASE_Temp_File_URL + '' + item.Image;
+  }
   else
-  this.imageButtons[index].Image="assets/imgs/feature/Car.png";
-  
+  {
+    if(index==0)
+    this.imageSrc="assets/imgs/feature/Car.png";
+    this.imageButtons[index].Image="assets/imgs/feature/Car.png";
+}
   });
 
     }
@@ -54,24 +61,9 @@ this.imageButtons.forEach((item, index) => {
 }
 
 
-  // PersonalCard: any[] = [
-  //   { 
-  //     title:'Koenigsegg',
-  //     img:'Car.png',
-  //     price:'80.00'
-  //    }
-  // ];
-
-  // For Left side car images
-  imageSrc = 'assets/imgs/feature/Car.png';
-  // object
-  // imageButtons = [ 
-  //   {src:'assets/imgs/feature/Car.png',name: 'image-1'}, 
-  //  {src:'assets/imgs/feature/car2.jpg', name: 'image-2'}, 
-  //  {src:'assets/imgs/feature/car3.jpg', name: 'image-3'}]
 
   onClick(imageNameObject:any) {
-    this.imageSrc = imageNameObject.src;
+    this.imageSrc = imageNameObject.Image;
   }
 
 }

@@ -32,7 +32,7 @@
     justify-content: center;
     img{
         max-height: 260px;
-        object-fit: cover;
+        object-fit: contain;
         border-radius: 8px;
     }
 }
@@ -46,9 +46,15 @@
     border: 0px;
     padding: 0;
     height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+    img{
+       
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 5px;
+
+    }
+   
     }
 }
 
