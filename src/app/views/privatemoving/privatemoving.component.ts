@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class PrivatemovingComponent {
   sliderValue = 0;
-  ShowSliderTow = false;
-  updateSliderValue(){
-    this.sliderValue= 1;
-    this.ShowSliderTow = true;
+  sliderMoe = '';
+  updateSliderValue(sliderMoe:any){
+    this.sliderValue= sliderMoe;
+    
   }
 }

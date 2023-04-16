@@ -33,19 +33,21 @@
         </p>
 
         <div class="row justify-content-center">
-            <div class="col-sm-9 mt-4">
+            <div class="col-sm-10 mt-4 stepsform">
                 <div class="card">
                   <div class="card-body form-card">
                   
                     <h3 class="card-title text-center mt-4">Get an offer for relocation assistance</h3>
                     <div class="row justify-content-center mt-4">
-                        <div class="col-6">
-                            
-                            <input type="range" class="form-range" [(ngModel)]="sliderValue" min="0" max="8" step="1">
+                        <div class="col-6">                               
+                           <div class="slider-wrap active{{sliderValue}}">
+                            <input type="range" class="form-range" [(ngModel)]="sliderValue" min="0" max="7" step="1">
+                           
+                           </div>
                         </div>
                          </div>
                    
-                    <div class="setp1" *ngIf="!ShowSliderTow">
+                    <div class="setp1" *ngIf="sliderValue === 0">
                       <div class="row">
                         <div class="col-sm-6">
                           <div class="mb-3">
@@ -134,26 +136,31 @@
                       </div>
   
                       <div class="d-flex justify-content-end">
-                          <button class="btn btn-danger"  (click)="updateSliderValue()">Save & Continue</button>
+                          <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(1)">Save & Continue</button>
                       </div>
                     </div>
 
 
-                    <div class="setp2" *ngIf="ShowSliderTow">
+                    <div class="setp2"  *ngIf="sliderValue === 1">
                       <div class="row">
                         <div class="col-sm-6">
-                          <div class="mb-3">
-                              <label for="HousingType" class="form-label"> Choose moving date:</label>
-                              <select class="form-select">
-                                <option>Choose</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                              </select>
+                            <div class="d-flex align-items-center justify-content-between mt-5">
+                                <label>Do you want to insure the moving load?</label>
+                                <div class="form-check-wrap d-flex">
+                                    <div class="form-check me-3">
+                                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                        <label class="form-check-label" for="radio2" ></label>
+                                      </div>
+                                      <div class="form-check ms-4">
+                                        <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                        <label class="form-check-label" for="radio" ></label>
+                                      </div>
+                                </div>
                             </div>
+    
   
                           <div class="mb-3">
-                            <label for="Name" class="form-label">Flexibility based on desired moving date? :</label>
+                            <label for="Name" class="form-label">Number of people in the household?</label>
                             <select class="form-select">
                               <option>Choose</option>
                               <option>2</option>
@@ -161,31 +168,408 @@
                               <option>4</option>
                             </select>
                           </div>
-                          <div class="mb-3">
-                              <label class="form-label">Do the objects have to be stored between moving out and
-                                moving in?:</label>
-                             
-                                <div class="form-check-wrap d-flex mt-5">
-                                  <div class="form-check me-3">
-                                      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Text
-                                      <label class="form-check-label" for="radio2" ></label>
-                                    </div>
-                                    <div class="form-check ms-4">
-                                      <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">Text
-                                      <label class="form-check-label" for="radio" ></label>
-                                    </div>
-                              </div>
-                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                         
   
+                          <div class="mb-3">
+                            <label for="Name" class="form-label">Approximately how big is the moving load?</label>
+                            <select class="form-select">
+                              <option>Choose</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                            </select>
+                          </div>
                         </div>
                   
   
                       </div>
   
                       <div class="d-flex justify-content-end">
-                          <button class="btn btn-danger">Save & Continue</button>
+                          <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(2)">Save & Continue</button>
                       </div>
                     </div>
+
+
+                    <div class="setp3"  *ngIf="sliderValue === 2">
+                        <div class="row">
+                            <div class="col-sm-6">
+                              <div class="mb-3">
+                                <label for="Name" class="form-label">Current Address</label>
+                                <select class="form-select">
+                                  <option>Choose</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                </select>
+                              </div>
+
+                            </div>
+                           
+
+                            <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="Name" class="form-label">Street no.</label>
+                                  <select class="form-select">
+                                    <option>Choose</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                             </div>
+
+                             <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="Name" class="form-label">The size of the home</label>
+                                  <select class="form-select">
+                                    <option>Choose</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                             </div>
+
+                             
+                             <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="Name" class="form-label">Total number of rooms</label>
+                                  <select class="form-select">
+                                    <option>Choose</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                             </div>
+
+
+                             
+                             <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="Name" class="form-label">Housing type</label>
+                                  <select class="form-select">
+                                    <option>Choose</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                             </div>
+
+
+                          </div>
+    
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(3)">Save & Continue</button>
+                        </div>
+                      </div>
+
+
+                      
+                    <div class="setp4"  *ngIf="sliderValue === 3">
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                
+      
+                              <div class="mb-3">
+                                <label for="Name" class="form-label">Choose moving date?</label>
+                                <select class="form-select">
+                                  <option>Choose</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                </select>
+                              </div>
+
+
+                                <div class="d-flex align-items-center justify-content-between mt-5">
+                                    <label>Should something be moved from garage?</label>
+                                    <div class="form-check-wrap d-flex">
+                                        <div class="form-check me-3">
+                                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                            <label class="form-check-label" for="radio2" ></label>
+                                          </div>
+                                          <div class="form-check ms-4">
+                                            <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                            <label class="form-check-label" for="radio" ></label>
+                                          </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <div class="col-sm-6">
+                             
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <label>Should something be moved from the 
+                                        storage rooms?</label>
+                                    <div class="form-check-wrap d-flex">
+                                        <div class="form-check me-3">
+                                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                            <label class="form-check-label" for="radio2" ></label>
+                                          </div>
+                                          <div class="form-check ms-4">
+                                            <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                            <label class="form-check-label" for="radio" ></label>
+                                          </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="Name" class="form-label">Distance to parking??</label>
+                                    <select class="form-select">
+                                      <option>Choose</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                    </select>
+                                  </div>
+                            </div>
+                          </div>
+      
+    
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(4)">Save & Continue</button>
+                        </div>
+                      </div>
+
+
+                      <div class="setp5"  *ngIf="sliderValue === 4">
+                        <div class="row">
+                            <div class="col-sm-6">
+                              <div class="mb-3">
+                                <label for="Name" class="form-label">New Address</label>
+                                <select class="form-select">
+                                  <option>Choose</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                </select>
+                              </div>
+
+                            </div>
+                           
+
+                            <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="Name" class="form-label">Street no.</label>
+                                  <select class="form-select">
+                                    <option>Choose</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                             </div>
+
+                             <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="Name" class="form-label">Postal code</label>
+                                  <select class="form-select">
+                                    <option>Choose</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                             </div>
+
+                             
+                             <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="Name" class="form-label">Total number of rooms</label>
+                                  <select class="form-select">
+                                    <option>Choose</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                             </div>
+
+
+                             
+                             <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="Name" class="form-label">Housing type</label>
+                                  <select class="form-select">
+                                    <option>Choose</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                             </div>
+
+
+                          </div>
+    
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(5)">Save & Continue</button>
+                        </div>
+                      </div>
+
+
+
+                      
+                      
+                    <div class="setp6"  *ngIf="sliderValue === 5">
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                
+      
+                              <div class="mb-3">
+                                <label for="Name" class="form-label">What floor is the apartment on?</label>
+                                <select class="form-select">
+                                  <option>Choose</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                </select>
+                              </div>
+
+
+                              <div class="mb-3">
+                                <label for="Name" class="form-label">Distance to parking??</label>
+                                <select class="form-select">
+                                  <option>Choose</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                </select>
+                              </div>
+
+                            </div>
+                            <div class="col-sm-6">
+                             
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <label>Is there a lift in the building?</label>
+                                    <div class="form-check-wrap d-flex">
+                                        <div class="form-check me-3">
+                                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                            <label class="form-check-label" for="radio2" ></label>
+                                          </div>
+                                          <div class="form-check ms-4">
+                                            <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                            <label class="form-check-label" for="radio" ></label>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+      
+    
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(6)">Save & Continue</button>
+                        </div>
+                      </div>
+
+
+
+                      <div class="setp6"  *ngIf="sliderValue === 6">
+                        <div class="row">
+
+                            
+                            <div class="col-sm-6">
+                             
+                                <div class="d-flex align-items-center justify-content-between mt-5">
+                                    <label>Are you moving heavy objects?</label>
+                                    <div class="form-check-wrap d-flex">
+                                        <div class="form-check me-3">
+                                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                            <label class="form-check-label" for="radio2" ></label>
+                                          </div>
+                                          <div class="form-check ms-4">
+                                            <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                            <label class="form-check-label" for="radio" ></label>
+                                          </div>
+                                    </div>
+                                </div>
+
+                              <div class="mb-3 mt-5">
+                                <textarea class="form-control" rows="5" id="" name="text" placeholder="Type Here..."></textarea>
+                              </div>
+
+
+                            </div>
+                            <div class="col-sm-6">
+
+                                <div class="d-flex align-items-center justify-content-between mt-5">
+                                    <label>Are you moving fragile or valuable items?</label>
+                                    <div class="form-check-wrap d-flex">
+                                        <div class="form-check me-3">
+                                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                            <label class="form-check-label" for="radio2" ></label>
+                                          </div>
+                                          <div class="form-check ms-4">
+                                            <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                            <label class="form-check-label" for="radio" ></label>
+                                          </div>
+                                    </div>
+                                </div>
+
+                              <div class="mb-3 mt-5">
+                                <textarea class="form-control" rows="5" id="" name="text" placeholder="Type Here..."></textarea>
+                              </div>
+
+
+
+                            </div>
+                           
+                          </div>
+      
+    
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(7)">Save & Continue</button>
+                        </div>
+                      </div>
+
+
+                      <div class="setp6"  *ngIf="sliderValue === 7">
+                        <div class="row">
+
+                            
+                            <div class="col-sm-6">
+                             
+
+                              <div class="mb-3">
+                                  <label>
+                                    Additional information (optional)
+                                  </label>
+                                <textarea class="form-control" rows="5" id="" name="text" placeholder="Type Here..."></textarea>
+                              </div>
+
+
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="mb-3">
+                                    <label for="Name" class="form-label">Your name?</label>
+                                    <input type="text" class="form-control" id=""  name="">
+                                  </div>
+
+                                  <div class="mb-3">
+                                    <label for="Name" class="form-label"> Email</label>
+                                    <input type="Email" class="form-control" id=""  name="">
+                                  </div>
+
+                                  <div class="mb-3">
+                                    <label for="Name" class="form-label">Telephone</label>
+                                    <input type="text" class="form-control" id=""  name="">
+                                  </div>
+
+                            </div>
+                           
+                          </div>
+      
+    
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(0)">Save & Continue</button>
+                        </div>
+                      </div>
 
                   </div>
                 </div>
