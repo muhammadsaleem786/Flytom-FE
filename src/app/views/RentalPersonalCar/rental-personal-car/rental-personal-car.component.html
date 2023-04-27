@@ -37,75 +37,80 @@
         <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </p>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-sm-9 mt-4 text-center">
-        <div class="btn-group advanceFilter" role="group" aria-label="Button group with nested dropdown">
-          <button disabled class="btn btn-dark btn-heading">Filter</button>
-          <div class="btn-group" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Seats {{SeatListModel.Name}}
-            </button>
-            <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
-              <li *ngFor="let s of SeatList"><a class="dropdown-item" (click)="selectSeat(s)">{{s.Name}}</a></li>
-            </ul>
+
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-lg-9 mt-4 text-center">
+            <div class="filter-scroll">
+            <div class="btn-group advanceFilter" role="group" aria-label="Button group with nested dropdown">
+              <button disabled class="btn btn-dark btn-heading">Filter</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Seats <span class="filtered_value">{{SeatListModel.Name}}</span>
+                </button>
+                <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+                  <li *ngFor="let s of SeatList"><a class="dropdown-item" (click)="selectSeat(s)">{{s.Name}}</a></li>
+                </ul>
+              </div>
+              <!-- ====== -->
+          
+              <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Gear box <span class="filtered_value">{{SteeringTypeModel.Name}} </span>
+                      
+                  </button>
+                  <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+                    <li *ngFor="let s of SteeringTypeList" (click)="selectGearBox(s)"><a class="dropdown-item">{{s.Name}}</a></li>
+           
+                  </ul> 
+                </div>
+          
+                  <!-- ====== -->
+          
+               <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ant. Dorer
+                  </button>
+                  <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+                    <li><a class="dropdown-item">1</a></li>
+                    <li><a class="dropdown-item">2 </a></li>
+                  </ul>
+                </div>
+          
+                  <!-- ====== -->
+          
+               <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Fuel <span class="filtered_value">{{FuelTypeModel.Name}}</span>
+                  </button>
+                  <ul class="dropdown-menu animate__animated animate__fadeInDown " aria-labelledby="btnGroupDrop1">
+                    <li *ngFor="let s of FuelTypeList"(click)="selectFuel(s)"><a class="dropdown-item">{{s.Name}}</a></li>
+                       </ul>
+                </div>
+          
+                   <!-- ====== -->
+          
+               <div class="btn-group no-border" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Wheel Drive  <span class="filtered_value">{{DriveWheelTypeModel.Name}} </span>
+                  </button>
+                  <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+                    <li *ngFor="let s of DriveWheelTypeList" (click)="selectWheelDrive(s)"><a class="dropdown-item">{{s.Name}}</a></li>
+                  </ul>
+                </div>
+          
+                <button type="button" class="btn btn-danger" (click)="advanceFilter()">Search</button>
+          
+            </div>
+            </div>
+            <!-- <app-advancefilter></app-advancefilter> -->
           </div>
-          <!-- ====== -->
-      
-          <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Gear box {{SteeringTypeModel.Name}}
-              </button>
-              <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
-                <li *ngFor="let s of SteeringTypeList" (click)="selectGearBox(s)"><a class="dropdown-item">{{s.Name}}</a></li>
-       
-              </ul> 
-            </div>
-      
-              <!-- ====== -->
-      
-           <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Ant. Dorer
-              </button>
-              <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
-                <li><a class="dropdown-item">1</a></li>
-                <li><a class="dropdown-item">2 </a></li>
-              </ul>
-            </div>
-      
-              <!-- ====== -->
-      
-           <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Fuel {{FuelTypeModel.Name}}
-              </button>
-              <ul class="dropdown-menu animate__animated animate__fadeInDown " aria-labelledby="btnGroupDrop1">
-                <li *ngFor="let s of FuelTypeList"(click)="selectFuel(s)"><a class="dropdown-item">{{s.Name}}</a></li>
-                   </ul>
-            </div>
-      
-               <!-- ====== -->
-      
-           <div class="btn-group no-border" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Wheel Drive {{DriveWheelTypeModel.Name}}
-              </button>
-              <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
-                <li *ngFor="let s of DriveWheelTypeList" (click)="selectWheelDrive(s)"><a class="dropdown-item">{{s.Name}}</a></li>
-              </ul>
-            </div>
-      
-            <button type="button" class="btn btn-danger" (click)="advanceFilter()">Search</button>
-      
         </div>
-        <!-- <app-advancefilter></app-advancefilter> -->
-      </div>
     </div>
+  
     <section class="feature_item py-5">
       <div class="container pt-5 mb-3">
         <div class="row">
-            <div class="col-md-4"  *ngFor="let carCard of PersonalCard">
+            <div class="col-md-6 col-xl-4"  *ngFor="let carCard of PersonalCard">
                 <div class="card mb-4">
                   
                   <ng-container>

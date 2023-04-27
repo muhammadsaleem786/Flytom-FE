@@ -39,12 +39,13 @@
         </p>
 
         <div class="row justify-content-center">
-            <div class="col-sm-9 mt-4 text-center">
+            <div class="col-sm-12 col-lg-9 mt-4 text-center">
+              <div class="filter-scroll">
               <div class="btn-group advanceFilter" role="group" aria-label="Button group with nested dropdown">
                 <button disabled class="btn btn-dark btn-heading">Filter</button>
                 <div class="btn-group" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Seats {{SeatListModel.Name}}
+                    Seats <span class="filtered_value">{{SeatListModel.Name}}</span>
                   </button>
                   <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
                     <li *ngFor="let s of SeatList"><a class="dropdown-item" (click)="selectSeat(s)">{{s.Name}}</a></li>
@@ -54,7 +55,7 @@
             
                 <div class="btn-group" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Gear box {{SteeringTypeModel.Name}}
+                        Gear box <span class="filtered_value"> {{SteeringTypeModel.Name}}</span>
                     </button>
                     <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
                       <li *ngFor="let s of SteeringTypeList" (click)="selectGearBox(s)"><a class="dropdown-item">{{s.Name}}</a></li>
@@ -78,7 +79,7 @@
             
                  <div class="btn-group" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Fuel {{FuelTypeModel.Name}}
+                        Fuel  <span class="filtered_value">{{FuelTypeModel.Name}}</span>
                     </button>
                     <ul class="dropdown-menu animate__animated animate__fadeInDown " aria-labelledby="btnGroupDrop1">
                       <li *ngFor="let s of FuelTypeList"(click)="selectFuel(s)"><a class="dropdown-item">{{s.Name}}</a></li>
@@ -89,7 +90,7 @@
             
                  <div class="btn-group no-border" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Wheel Drive {{DriveWheelTypeModel.Name}}
+                        Wheel Drive <span class="filtered_value"> {{DriveWheelTypeModel.Name}}</span>
                     </button>
                     <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
                       <li *ngFor="let s of DriveWheelTypeList" (click)="selectWheelDrive(s)"><a class="dropdown-item">{{s.Name}}</a></li>
@@ -99,6 +100,7 @@
                   <button type="button" class="btn btn-danger" (click)="advanceFilter()">Search</button>
             
               </div>
+              </div>
               <!-- <app-advancefilter></app-advancefilter> -->
             </div>
           </div>
@@ -107,7 +109,7 @@
     <section class="feature_item py-5">
       <div class="container pt-5 mb-3">
         <div class="row">
-            <div class="col-md-4 col-xl-6"  *ngFor="let carCard of RentalCard">
+            <div class="col-md-6 col-xl-4"  *ngFor="let carCard of RentalCard">
                 <div class="card mb-4">
                   
                   <ng-container>

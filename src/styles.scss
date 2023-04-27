@@ -337,4 +337,97 @@ ngb-datepicker.dropdown-menu.show {
     color: #Fff;
     opacity: 1;
 } 
+
+.filtered_value {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    text-align: left;
+    width: 100%;
+    font-size: 13px;
+    color: #092c4c;
+    padding: 0 0 0 20px;
+    border-radius: 4px;
+}
+
+}
+
+.advanceFilter .dropdown-menu a{
+    cursor: pointer;
+}
+
+@media (max-width: 990px){
+    .advanceFilter .btn-group > .btn-dark {
+        border-right: 2px solid #6e6e6e;
+        padding: 2px 10px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .form-label {
+        font-size: 14px;
+    }
+    .container {
+        max-width: 96%;
+    }
+    .navbar-expand-sm .navbar-nav .nav-link img {
+        display: none;
+    }
+    .advanceFilter {
+        padding: 10px 20px;
+        background: #092C4C;
+        border-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 96%;
+        margin: auto;
+
+        .btn-group, .btn-group-vertical {
+            overflow: hidden;
+        }
+    }
+
+    .advanceFilter .btn-heading {
+        width: 100%;
+    }
+    .advanceFilter .btn-danger {
+        max-width: 100px;
+        position: relative;
+        left: 10px;
+    }
+
+    .advanceFilter .filtered_value {
+        position: relative;
+        bottom: initial;
+        left: 0;
+        text-align: left;
+        width: 100%;
+        font-size: 13px;
+        color: #aba5a5;
+        padding: 0 6px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+.navbar-collapse {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+    .link-w-icon {
+        font-size: 14px;
+    }
+    .customer_reviews .owl-theme .owl-nav {
+        position: relative;
+        top: 0;
+    }
+
+
 }

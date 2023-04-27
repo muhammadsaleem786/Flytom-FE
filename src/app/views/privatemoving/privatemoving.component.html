@@ -42,7 +42,11 @@
                         <div class="col-6">                               
                            <div class="slider-wrap active{{sliderValue}}">
                             <input type="range" class="form-range" [(ngModel)]="sliderValue" min="0" max="7" step="1">
-                          
+                            <!-- <span class="ActivesliderValue animate__animated animate__fadeInDown" [style.left]="sliderValue * 14.285 - sliderValue/1.5  + '%'">
+                                <span class="slide-icon">
+                                   {{sliderValue + 1}}
+                                </span>
+                            </span> -->
                            </div>
                         </div>
                          </div>
