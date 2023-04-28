@@ -1,0 +1,34 @@
+export class OfferModel {
+       Id : number=0;
+        MovingDate : Date=new Date();
+       IsFlexible : boolean=false;
+        DesiredMovingDate : Date=new Date();
+       IsPackedItem : boolean=false;
+       IsStoreObject : boolean=false;
+         IsCurrentHome : boolean=false;
+        IsInsureMoving : boolean=false;
+        MovingLoad : string="";
+         NoOfPeople : string="";
+         CurrentAddress : string="";
+        StreetNo : string="";
+         SizeOfHome : string="";
+         TotalRoom : string="";
+        HouseType : string="";
+         IsMovedStorageRoom : boolean=false;
+         IsMovedGarage : boolean=false;
+        ParkingDistance : string="";
+         NewAddress : string="";
+         NewStreetNo : string="";
+         PostalCode : string="";
+        NewTotalRoom : string="";
+         NewHouseType : string="";
+         ApartmentFloor : string="";
+         IsLift : boolean=false;
+        NewParkingDistance : string="";
+        IsMovingHeavyObject : boolean=false;
+        IsMovingValueableItem : boolean=false;
+        AdditionalInfo : string="";
+       Name : string="";
+        Email : string="";
+        Phone : string="";
+}

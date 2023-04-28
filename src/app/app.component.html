@@ -3,8 +3,14 @@
       <div class="container d-flex flex-wrap">
         <ul class="nav me-auto">
           <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Home</a></li>
-          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">About Us</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-white px-2">Contact</a></li>
+          <li class="nav-item me-3">            
+              <a routerLinkActive="active" routerLink="/about" class="nav-link text-white px-2">                 
+              About Us</a>          
+          </li>
+          <li class="nav-item">
+              <a routerLinkActive="active" routerLink="/contact" class="nav-link text-white px-2">                 
+
+            Contact</a></li>
         
         </ul>
         <ul class="nav">
@@ -36,10 +42,12 @@
                 <li>
                   <a  class="dropdown-item text-muted">Car Rental</a>
                 </li>
-                <li class=""><a routerLinkActive="active" routerLink="/RentalPersonalCar" class="link-w-icon PersonalCars dropdown-item">
+                <li class="">
+                  <a routerLinkActive="active" routerLink="/RentalPersonalCar" class="link-w-icon PersonalCars dropdown-item">
                   Personal Cars
                   <span class="d-block text-muted">Dummy Text</span>
-                </a></li>
+                </a>
+              </li>
                 <li class=""><a routerLinkActive="active" routerLink="/RentalVans"  class="link-w-icon Vans dropdown-item" href="#">
                   Vans
                   <span class="d-block text-muted">Dummy Text</span>

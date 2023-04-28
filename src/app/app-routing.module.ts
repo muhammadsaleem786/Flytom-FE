@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CardetailpageComponent } from './views/RentalPersonalCar/cardetailpage/cardetailpage.component';
 import { HomeComponent } from './views/home/home.component';
+import { AboutComponent } from './views/About/About.component';
+import { ContactComponent } from './views/Contact/Contact.component';
 import { RentalPersonalCarComponent } from './views/RentalPersonalCar/rental-personal-car/rental-personal-car.component';
 import { RentalvansComponent } from './views/RentalVans/rentalvans/rentalvans.component';
 import { VansdetailComponent } from './views/RentalVans/vansdetail/vansdetail.component';
@@ -23,6 +25,8 @@ const routes: Routes = [];
       
       { path: 'RentalPersonalCar', component: RentalPersonalCarComponent },
       { path: 'home', component: HomeComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactComponent },
       { path: 'RentalVans', component: RentalvansComponent },
       
       { path: 'LongTermRental', component: LongTermRentalComponent},

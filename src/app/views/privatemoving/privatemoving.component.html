@@ -42,36 +42,30 @@
                         <div class="col-6">                               
                            <div class="slider-wrap active{{sliderValue}}">
                             <input type="range" class="form-range" [(ngModel)]="sliderValue" min="0" max="7" step="1">
-                            <!-- <span class="ActivesliderValue animate__animated animate__fadeInDown" [style.left]="sliderValue * 14.285 - sliderValue/1.5  + '%'">
-                                <span class="slide-icon">
-                                   {{sliderValue + 1}}
-                                </span>
-                            </span> -->
+                           
                            </div>
                         </div>
                          </div>
-                   
+                  <form class="row g-3" [formGroup]="MovingForm" (ngSubmit)="AddMovingForm()" method="post">
                     <div class="setp1" *ngIf="sliderValue === 0">
                       <div class="row">
                         <div class="col-sm-6">
                           <div class="mb-3">
                               <label for="HousingType" class="form-label"> Choose moving date:</label>
-                              <select class="form-select">
-                                <option>Choose</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                              </select>
+                              <mat-form-field>
+                                <input matInput [matDatepicker]="MovingDate" formControlName="MovingDate"[(ngModel)]="model.MovingDate" placeholder="Choose a date">
+                                <mat-datepicker-toggle matSuffix [for]="MovingDate"></mat-datepicker-toggle>
+                                <mat-datepicker #MovingDate></mat-datepicker>
+                              </mat-form-field>
                             </div>
   
                           <div class="mb-3">
                             <label for="Name" class="form-label">Flexibility based on desired moving date? :</label>
-                            <select class="form-select">
-                              <option>Choose</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
+                            <mat-form-field>
+                              <input matInput [matDatepicker]="DesiredMovingDate" formControlName="DesiredMovingDate"[(ngModel)]="model.DesiredMovingDate" placeholder="Choose a date">
+                              <mat-datepicker-toggle matSuffix [for]="DesiredMovingDate"></mat-datepicker-toggle>
+                              <mat-datepicker #DesiredMovingDate></mat-datepicker>
+                            </mat-form-field>
                           </div>
                           <div class="mb-3">
                               <label class="form-label">Do the objects have to be stored between moving out and
@@ -79,11 +73,11 @@
                              
                                 <div class="form-check-wrap d-flex mt-5">
                                   <div class="form-check me-3">
-                                      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Text
+                                      <input type="radio" class="form-check-input"formControlName="IsStoreObject"[(ngModel)]="model.IsStoreObject" id="radio2"  value="Yes">Yes
                                       <label class="form-check-label" for="radio2" ></label>
                                     </div>
                                     <div class="form-check ms-4">
-                                      <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">Text
+                                      <input type="radio" class="form-check-input" id="radio"formControlName="IsStoreObject"[(ngModel)]="model.IsStoreObject"  value="No">No
                                       <label class="form-check-label" for="radio" ></label>
                                     </div>
                               </div>
@@ -95,11 +89,11 @@
                               <label>Is the moving date flexible?</label>
                               <div class="form-check-wrap d-flex">
                                   <div class="form-check me-3">
-                                      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                      <input type="radio" class="form-check-input" id="radio2" formControlName="IsFlexible"[(ngModel)]="model.IsFlexible" value="Yes">Yes
                                       <label class="form-check-label" for="radio2" ></label>
                                     </div>
                                     <div class="form-check ms-4">
-                                      <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                      <input type="radio" class="form-check-input" id="radio" formControlName="IsFlexible"[(ngModel)]="model.IsFlexible" value="No">No
                                       <label class="form-check-label" for="radio" ></label>
                                     </div>
                               </div>
@@ -109,11 +103,11 @@
                               <label>Do you want agency to pack the items?</label>
                               <div class="form-check-wrap d-flex">
                                   <div class="form-check me-3">
-                                      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                      <input type="radio" class="form-check-input" id="radio2" formControlName="IsPackedItem"[(ngModel)]="model.IsPackedItem" value="Yes">Yes
                                       <label class="form-check-label" for="radio2" ></label>
                                     </div>
                                     <div class="form-check ms-4">
-                                      <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                      <input type="radio" class="form-check-input" id="radio" formControlName="IsPackedItem"[(ngModel)]="model.IsPackedItem" value="No">No
                                       <label class="form-check-label" for="radio" ></label>
                                     </div>
                               </div>
@@ -124,11 +118,11 @@
                               <label>Do you want to wash your current home?</label>
                               <div class="form-check-wrap d-flex">
                                   <div class="form-check me-3">
-                                      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                      <input type="radio" class="form-check-input" id="radio2" formControlName="IsCurrentHome"[(ngModel)]="model.IsCurrentHome" value="Yes">Yes
                                       <label class="form-check-label" for="radio2" ></label>
                                     </div>
                                     <div class="form-check ms-4">
-                                      <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                      <input type="radio" class="form-check-input" id="radio" formControlName="IsCurrentHome"[(ngModel)]="model.IsCurrentHome" value="No">No
                                       <label class="form-check-label" for="radio" ></label>
                                     </div>
                               </div>
@@ -143,8 +137,6 @@
                           <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(1)">Save & Continue</button>
                       </div>
                     </div>
-
-
                     <div class="setp2"  *ngIf="sliderValue === 1">
                       <div class="row">
                         <div class="col-sm-6">
@@ -152,11 +144,11 @@
                                 <label>Do you want to insure the moving load?</label>
                                 <div class="form-check-wrap d-flex">
                                     <div class="form-check me-3">
-                                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Yes
+                                        <input type="radio" class="form-check-input" id="radio2"  formControlName="IsInsureMoving"[(ngModel)]="model.IsInsureMoving"value="Yes">Yes
                                         <label class="form-check-label" for="radio2" ></label>
                                       </div>
                                       <div class="form-check ms-4">
-                                        <input type="radio" class="form-check-input" id="radio" name="optradio" value="option">No
+                                        <input type="radio" class="form-check-input" id="radio" formControlName="IsInsureMoving"[(ngModel)]="model.IsInsureMoving" value="No">No
                                         <label class="form-check-label" for="radio" ></label>
                                       </div>
                                 </div>
@@ -194,8 +186,6 @@
                           <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(2)">Save & Continue</button>
                       </div>
                     </div>
-
-
                     <div class="setp3"  *ngIf="sliderValue === 2">
                         <div class="row">
                             <div class="col-sm-6">
@@ -270,9 +260,6 @@
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(3)">Save & Continue</button>
                         </div>
                       </div>
-
-
-                      
                     <div class="setp4"  *ngIf="sliderValue === 3">
                         <div class="row">
                             <div class="col-sm-6">
@@ -339,8 +326,6 @@
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(4)">Save & Continue</button>
                         </div>
                       </div>
-
-
                       <div class="setp5"  *ngIf="sliderValue === 4">
                         <div class="row">
                             <div class="col-sm-6">
@@ -415,11 +400,6 @@
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(5)">Save & Continue</button>
                         </div>
                       </div>
-
-
-
-                      
-                      
                     <div class="setp6"  *ngIf="sliderValue === 5">
                         <div class="row">
                             <div class="col-sm-6">
@@ -471,9 +451,6 @@
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(6)">Save & Continue</button>
                         </div>
                       </div>
-
-
-
                       <div class="setp6"  *ngIf="sliderValue === 6">
                         <div class="row">
 
@@ -531,8 +508,6 @@
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(7)">Save & Continue</button>
                         </div>
                       </div>
-
-
                       <div class="setp6"  *ngIf="sliderValue === 7">
                         <div class="row">
 
@@ -574,7 +549,7 @@
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(0)">Save & Continue</button>
                         </div>
                       </div>
-
+                    </form>
                   </div>
                 </div>
             </div>
