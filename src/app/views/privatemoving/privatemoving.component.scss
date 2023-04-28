@@ -28,6 +28,30 @@
     background-size: cover;
 }
 
+
+.input-group{
+   
+    .btn, .input-group-text{
+        background: transparent;
+        border-color: #ced4da ;
+        img{
+            position: relative;
+            top: -1px
+        }
+        &:hover{
+           
+            background: transparent;
+        }
+    }
+   
+}
+
+.DatePicker{
+    label{
+        z-index: 2;
+    }
+}
+
 // .stepsform{
 //     label{
 //         font-size: 13px;
