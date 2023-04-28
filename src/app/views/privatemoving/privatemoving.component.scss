@@ -60,4 +60,11 @@
 //         margin-left: -3px;
 //     }
     
+
+// <span class="ActivesliderValue animate__animated animate__fadeInDown" [style.left]="sliderValue * 14.285 - sliderValue/1.5  + '%'">
+//<span class="slide-icon">
+//   {{sliderValue + 1}}
+//</span>
+//</span> 
+
 // }
