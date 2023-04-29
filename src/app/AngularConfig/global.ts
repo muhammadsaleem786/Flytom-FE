@@ -1,7 +1,7 @@
 import { AbstractControl } from '@angular/forms';
 export const GlobalVariable = {
-    BASE_Api_URL: "https://localhost:44346/api/v1",
-    //BASE_Api_URL: "http://3.75.117.51:8181/api/v1",//live api
+    //BASE_Api_URL: "https://localhost:44346/api/v1",
+    BASE_Api_URL: "http://3.75.117.51:8181/api/v1",//live api
     BASE_Web_URL: "http://localhost:4200",
     BASE_File_URL: "http://3.75.117.51:8181/files/attachmentfiles/",
     BASE_Temp_File_URL: "http://3.75.117.51:8181/",
