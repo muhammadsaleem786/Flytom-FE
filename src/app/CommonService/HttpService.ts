@@ -28,8 +28,8 @@ export class HttpService {
       
       }
    
-      Post(url: string, obj: object): Observable<any> {
-        return this.httpClient.post<any>(url, obj, httpOptions)
+      Post(url: string, data: any): Observable<any> {
+        return this.httpClient.post<any>(url, data, httpOptions)
           .pipe(
             map(res => res),
             tap((obj: any) => {
@@ -37,6 +37,8 @@ export class HttpService {
             catchError(this.handleError())
           );
       }
+
+   
     // public Get1(url: string, data: any): Promise<any> {
 
     //     let headers = this.CreateAuthorizationHeader();

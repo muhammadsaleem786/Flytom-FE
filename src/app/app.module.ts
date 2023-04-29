@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommonService } from './views/common/CommenService'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
@@ -25,10 +26,6 @@ import { CommonToastrService } from './CommonService/CommonToastrService';
 import { LoaderService } from './CommonService/LoaderService';
 import { PrivatemovingComponent } from './views/privatemoving/privatemoving.component';
 import { CompanymovingComponent } from './views/companymoving/companymoving.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,11 +45,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     HttpClientModule,
     BrowserAnimationsModule,ToastrModule.forRoot(),
     CarouselModule,NgbDatepickerModule, NgbAlertModule, FormsModule,
-    MatDatepickerModule,
-    MatInputModule,
-    MatNativeDateModule
-  ],
-  providers: [HttpService,CommonToastrService,LoaderService],
+   ],
+  providers: [HttpService,CommonToastrService,LoaderService,CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
