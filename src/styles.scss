@@ -9,7 +9,12 @@ li.breadcrumb-item a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5);
 }
-
+.text-overflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
 .card{
     .fa-heart{
         color: #90A3BF;

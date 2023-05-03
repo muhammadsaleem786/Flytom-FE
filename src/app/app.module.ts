@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FilterComponent } from './views/common/filter/filter.component';
 import { HomeComponent } from './views/home/home.component';
-import { NgbAlertModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbDatepickerModule,NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './views/common/footer/footer.component';
 import { AdvancefilterComponent } from './views/common/advancefilter/advancefilter.component';
 import { CardetailpageComponent } from './views/RentalPersonalCar/cardetailpage/cardetailpage.component';
@@ -44,7 +44,7 @@ import { CompanymovingComponent } from './views/companymoving/companymoving.comp
     RouterModule,
     HttpClientModule,
     BrowserAnimationsModule,ToastrModule.forRoot(),
-    CarouselModule,NgbDatepickerModule, NgbAlertModule, FormsModule,
+    CarouselModule,NgbDatepickerModule,NgbTooltipModule, NgbAlertModule, FormsModule,
    ],
   providers: [HttpService,CommonToastrService,LoaderService,CommonService],
   bootstrap: [AppComponent]
