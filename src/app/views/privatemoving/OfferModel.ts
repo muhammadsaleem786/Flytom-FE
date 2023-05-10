@@ -15,6 +15,8 @@ export class OfferModel {
         PostalCode : string="";
         TotalRoomId :string="";
         HouseTypeId :string="";
+        EmployeeId:string="";
+        CompanyFloorTypeId:string="";
         IsMovedStorageRoom :string="No";
         IsMovedGarage :string="No";
         ParkingDistance : string="";
@@ -29,8 +31,13 @@ export class OfferModel {
         NewFloorTypeId :string="";
         IsMovingHeavyObject : string="Yes";
         IsMovingValueableItem : string="Yes";  
+        Islift:string="Yes";
         AdditionalInfo : string="";
        Name : string="";
         Email : string="";
         Phone : string="";
+        ContactPerson:string="";
+        WhichFloorTypeId:string="";
+        NewWhichFloorTypeId:string="";
+        IsNewlift:string="Yes"
 }

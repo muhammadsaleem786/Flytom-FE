@@ -234,7 +234,7 @@ AddMovingForm() {
   this.model.IsMovingValueableItem=this.model.IsMovingValueableItem=="Yes"?"true":"false";
   this.model.Id=0;
   this.model.DesiredMovingDate=this._commonService.GetFormatDatePk(this.model.DesiredMovingDate);
- 
+ debugger
   this.http.Post(this.urlToApi + '/AddUpdate', this.model).subscribe((res) => {
    if(res!=undefined){
      if (res.IsSuccess) {     
@@ -254,8 +254,7 @@ AddMovingForm() {
      else {    
          alert(res.ErrorMessage); 
      }
-   }else
-   window.location.reload();
+   }
   }, err => {
     console.log(err);
   }); 
