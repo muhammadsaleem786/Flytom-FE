@@ -2,23 +2,23 @@
   <nav class="py-2 bg-dark border-bottom">
       <div class="container d-flex flex-wrap">
         <ul class="nav me-auto">
-          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Home</a></li>
+          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Hjem</a></li>
           <li class="nav-item me-3">            
               <a routerLinkActive="active" routerLink="/about" class="nav-link text-white px-2">                 
-              About Us</a>          
+                Om oss</a>          
           </li>
           <li class="nav-item">
               <a routerLinkActive="active" routerLink="/contact" class="nav-link text-white px-2">                 
 
-            Contact</a></li>
+                Kontakt</a></li>
         
         </ul>
         <ul class="nav">
-          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Read Help</a></li>
-          <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Insurance</a></li>
+          <li class="nav-item me-3"><a routerLinkActive="active" routerLink="/Help" class="nav-link text-white px-2">Veihjelp</a></li>
+          <li class="nav-item me-3"><a routerLinkActive="active" routerLink="/Insurance" class="nav-link text-white px-2">Leiebetingelser</a></li>
           
           <li class="nav-item"><span  class="phone-block">
-            <a href="tel:+51 54 24 00 000">+51 54 24 00 000</a>
+            <a href="tel:+51 54 24 00 000">+51 54 24 00</a>
           </span></li>
         </ul>
       </div>
@@ -37,55 +37,64 @@
       <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown me-3">
               <a class="nav-link dropdown-toggle"  routerLinkActive="active" href="#" role="button" data-bs-toggle="dropdown">
-                <img class="me-2" src="../assets/imgs/icons/sedan.svg"> Car Rental </a>
+                <img class="me-2" src="../assets/imgs/icons/sedan.svg"> Bilutleie </a>
               <ul class="animate__animated animate__fadeInDown dropdown-menu dropdown-menu-end">
-                <li>
-                  <a  class="dropdown-item text-muted">Car Rental</a>
-                </li>
+                <!-- <li>
+                  <a  class="dropdown-item text-muted">Bilutleie</a>
+                </li> -->
+                <li class=""><a routerLinkActive="active" routerLink="/RentalVans"  class="link-w-icon Vans dropdown-item" href="#">
+                  Varebiler
+                </a></li>
+
                 <li class="">
                   <a routerLinkActive="active" routerLink="/RentalPersonalCar" class="link-w-icon PersonalCars dropdown-item">
-                  Personal Cars
-                  <span class="d-block text-muted">Dummy Text</span>
+                    Personbiler
                 </a>
               </li>
-                <li class=""><a routerLinkActive="active" routerLink="/RentalVans"  class="link-w-icon Vans dropdown-item" href="#">
-                  Vans
-                  <span class="d-block text-muted">Dummy Text</span>
-                </a></li>
+              <li class="">
+                <a routerLinkActive="active" routerLink="/ElectricCar" class="link-w-icon PersonalCars dropdown-item">
+                  Elbiler
+              </a>
+            </li>
                 <li class=""><a routerLinkActive="active" routerLink="/LongTermRental"   class="link-w-icon LongTermRent dropdown-item" href="#">
-                  Long Term Rent
-                  <span class="d-block text-muted">Dummy Text</span>
+                  Bilabonnement
+                </a></li>
+
+                <li class=""><a routerLinkActive="active" routerLink="/Agreement"   class="link-w-icon LongTermRent dropdown-item" href="#">
+                  Bedriftsavtale
+                </a></li>
+                
+                <li class=""><a routerLinkActive="active" routerLink="/Faq"   class="link-w-icon LongTermRent dropdown-item" href="#">
+                  Faq
                 </a></li>
               </ul>
           </li>
         <li class="nav-item dropdown me-3">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            <img class="me-2"  src="../assets/imgs/icons/delivery-van.svg"> Moving Services </a>
+            <img class="me-2"  src="../assets/imgs/icons/delivery-van.svg"> Flytting </a>
           <ul class="animate__animated animate__fadeInDown dropdown-menu dropdown-menu-end">
-            <li>
+            <!-- <li>
               <a class="dropdown-item text-muted">Car Rental</a>
-            </li>
-            <li class=""><a routerLinkActive="active" routerLink="/ServicePacking"  class="link-w-icon Packing dropdown-item" href="#">
-              Packing 
-              <span class="d-block text-muted">Dummy Text</span>
-            </a></li>
+            </li> -->
             <li class=""><a [routerLink]="['/Privatemoving']" routerLinkActive="active"  class="link-w-icon PrivateMoving dropdown-item" href="#">
-              Private Moving
-              <span class="d-block text-muted">Dummy Text</span>
+              Privatflytting
             </a></li>
+
+            <li class=""><a routerLinkActive="active" routerLink="/ServicePacking"  class="link-w-icon Packing dropdown-item" href="#">
+              Pakking
+            </a></li>
+            
             <li class=""><a [routerLink]="['/Companymoving']" routerLinkActive="router"  class="link-w-icon CompanyMoving dropdown-item" href="#">
-              Company Moving
-              <span class="d-block text-muted">Dummy Text</span>
+              BEDRIFTSFLYTTING
             </a></li>
-            <li class=""><a class="link-w-icon Dodsbo dropdown-item" href="#">
+            <li class=""><a [routerLink]="['/Dodsbo']" routerLinkActive="router" class="link-w-icon Dodsbo dropdown-item" href="#">
               Dodsbo
-              <span class="d-block text-muted">Dummy Text</span>
             </a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            <img class="me-2"  src="../assets/imgs/icons/package.svg"> Storage </a>
+            <img class="me-2"  src="../assets/imgs/icons/package.svg"> Lagerhotell </a>
           <!-- <ul class="dropdown-menu dropdown-menu-end">
             <li>
               <a class="dropdown-item text-muted">Storage </a>

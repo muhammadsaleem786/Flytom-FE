@@ -2,9 +2,12 @@
     <div class="container py-5">
         <div class="row align-items-center g-lg-5 py-5">
           <div class="col-lg-8 text-center text-lg-start text-white">
-            <h1 class="display-4 fw-bold lh-1 mb-3">A little introduction of 
-                the services you provide</h1>
-            <p class="col-lg-10 fs-5 mt-3 mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+            <!-- <h1 class="display-4 fw-bold lh-1 mb-3">A little introduction of 
+                the services you provide</h1> -->
+            <p class="col-lg-10 fs-5 mt-3 mt-4">
+              Flyttom AS har vært etablert siden år 2000 og har gjennom årene markert seg som en anerkjent aktør innen bilutleie og flyttetjenester i Rogaland.
+              Vårt hovedfokus er utleie av personbiler og varebiler, samt også flytte og transporttjenester. 
+            </p>
           </div>
           
         </div>
@@ -23,37 +26,47 @@
   <div class="container pt-5 mb-3">
     <h1 class="text-center mt-5 mb-4">Velg Tjeneste</h1>
     <div class="row">
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img class="card-img-top" src="assets/imgs/feature/feature-1.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">Warehouse hotel</h4>
-                  <p class="card-text">Write an amazing description in this dedicated card section. Each word counts. </p>
-                  <a href="#" class="btn btn-danger mb-2">See more</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img class="card-img-top" src="assets/imgs/feature/feature-2.png" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">Car rental</h4>
-                  <p class="card-text">Write an amazing description in this dedicated card section. Each word counts. </p>
-                  <a href="#" class="btn btn-danger mb-2">See more</a>
-                </div>
-              </div>
-        </div>
+      <div class="col-md-4">
+        <div class="card text-center">
+            <img class="card-img-top" src="assets/imgs/feature/feature-2.png" alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">Biltuleie</h4>
+              <p class="card-text">
+                Vi har biler som passer ditt budsjett. Hos oss kan du leie for en kort periode
+                eller langtidsleie.  
+              </p>
+              <a href="#" class="btn btn-danger mb-2">See more</a>
+            </div>
+          </div>
+    </div>
+
+       
+       
 
         <div class="col-md-4">
             <div class="card text-center">
                 <img class="card-img-top" src="assets/imgs/feature/feature-3.png" alt="Card image" style="width:100%">
                 <div class="card-body">
-                  <h4 class="card-title">Moving</h4>
-                  <p class="card-text">Write an amazing description in this dedicated card section. Each word counts. </p>
+                  <h4 class="card-title">Flytting</h4>
+                  <p class="card-text">Trenger du flyttebil eller hjelp med flytting?
+                    Vi tilbyr flyttehjelp med mannskap. </p>
                   <a href="#" class="btn btn-danger mb-2">See more</a>
                 </div>
               </div>
         </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+              <img class="card-img-top" src="assets/imgs/feature/feature-1.png" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <h4 class="card-title">Lagerbod</h4>
+                <p class="card-text">
+                  Vi har lagerhotell til både privat og bedrifter. Ulike størrelser som kan tilpasses
+ditt behov.
+                   </p>
+                <a href="#" class="btn btn-danger mb-2">See more</a>
+              </div>
+            </div>
+      </div>
     </div></div>
 </section> 
 
@@ -70,7 +83,7 @@
   
 <section class="customer_reviews">
   <div class="container pt-2 pb-5">
-    <h2 class="text-white mb-5 mt-5">What do customers say?</h2>
+    <h2 class="text-white mb-5 mt-5">Hva sier våre kunder?</h2>
     <owl-carousel-o [options]="carouselOptions">
       <ng-container *ngFor="let p of products">
         <ng-template carouselSlide>

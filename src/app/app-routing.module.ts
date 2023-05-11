@@ -12,6 +12,16 @@ import { ServicepackingComponent } from './views/ServicePacking/servicepacking/s
 import { PrivatemovingComponent } from './views/privatemoving/privatemoving.component';
 import { CompanymovingComponent } from './views/companymoving/companymoving.component';
 
+import { AgreementComponent } from './views/Agreement/Agreement.component';
+import { FaqComponent } from './views/Faq/Faq.component';
+
+import { DodsboComponent } from './views/Dodsbo/Dodsbo.component';
+import { ElectricCarComponent } from './views/ElectricCar/ElectricCar.component';
+
+
+import { HelpComponent } from './views/Help/Help.component';
+
+import { InsuranceComponent } from './views/Insurance/Insurance.component';
 
 const routes: Routes = [];
 
@@ -24,8 +34,16 @@ const routes: Routes = [];
     RouterModule.forRoot([
       
       { path: 'RentalPersonalCar', component: RentalPersonalCarComponent },
+      { path: 'ElectricCar', component: ElectricCarComponent },
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'Agreement', component: AgreementComponent },
+      { path: 'Faq', component: FaqComponent },
+      { path: 'Dodsbo', component: DodsboComponent },
+
+      { path: 'Help', component: HelpComponent },
+      { path: 'Insurance', component: InsuranceComponent },
+      
       { path: 'contact', component: ContactComponent },
       { path: 'RentalVans', component: RentalvansComponent },
       
