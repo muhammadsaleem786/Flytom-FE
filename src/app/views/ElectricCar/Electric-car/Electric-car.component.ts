@@ -1,17 +1,17 @@
 import { Component,OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { map,Observable  } from 'rxjs';
-import { PaginationModel, PaginationConfig } from '../../views/common/PaginationComponentConfig';
-import { GlobalVariable } from '../../AngularConfig/global';
-import { HttpService } from '../../CommonService/HttpService';
-import { LoaderService } from '../../CommonService/LoaderService';
-import { CommonToastrService } from '../../CommonService/CommonToastrService';
+import { PaginationModel, PaginationConfig } from '../../common/PaginationComponentConfig';
+import { GlobalVariable } from '../../../AngularConfig/global';
+import { HttpService } from '../../../CommonService/HttpService';
+import { LoaderService } from '../../../CommonService/LoaderService';
+import { CommonToastrService } from '../../../CommonService/CommonToastrService';
 
 
 @Component({
-  selector: 'app-ElectricCar',
-  templateUrl: './ElectricCar.component.html',
-  styleUrls: ['./ElectricCar.component.scss'],
+  selector: 'app-Electric-car',
+  templateUrl: './Electric-car.component.html',
+  styleUrls: ['./Electric-car.component.scss'],
 })
 export class ElectricCarComponent implements OnInit{
   private urlToApi = GlobalVariable.BASE_Api_URL + "/home"
@@ -39,6 +39,7 @@ public SeatList:any[]=[];
   }
     Refresh() {
         this.loader.ShowLoader();
+        debugger
         if(this.SeatListModel==undefined)
       this.SeatListModel=0;
       if(this.SteeringTypeModel==undefined)
@@ -115,37 +116,4 @@ this.Refresh();
 
 }
 }
-// PersonalCard = [
-//   { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-   
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    }
-// ];
-// }
+

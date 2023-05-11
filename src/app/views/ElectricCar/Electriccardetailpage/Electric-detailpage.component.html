@@ -1,0 +1,109 @@
+<section class="feature_item detail_wraper py-2">
+    <div class="container mb-3">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb pt-2">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Car Rental</a> </li>
+              <li class="breadcrumb-item"><a href="#">Personal Car </a> </li>
+              <li class="breadcrumb-item active" aria-current="page"> Detail</li>
+            </ol>
+          </nav>
+      <div class="row">
+          <div class="col-md-6" >
+              <div class="card mb-4">
+                
+                  <div class="card-body">
+                    <div class="row mb-3">
+                      <div class="col">
+                          <h2>{{PersonalCard.Name}}</h2>
+                          <h6 class="text-muted">
+                            Sport
+                          </h6>
+                      </div>
+                      <div class="col text-end mt-2">
+                        <span class="favriout active">
+                          <i class="fa fa-heart" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                    </div>
+
+                   <div class="slider-img">
+                    <img class="card-img-top text-center" src="{{imageSrc}}" alt="Card image" style="width:100%">
+                   </div>
+                    <div class="btn-group slidebtn">
+                        <button *ngFor="let imageButton of imageButtons; let i = index" 
+                    (click)="onClick(imageButton)" class="button">
+                        <img src="{{imageButton.Image}}">
+                    </button>
+                    </div>
+                </div>
+            </div>
+          </div>
+         
+
+          <div class="col-md-6" >
+            <div class="card mb-4">
+              
+                <div class="card-body">
+                  <div class="row mb-4">
+                    <div class="col">
+                        <h2>{{PersonalCard.Name}}</h2>
+                        <h6 class="text-muted">
+                          Sport
+                        </h6>
+                    </div>
+                    
+                  </div>
+
+                 <p class="descp">
+                   {{PersonalCard.Description}}
+                 </p>
+                  <div class="row p-0 mt-5 gray">
+                    <div class="col">
+                       TypeCar
+                      </div>
+                      <div class="col">
+                        {{PersonalCard.CarType}}
+                      </div>
+                      <div class="col">
+                        Capacity
+                      </div>
+                      <div class="col text-end">
+                        <i class="fa fa-users" aria-hidden="true"></i> 2 People
+                      </div>
+                 </div>
+                 <div class="row mt-3 gray">
+                     
+                    <div class="col">
+                        Steering 
+                      </div>
+                      <div class="col">
+                        <i class="fa fa-support" aria-hidden="true"></i> {{PersonalCard.SteeringType}}
+                      </div>
+                      <div class="col">
+                        {{PersonalCard.FuelType}} 
+                      </div>
+                    <div class="col text-end">
+                      <img class="icon-sm" src="assets/imgs/icons/petrol.png">  {{PersonalCard.TankCapacity}}L
+                    </div>
+                 </div>
+
+                  <div class="row p-0 mt-5 pt-3">
+                    <!-- <div class="col text-start">
+                     <h4> $80.00 Per/ <span class="text-muted font-14">Day</span></h4> 
+                     <span class="text-muted d-block">$100</span>
+                    </div> -->
+                  
+                    <div class="col text-end">
+                       <a  routerLink="/Electricdetails" class="btn btn-lg btn-danger mb-2">Check price and order </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div></div>
+  </section> 
+
+  <section class="our-services">
+    <app-ourservices></app-ourservices>
+  </section>

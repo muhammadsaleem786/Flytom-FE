@@ -1,0 +1,166 @@
+<div class="Rental-personal-car">
+    <div class="container">
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb pt-2">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Car Rental</a> </li>
+          <li class="breadcrumb-item active" aria-current="page">Personal Car</li>
+        </ol>
+      </nav>
+
+      <div class="home-baner baner-rounded py-5">
+      
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-8 text-center text-lg-start text-white px-5">
+              <h1 class="display-4 fw-bold lh-1 mb-3"> Elbiler Cars</h1>
+              <p class="col-lg-10 fs-5 mt-3 mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+            </div>
+            
+          </div>
+          <div class="row justify-content-center filter-pos">
+                <div class="col-10">
+                    <app-filter></app-filter>
+                </div>
+          </div>
+    </div> 
+    
+    
+    </div>
+   
+    
+
+    <div class="container pt-5 mt-5">
+     
+        <h1 class="mt-5">
+            Personal Cars
+        </h1>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-lg-9 mt-4 text-center">
+            <div class="filter-scroll">
+            <div class="btn-group advanceFilter" role="group" aria-label="Button group with nested dropdown">
+              <button disabled class="btn btn-dark btn-heading">Filter</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Seats <span class="filtered_value">{{SeatListModel.Name}}</span>
+                </button>
+                <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+                  <li *ngFor="let s of SeatList"><a class="dropdown-item" (click)="selectSeat(s)">{{s.Name}}</a></li>
+                </ul>
+              </div>
+              <!-- ====== -->
+          
+              <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Gear box <span class="filtered_value">{{SteeringTypeModel.Name}} </span>
+                      
+                  </button>
+                  <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+                    <li *ngFor="let s of SteeringTypeList" (click)="selectGearBox(s)"><a class="dropdown-item">{{s.Name}}</a></li>
+           
+                  </ul> 
+                </div>
+          
+                  <!-- ====== -->
+          
+               <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ant. Dorer
+                  </button>
+                  <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+                    <li><a class="dropdown-item">1</a></li>
+                    <li><a class="dropdown-item">2 </a></li>
+                  </ul>
+                </div>
+          
+                  <!-- ====== -->
+          
+               <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Fuel <span class="filtered_value">{{FuelTypeModel.Name}}</span>
+                  </button>
+                  <ul class="dropdown-menu animate__animated animate__fadeInDown " aria-labelledby="btnGroupDrop1">
+                    <li *ngFor="let s of FuelTypeList"(click)="selectFuel(s)"><a class="dropdown-item">{{s.Name}}</a></li>
+                       </ul>
+                </div>
+          
+                   <!-- ====== -->
+          
+               <div class="btn-group no-border" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Wheel Drive  <span class="filtered_value">{{DriveWheelTypeModel.Name}} </span>
+                  </button>
+                  <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
+                    <li *ngFor="let s of DriveWheelTypeList" (click)="selectWheelDrive(s)"><a class="dropdown-item">{{s.Name}}</a></li>
+                  </ul>
+                </div>
+          
+                <button type="button" class="btn btn-danger" (click)="advanceFilter()">Search</button>
+          
+            </div>
+            </div>
+            <!-- <app-advancefilter></app-advancefilter> -->
+          </div>
+        </div>
+    </div>
+  
+    <section class="feature_item py-5">
+      <div class="container pt-5 mb-3">
+        <div class="row">
+            <div class="col-md-6 col-xl-4"  *ngFor="let carCard of PersonalCard">
+                <div class="card mb-4">
+                  
+                  <ng-container>
+                   
+                    <div class="card-body">
+                      <div class="row mb-3">
+                        <div class="col">
+                            <h2 class="text-overflow" placement="bottom" ngbTooltip={{carCard.Description}}>{{carCard.Description}}</h2>
+                            <h6 class="text-muted">
+                              Sport
+                            </h6>
+                        </div>
+                        <div class="col text-end mt-2">
+                          <span class="favriout">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <img class="card-img-top text-center" src="{{carCard.CarImage}}" alt="Card image" style="width:100%">
+                      <div class="row p-0 mt-5 gray">
+                        <div class="col text-start">
+                          <img class="icon-sm" src="assets/imgs/icons/petrol.png">  {{carCard.TankCapacity}}L
+                        </div>
+                        <div class="col">
+                          <i class="fa fa-support" aria-hidden="true"></i>{{carCard.SteeringType}}
+                        </div>
+                        <div class="col text-end">
+                          <i class="fa fa-users" aria-hidden="true"></i> 2 People
+                        </div>
+                     </div>
+
+                      <div class="row p-0 mt-4">
+                        <div class="col text-start">
+                         <!-- <strong> ${{carCard.price}} Per/</strong> <span class="text-muted">Day</span> -->
+                        </div>
+                      
+                        <div class="col text-end">
+                           <a  [routerLink]="['/Electricdetails']" [queryParams]="{ id: carCard.ID }"class="btn btn-danger mb-2">More Info </a>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+
+                
+                  </div>
+            </div>
+           
+        </div></div>
+    </section> 
+</div>
+
+

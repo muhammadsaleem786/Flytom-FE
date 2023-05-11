@@ -116,37 +116,4 @@ this.Refresh();
 
 }
 }
-// PersonalCard = [
-//   { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-   
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    },
-//    { 
-//     title:'Koenigsegg',
-//     img:'Car.png',
-//     price:'80.00'
-//    }
-// ];
-// }
+

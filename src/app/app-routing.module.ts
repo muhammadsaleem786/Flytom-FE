@@ -16,7 +16,8 @@ import { AgreementComponent } from './views/Agreement/Agreement.component';
 import { FaqComponent } from './views/Faq/Faq.component';
 
 import { DodsboComponent } from './views/Dodsbo/Dodsbo.component';
-import { ElectricCarComponent } from './views/ElectricCar/ElectricCar.component';
+import { ElectricCarComponent } from './views/ElectricCar/Electric-car/Electric-car.component';
+import { ElectricCardetailpageComponent } from './views/ElectricCar/Electriccardetailpage/Electric-detailpage.component';
 
 
 import { HelpComponent } from './views/Help/Help.component';
@@ -34,7 +35,9 @@ const routes: Routes = [];
     RouterModule.forRoot([
       
       { path: 'RentalPersonalCar', component: RentalPersonalCarComponent },
-      { path: 'ElectricCar', component: ElectricCarComponent },
+     { path: 'ElectricCar', component: ElectricCarComponent },
+     { path: 'Electricdetails:id', component: ElectricCardetailpageComponent },
+     { path: 'Electricdetails', component: ElectricCardetailpageComponent },
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
       { path: 'Agreement', component: AgreementComponent },

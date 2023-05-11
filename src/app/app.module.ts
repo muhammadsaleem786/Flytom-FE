@@ -15,6 +15,9 @@ import { AdvancefilterComponent } from './views/common/advancefilter/advancefilt
 import { CardetailpageComponent } from './views/RentalPersonalCar/cardetailpage/cardetailpage.component';
 import { OurservicesComponent } from './views/common/ourservices/ourservices.component';
 import { RentalPersonalCarComponent } from './views/RentalPersonalCar/rental-personal-car/rental-personal-car.component';
+import { ElectricCarComponent } from './views/ElectricCar/Electric-car/Electric-car.component';
+import { ElectricCardetailpageComponent } from './views/ElectricCar/Electriccardetailpage/Electric-detailpage.component';
+
 import { RentalvansComponent } from './views/RentalVans/rentalvans/rentalvans.component';
 import { VansdetailComponent } from './views/RentalVans/vansdetail/vansdetail.component';
 import { LongTermRentalComponent } from './views/LongTermRental/longtermrental/longtermrental.component';
@@ -30,7 +33,8 @@ import { CompanymovingComponent } from './views/companymoving/companymoving.comp
   declarations: [
     AppComponent,
     FilterComponent,AdvancefilterComponent,
-    HomeComponent,FooterComponent,RentalPersonalCarComponent,CardetailpageComponent,
+    HomeComponent,FooterComponent,RentalPersonalCarComponent,CardetailpageComponent,ElectricCarComponent,
+    ElectricCardetailpageComponent,
     OurservicesComponent, RentalvansComponent, VansdetailComponent,LongTermRentalComponent,
     ServicepackingComponent,
     PrivatemovingComponent,
