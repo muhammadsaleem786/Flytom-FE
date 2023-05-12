@@ -43,72 +43,53 @@ export class PrivatemovingComponent implements OnInit{
 }
 MovingForm1: FormGroup = this.formBuilder.group({
   Id : [''],  
-  IsFlexible : [''],  
-  DesiredMovingDate : ['', Validators.required], 
-  FlexibleMovingDateId:['', Validators.required] ,
-  IsPackedItem : [''],  
-  IsStoreObject : [''],  
-    IsCurrentHome :['']  
+  IsPacking : [''],  
+  MovingDate : [''], 
+  IsWarehousehotel :[''] ,
+  Ispiano : [''],  
 }
 ); 
-MovingForm2: FormGroup = this.formBuilder.group({  
-    IsInsureMoving : [''],  
-    MovingLoadId : ['', Validators.required],  
-    NoOfPeopleId : ['', Validators.required],  
-}
-); 
-MovingForm3: FormGroup = this.formBuilder.group({
+
+MovingForm2: FormGroup = this.formBuilder.group({
   CurrentAddress : [''],  
   StreetNo : [''],  
   PostalCode : [''],  
-    SizeOfHome : ['', Validators.required], 
-    TotalRoomId :['', Validators.required],  
-    HouseTypeId : ['', Validators.required],  
+    SizeOfHome : [''], 
+    TotalRoomId :[''],  
+    HouseTypeId : [''],  
+    FloorTypeId:[''],
+    garage:[''],
+    ParkingDistance:['']
 }
 ); 
+MovingForm3: FormGroup = this.formBuilder.group({
+  NewAddress : [''],  
+  NewStreetNo : [''],  
+  NewPostalCode : [''],  
+ NewTotalRoomId : [''],  
+  NewHouseTypeId : [''],  
+  NewSizeOfHome : [''],  
+  NewFloorTypeId:[''],
+  NewParkingDistance : [''],  
+  Newgarage:['']
+ }
+);
 MovingForm4: FormGroup = this.formBuilder.group({
-  FloorTypeId:['', Validators.required],
-  IsMovedStorageRoom :[''],  
-    IsMovedGarage : [''],  
-    ParkingDistance : ['', Validators.required],  
-}
-); 
-MovingForm5: FormGroup = this.formBuilder.group({
-    NewAddress : [''],  
-    NewStreetNo : [''],  
-    NewPostalCode : [''],  
-   NewTotalRoomId : ['', Validators.required],  
-    NewHouseTypeId : ['', Validators.required],  
-    NewSizeOfHome : ['', Validators.required],  
-   }
-);
-MovingForm6: FormGroup = this.formBuilder.group({
-    NewParkingDistance :[''], 
-    NewFloorTypeId:['', Validators.required],
+  AdditionalInfo : [''],  
+ Name : ['', Validators.required],  
+  Email : ['', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+  Phone : ['', Validators.required],  
 }
 );
-MovingForm7: FormGroup = this.formBuilder.group({
-    IsMovingHeavyObject : [''],  
-    IsMovingValueableItem :[''],  
-}
-);
-MovingForm8: FormGroup = this.formBuilder.group({
-        AdditionalInfo : [''],  
-       Name : ['', Validators.required],  
-        Email : ['', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-        Phone : ['', Validators.required],  
-}
-);
+
+
+
 
 submitted = false;
 get fs1() { return this.MovingForm1.controls; }
 get fs2() { return this.MovingForm2.controls; }
 get fs3() { return this.MovingForm3.controls; }
 get fs4() { return this.MovingForm4.controls; }
-get fs5() { return this.MovingForm5.controls; }
-get fs6() { return this.MovingForm6.controls; }
-get fs7() { return this.MovingForm7.controls; }
-get fs8() { return this.MovingForm8.controls; }
   ngOnInit(): void {  
     this.ngbDateParserFormatter.format = (date: NgbDateStruct | null) => {
       if (date) {
@@ -122,6 +103,7 @@ get fs8() { return this.MovingForm8.controls; }
     this.LoadDropDown(); 
   }
   updateSliderValue(sliderMoe:any){
+    debugger
     if(sliderMoe==1){
       if (this.MovingForm1.invalid) {
         this.submitted=true;
@@ -158,43 +140,17 @@ get fs8() { return this.MovingForm8.controls; }
         this.sliderValue= sliderMoe;
       }  
     }
-    if(sliderMoe==5){
-      if (this.MovingForm5.invalid) {
-        this.submitted=true;
-        return;
-      }else{
-        this.submitted=false;
-        this.sliderValue= sliderMoe;
-      }  
-    }
-    if(sliderMoe==6){
-      if (this.MovingForm6.invalid) {
-        this.submitted=true;
-        return;
-      }else{
-        this.submitted=false;
-        this.sliderValue= sliderMoe;
-      }  
-    }
-    if(sliderMoe==7){
-      if (this.MovingForm7.invalid) {
-        this.submitted=true;
-        return;
-      }else{
-        this.submitted=false;
-        this.sliderValue= sliderMoe;
-      }  
-    }
-    if(sliderMoe==0){
-      if (this.MovingForm8.invalid) {
-        this.submitted=true;
-        return;
-      }else{
-        this.submitted=false;
-        this.sliderValue= sliderMoe;
-        this.AddMovingForm();
-      }  
-    }
+    
+    // if(sliderMoe==0){
+    //   if (this.MovingForm8.invalid) {
+    //     this.submitted=true;
+    //     return;
+    //   }else{
+    //     this.submitted=false;
+    //     this.sliderValue= sliderMoe;
+    //     this.AddMovingForm();
+    //   }  
+    // }
     // this.sliderValue= sliderMoe;    
     // if(this.sliderValue==7)
     // this.AddMovingForm();
@@ -223,17 +179,10 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
 AddMovingForm() {
  
      
-  this.model.IsStoreObject=this.model.IsStoreObject=="Yes"?"true":"false";
-  this.model.IsFlexible=this.model.IsFlexible=="Yes"?"true":"false";
-  this.model.IsPackedItem=this.model.IsPackedItem=="Yes"?"true":"false";
-  this.model.IsCurrentHome=this.model.IsCurrentHome=="Yes"?"true":"false";
-  this.model.IsInsureMoving=this.model.IsInsureMoving=="Yes"?"true":"false";
-  this.model.IsMovedStorageRoom=this.model.IsMovedStorageRoom=="Yes"?"true":"false";
-  this.model.IsMovedGarage=this.model.IsMovedGarage=="Yes"?"true":"false";
-  this.model.IsMovingHeavyObject=this.model.IsMovingHeavyObject=="Yes"?"true":"false";
-  this.model.IsMovingValueableItem=this.model.IsMovingValueableItem=="Yes"?"true":"false";
+  this.model.IsPacking=this.model.IsPacking=="Yes"?"true":"false";
+  this.model.IsWarehousehotel=this.model.IsWarehousehotel=="Yes"?"true":"false";
+  this.model.Ispiano=this.model.Ispiano=="Yes"?"true":"false";
   this.model.Id=0;
-  this.model.DesiredMovingDate=this._commonService.GetFormatDatePk(this.model.DesiredMovingDate);
  debugger
   this.http.Post(this.urlToApi + '/AddUpdate', this.model).subscribe((res) => {
    if(res!=undefined){
@@ -243,11 +192,7 @@ AddMovingForm() {
        this.MovingForm1.reset(); 
        this.MovingForm2.reset(); 
        this.MovingForm3.reset(); 
-       this.MovingForm4.reset(); 
-       this.MovingForm5.reset(); 
-       this.MovingForm6.reset(); 
-       this.MovingForm7.reset(); 
-       this.MovingForm8.reset(); 
+       this.MovingForm4.reset();    
        window.location.reload();
        alert(res.Message);
      }

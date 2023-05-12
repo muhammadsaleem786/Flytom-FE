@@ -24,6 +24,8 @@ import { HelpComponent } from './views/Help/Help.component';
 
 import { InsuranceComponent } from './views/Insurance/Insurance.component';
 
+import { StorageComponent } from './views/Storage/storage.component';
+
 const routes: Routes = [];
 
 
@@ -43,7 +45,7 @@ const routes: Routes = [];
       { path: 'Agreement', component: AgreementComponent },
       { path: 'Faq', component: FaqComponent },
       { path: 'Dodsbo', component: DodsboComponent },
-
+      { path: 'Storage', component: StorageComponent },      
       { path: 'Help', component: HelpComponent },
       { path: 'Insurance', component: InsuranceComponent },
       
