@@ -85,6 +85,20 @@ li.breadcrumb-item a {
         background-image: url('assets/imgs/icons/package.svg');
 
     }
+    &.hand{
+        background-image: url('assets/imgs/icons/hand.png');
+
+    }
+    &.faq{
+        background-image: url('assets/imgs/icons/faq.png');
+
+    }
+    &.battery{
+        background-image: url('assets/imgs/icons/battery.png');
+        background-size: 15px;
+        background-position: 21px center;
+
+    }
 }
 
 @keyframes fadeInDown {
