@@ -90,20 +90,19 @@ med å finne riktig volum. </p>
                       </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Ønsker du lagerhotell?</label>
-                           
-                              <div class="form-check-wrap d-flex mt-5">
-                                <div class="form-check me-3">
-                                    <input type="radio" class="form-check-input"formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" id="radio2"  value="Yes">Ja
-                                    <label class="form-check-label" for="radio2" ></label>
-                                  </div>
-                                  <div class="form-check ms-4">
-                                    <input type="radio" class="form-check-input" id="radio"formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel"  value="No">Nei
-                                    <label class="form-check-label" for="radio" ></label>
-                                  </div>
-                            </div>
+                        <div class="d-flex align-items-center justify-content-between mt-5">
+                          <label>Ønsker du pakking?</label>
+                          <div class="form-check-wrap d-flex">
+                              <div class="form-check me-3">
+                                  <input type="radio" class="form-check-input" id="IsWarehousehotel" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="Yes">Ja
+                                  <label class="form-check-label" for="IsWarehousehotel" ></label>
+                                </div>
+                                <div class="form-check ms-4">
+                                  <input type="radio" class="form-check-input" id="IsWarehousehotel" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="No">Nei
+                                  <label class="form-check-label" for="IsWarehousehotel2" ></label>
+                                </div>
                           </div>
+                        </div>
 
                       </div>
                       <div class="col-sm-6">
