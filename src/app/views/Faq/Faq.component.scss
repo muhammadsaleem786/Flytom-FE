@@ -1,0 +1,79 @@
+.ContactBaner{
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('../../../assets/imgs/ContactUs.png');
+   // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#accordion{
+    .card {
+            
+            border: 0px;
+            min-height: 170px;
+            border-radius: 0px;
+            border-bottom: 1px solid #efefef;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        .card-header {
+                            
+            border-bottom: 0px;
+            background: #fff;
+            padding: 0;
+                
+            a{
+
+                font-size: 22px;
+                font-weight: bold;
+                width: 100%;
+                text-align: left;
+                padding: 20px 30px 20px 100px;
+                &.btn:not(.collapsed){
+                    background: #C8E4EB;
+                    border-radius: 0px;
+                    .collapse_icon{
+                        background: #000;
+                        box-shadow: none;
+                        color: #fff;
+                    }
+
+                }
+                &:focus{
+                    outline: none;
+                    border:0px;
+                }
+            }
+        }
+        .collapse.show, .collapsing{
+            background: #C8E4EB;
+            border-radius: 0px;
+        }
+        .card-body{
+            padding: 0px 30px 20px 100px;
+            min-height: 94px;
+
+           
+        }
+        span.number {
+            position: absolute;
+            left: 35px;
+            font-size: 30px;
+            margin-top: -6px;
+        }
+    }
+}
+
+
+span.collapse_icon {
+    position: absolute;
+    right: 30px;
+    top: 16px;
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 1px 4px 6px #efefef;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}

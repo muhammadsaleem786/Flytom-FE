@@ -2,6 +2,7 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+.flytomApp{
 .pos-rel{
     position: relative;
 }
@@ -278,6 +279,7 @@ ngb-datepicker.dropdown-menu.show {
             font-size: 12px;
             background: #fff;
             padding: 2px 5px;
+            z-index: 1;
     }
 }
 .toast-top-right {
@@ -453,5 +455,7 @@ ngb-datepicker.dropdown-menu.show {
 
 
 }
+}
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Inter', "Helvetica Neue", sans-serif; }
+
