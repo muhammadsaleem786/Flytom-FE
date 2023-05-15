@@ -28,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommonToastrService } from './CommonService/CommonToastrService';
 import { LoaderService } from './CommonService/LoaderService';
 import { PrivatemovingComponent } from './views/privatemoving/privatemoving.component';
+import { ContactComponent } from './views/Contact/Contact.component';
 import { CompanymovingComponent } from './views/companymoving/companymoving.component';
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CompanymovingComponent } from './views/companymoving/companymoving.comp
     OurservicesComponent, RentalvansComponent, VansdetailComponent,LongTermRentalComponent,
     ServicepackingComponent,
     PrivatemovingComponent,
+    ContactComponent,
     CompanymovingComponent,
   ],
   imports: [
