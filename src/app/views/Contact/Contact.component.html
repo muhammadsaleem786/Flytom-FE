@@ -17,24 +17,37 @@
                               <h4 class="mt-5">
                                 Kontakt
                               </h4>
-                              <form class="row g-3" [formGroup]="Form1">
+                              <form [formGroup]="Form1" novalidate (ngSubmit)="SaveOrUpdate()" class="row g-3">
                               <div class="row">
                                 <div class="col-sm-12 my-3">
                                   <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Navn" name="Name">
+                                    <input type="text" class="form-control"formControlName="Name" [(ngModel)]="model.Name" placeholder="Navn" name="Name">
                                   </div>
                                 </div>
                                 <div class="col-sm-12 my-3">
                                   <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Mobil" name="Name">
+                                    <input type="text" class="form-control"formControlName="Phone" [(ngModel)]="model.Phone" placeholder="Mobil" name="Name">
+                                    <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.invalid)">
+                                      This value is required.
+                                  </div>
+                                  <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.errors?.['pattern'])">
+                                      Enter Valid Phone Numner
+                                  </div>
                                   </div>
                                 </div>
                                 <div class="col-sm-12  my-3">
                                   <div class="mb-3">
-                                    <input type="email" class="form-control"  placeholder="E-post" name="email">
+                                    <input type="email" class="form-control"formControlName="Email" [(ngModel)]="model.Email"  placeholder="E-post" name="email">
+                                    <div class="text-danger" *ngIf="submitted && (fs1['Email']?.invalid)">
+                                      This value is required.
                                   </div>
+                                  <div class="text-danger" *ngIf="submitted && (fs1['Email']?.errors?.['Email'] ||fs1['Email']?.errors?.['pattern'])">
+                                    Enter Valid Email
                                 </div>
-                                <!-- <div class="col-sm-12  my-3">
+                                  </div>
+                                 
+                                </div>
+                                <div class="col-sm-12  my-3">
                                   <div class="mb-3">
                                     <select class="form-control form-control-sm form-control-alternative" formControlName="EnquiryTypeId" [(ngModel)]="model.EnquiryTypeId">
                                       <option *ngFor="let item of EnquiryTypeList" [value]="item.ID">
@@ -42,10 +55,10 @@
                                       </option>
                                   </select> 
                                   </div>
-                                </div> -->
+                                </div>
                                 <div class="col-sm-12  my-3 text-center">
                                   <div class="mb-3">
-                                    <button class="btn btn-danger px-5">Submit</button>
+                                    <button type="submit" class="btn btn-danger px-5">Submit</button>
                                   </div>
                                 </div>
                              </div>

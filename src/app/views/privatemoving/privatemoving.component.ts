@@ -103,7 +103,6 @@ get fs4() { return this.MovingForm4.controls; }
     this.LoadDropDown(); 
   }
   updateSliderValue(sliderMoe:any){
-    debugger
     if(sliderMoe==1){
       if (this.MovingForm1.invalid) {
         this.submitted=true;
@@ -137,23 +136,10 @@ get fs4() { return this.MovingForm4.controls; }
         return;
       }else{
         this.submitted=false;
-        this.sliderValue= sliderMoe;
+        this.AddMovingForm();
       }  
     }
     
-    // if(sliderMoe==0){
-    //   if (this.MovingForm8.invalid) {
-    //     this.submitted=true;
-    //     return;
-    //   }else{
-    //     this.submitted=false;
-    //     this.sliderValue= sliderMoe;
-    //     this.AddMovingForm();
-    //   }  
-    // }
-    // this.sliderValue= sliderMoe;    
-    // if(this.sliderValue==7)
-    // this.AddMovingForm();
   }
 LoadDropDown() {
   this.loader.ShowLoader();
@@ -178,11 +164,12 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
 }
 AddMovingForm() {
  
-     
+     debugger
   this.model.IsPacking=this.model.IsPacking=="Yes"?"true":"false";
   this.model.IsWarehousehotel=this.model.IsWarehousehotel=="Yes"?"true":"false";
   this.model.Ispiano=this.model.Ispiano=="Yes"?"true":"false";
   this.model.Id=0;
+  this.model.MovingDate="";
  debugger
   this.http.Post(this.urlToApi + '/AddUpdate', this.model).subscribe((res) => {
    if(res!=undefined){

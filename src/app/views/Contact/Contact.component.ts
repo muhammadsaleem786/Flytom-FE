@@ -19,6 +19,7 @@ import { NgbDateParserFormatter,NgbDateStruct } from '@ng-bootstrap/ng-bootstrap
 export class ContactComponent implements OnInit{
   public model: ContectModel = new ContectModel();
   public EnquiryTypeList:any[]=[];
+  private urlToApi = GlobalVariable.BASE_Api_URL + "/moving"
   constructor(public _router: Router,
     public http: HttpService,public loader: LoaderService, public toastr: CommonToastrService,
     private formBuilder: FormBuilder, private _commonService: CommonService,
@@ -28,12 +29,52 @@ export class ContactComponent implements OnInit{
 Form1: FormGroup = this.formBuilder.group({
   Id : [''],  
   Name : [''],  
-  Phone : [''], 
-  Email :[''] ,
+  Phone : ['', Validators.required], 
+  Email : ['', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
   EnquiryTypeId : [''],  
 }); 
 
 submitted = false;
 get fs1() { return this.Form1.controls; }
 ngOnInit(): void {   
-}}
+  this.LoadDropDown();
+}
+LoadDropDown() {
+  this.loader.ShowLoader();
+let params = 
+{
+};
+this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
+      data => {
+  if(data.IsSuccess){
+    this.EnquiryTypeList = data.ResultSet.ContactList;
+  }
+      },
+      error => {
+        console.log(error);
+      }
+  );
+}
+SaveOrUpdate() {
+ if (this.Form1.invalid){
+  this.submitted=true;
+  return;
+ }
+  this.http.Post(this.urlToApi + '/ContactAddUpdate', this.model).subscribe((res) => {
+   if(res!=undefined){
+     if (res.IsSuccess) {     
+      this.model=new ContectModel();   
+       this.submitted = false;
+       this.Form1.reset(); 
+       alert(res.Message);
+     }
+     else {    
+         alert(res.ErrorMessage); 
+     }
+   }
+  }, err => {
+    console.log(err);
+  }); 
+
+} 
+}
