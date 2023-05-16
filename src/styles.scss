@@ -254,7 +254,13 @@ ngb-datepicker.dropdown-menu.show {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.dødsboet, .van-baner{
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('assets/imgs/Hero-BG-van.png');
+   // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
 .form-card{
