@@ -17,10 +17,15 @@
           <li class="nav-item me-3"><a routerLinkActive="active" routerLink="/Help" class="nav-link text-white px-2">Veihjelp</a></li>
           <li class="nav-item me-3"><a class="nav-link text-white px-2">Post@flyttom.no</a></li>
           
+         
+        
+          <li class="nav-item me-3"><a class="nav-link text-white px-2 fa fa-facebook" href="https://www.facebook.com/flyttom" target="_blank"></a></li>
+          <li class="nav-item me-3"><a class="nav-link text-white px-2 fa fa-instagram" href="https://www.instagram.com/flyttom" target="_blank"></a></li>
           <li class="nav-item"><span  class="phone-block">
-            <a href="tel:+51 54 24 00 000">51 54 24 00</a>
+            <a href="tel:+51 54 24 00">51 54 24 00</a>
           </span></li>
         </ul>
+
       </div>
     </nav>
 
@@ -93,13 +98,15 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" [routerLink]="['/Storage']"  role="button" data-bs-toggle="dropdown">
             <img class="me-2"  src="../assets/imgs/icons/package.svg"> Lagerhotell </a>
           <!-- <ul class="dropdown-menu dropdown-menu-end">
             <li>
               <a class="dropdown-item text-muted">Storage </a>
             </li>
-            
+             <a [routerLink]="['/Storage']" routerLinkActive="active"  class="link-w-icon CompanyMoving dropdown-item" href="#">
+            Lagerhotell
+          </a>
           </ul> -->
         </li>
       </ul>

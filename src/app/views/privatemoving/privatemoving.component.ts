@@ -47,6 +47,11 @@ MovingForm1: FormGroup = this.formBuilder.group({
   MovingDate : [''], 
   IsWarehousehotel :[''] ,
   Ispiano : [''],  
+  AdditionalInfo : [''],  
+  ContactType: [''],  
+ Name : ['', Validators.required],  
+  Email : ['', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+  Phone : ['', Validators.required],  
 }
 ); 
 
@@ -74,13 +79,7 @@ MovingForm3: FormGroup = this.formBuilder.group({
   Newgarage:['']
  }
 );
-MovingForm4: FormGroup = this.formBuilder.group({
-  AdditionalInfo : [''],  
- Name : ['', Validators.required],  
-  Email : ['', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-  Phone : ['', Validators.required],  
-}
-);
+
 
 
 
@@ -89,7 +88,6 @@ submitted = false;
 get fs1() { return this.MovingForm1.controls; }
 get fs2() { return this.MovingForm2.controls; }
 get fs3() { return this.MovingForm3.controls; }
-get fs4() { return this.MovingForm4.controls; }
   ngOnInit(): void {  
     this.ngbDateParserFormatter.format = (date: NgbDateStruct | null) => {
       if (date) {
@@ -127,18 +125,18 @@ get fs4() { return this.MovingForm4.controls; }
         return;
       }else{
         this.submitted=false;
-        this.sliderValue= sliderMoe;
-      }  
-    }
-    if(sliderMoe==4){
-      if (this.MovingForm4.invalid) {
-        this.submitted=true;
-        return;
-      }else{
-        this.submitted=false;
         this.AddMovingForm();
       }  
     }
+    // if(sliderMoe==4){
+    //   if (this.MovingForm4.invalid) {
+    //     this.submitted=true;
+    //     return;
+    //   }else{
+    //     this.submitted=false;
+    //     this.AddMovingForm();
+    //   }  
+    // }
     
   }
 LoadDropDown() {
@@ -178,8 +176,7 @@ AddMovingForm() {
        this.submitted = false;
        this.MovingForm1.reset(); 
        this.MovingForm2.reset(); 
-       this.MovingForm3.reset(); 
-       this.MovingForm4.reset();    
+       this.MovingForm3.reset();   
        window.location.reload();
        alert(res.Message);
      }

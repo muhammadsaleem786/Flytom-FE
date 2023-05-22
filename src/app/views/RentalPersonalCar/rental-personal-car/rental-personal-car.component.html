@@ -50,7 +50,7 @@ dagen!
               <button disabled class="btn btn-dark btn-heading">Filter</button>
               <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Seats <span class="filtered_value">{{SeatListModel.Name}}</span>
+                  SeterFilter <span class="filtered_value">{{SeatListModel.Name}}</span>
                 </button>
                 <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
                   <li *ngFor="let s of SeatList"><a class="dropdown-item" (click)="selectSeat(s)">{{s.Name}}</a></li>
@@ -60,7 +60,7 @@ dagen!
           
               <div class="btn-group" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Gear box <span class="filtered_value">{{SteeringTypeModel.Name}} </span>
+                    Girkasse<span class="filtered_value">{{SteeringTypeModel.Name}} </span>
                       
                   </button>
                   <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
@@ -71,7 +71,7 @@ dagen!
           
                   <!-- ====== -->
           
-               <div class="btn-group" role="group">
+               <!-- <div class="btn-group" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Ant. Dorer
                   </button>
@@ -79,13 +79,13 @@ dagen!
                     <li><a class="dropdown-item">1</a></li>
                     <li><a class="dropdown-item">2 </a></li>
                   </ul>
-                </div>
+                </div> -->
           
                   <!-- ====== -->
           
                <div class="btn-group" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Fuel <span class="filtered_value">{{FuelTypeModel.Name}}</span>
+                    Brensel <span class="filtered_value">{{FuelTypeModel.Name}}</span>
                   </button>
                   <ul class="dropdown-menu animate__animated animate__fadeInDown " aria-labelledby="btnGroupDrop1">
                     <li *ngFor="let s of FuelTypeList"(click)="selectFuel(s)"><a class="dropdown-item">{{s.Name}}</a></li>
@@ -96,7 +96,7 @@ dagen!
           
                <div class="btn-group no-border" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Wheel Drive  <span class="filtered_value">{{DriveWheelTypeModel.Name}} </span>
+                    Hjuldrift  <span class="filtered_value">{{DriveWheelTypeModel.Name}} </span>
                   </button>
                   <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
                     <li *ngFor="let s of DriveWheelTypeList" (click)="selectWheelDrive(s)"><a class="dropdown-item">{{s.Name}}</a></li>
@@ -123,16 +123,16 @@ dagen!
                     <div class="card-body">
                       <div class="row mb-3">
                         <div class="col">
-                            <h2 class="text-overflow" placement="bottom" ngbTooltip={{carCard.Description}}>{{carCard.Description}}</h2>
-                            <h6 class="text-muted">
+                            <h2 class="text-overflow" placement="bottom" ngbTooltip={{carCard.Description}}>{{carCard.Name}}</h2>
+                            <!-- <h6 class="text-muted">
                               Sport
-                            </h6>
+                            </h6> -->
                         </div>
-                        <div class="col text-end mt-2">
+                        <!-- <div class="col text-end mt-2">
                           <span class="favriout">
                             <i class="fa fa-heart" aria-hidden="true"></i>
                           </span>
-                        </div>
+                        </div> -->
                       </div>
                       
                       <img class="card-img-top text-center" src="{{carCard.CarImage}}" alt="Card image" style="width:100%">
@@ -154,7 +154,7 @@ dagen!
                         </div>
                       
                         <div class="col text-end">
-                           <a  [routerLink]="['/details']" [queryParams]="{ id: carCard.ID }"class="btn btn-danger mb-2">More Info </a>
+                           <a  [routerLink]="['/details']" [queryParams]="{ id: carCard.ID }"class="btn btn-danger mb-2">Mer info </a>
                         </div>
                       </div>
                     </div>

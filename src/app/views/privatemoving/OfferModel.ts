@@ -4,7 +4,7 @@ export class OfferModel {
        MovingDate : string="";
        IsWarehousehotel : string="Yes";
        Ispiano : string="Yes";
-
+       ContactType:string="P";
        CurrentAddress :string="";
        StreetNo : string="";
        PostalCode : string="";

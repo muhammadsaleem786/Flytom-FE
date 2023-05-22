@@ -54,7 +54,7 @@ public SeatList:any[]=[];
       RecordPerPage: this.PModel.RecordPerPage,
       SortOrder:this.PModel.SortOrder,
       SearchText:this.PModel.SearchText,
-      Type:"P",
+      Type:"E",
       SeatNo:this.SeatListModel.ID,
       SteeringType:this.SteeringTypeModel.ID,
       FuelType:this.FuelTypeModel.ID,

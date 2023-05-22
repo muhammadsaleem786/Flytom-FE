@@ -3,5 +3,7 @@ export class ContectModel {
        Name :string="";
        Phone:string="";
         Email :string="";
-        EnquiryTypeId:string="";
+        Description:string="";
+        EnquiryTypeId:string="0";
+        ContactType:string="P";
 }

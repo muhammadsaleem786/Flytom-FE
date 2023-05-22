@@ -88,16 +88,23 @@ ditt behov.
       <ng-container *ngFor="let p of products">
         <ng-template carouselSlide>
           <div class="customer-review" [ngClass]="p.class">
-            <p class="description mb-4">
+            <!-- <p class="description mb-4">
               {{p.description}}
-            </p>
+            </p> -->
            <div class="row">
-              <div class="col img-col pe-0">
+              <!-- <div class="col img-col pe-0">
                 <img src="assets/imgs/users/{{p.img}}">
-              </div>
+              </div> -->
               <div class="col">
                 <h6 class="mb-1 mt-1">{{p.title}}</h6>
-                <p>{{p.designation}}</p>
+                
+                  <span class="fa fa-star Starchecked"></span>
+<span class="fa fa-star Starchecked"></span>
+<span class="fa fa-star Starchecked"></span>
+<span class="fa fa-star Starchecked"></span>
+<span class="fa fa-star Starchecked"></span>
+               
+                <p>{{p.description}}</p>
               </div>
            </div>
           </div>

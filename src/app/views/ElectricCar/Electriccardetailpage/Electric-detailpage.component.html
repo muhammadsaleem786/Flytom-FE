@@ -2,10 +2,11 @@
     <div class="container mb-3">
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
             <ol class="breadcrumb pt-2">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Car Rental</a> </li>
-              <li class="breadcrumb-item"><a href="#">Personal Car </a> </li>
-              <li class="breadcrumb-item active" aria-current="page"> Detail</li>
+              <li class="breadcrumb-item"><a href="#">Hjem</a></li>
+              <li class="breadcrumb-item"><a routerLinkActive="active" routerLink="/ElectricCar">Bilutleie</a> </li>
+              <li class="breadcrumb-item"><a routerLinkActive="active" routerLink="/ElectricCar">Elbiler</a> </li>
+ 
+              <li class="breadcrumb-item active" aria-current="page"> Info</li>
             </ol>
           </nav>
       <div class="row">
@@ -16,15 +17,15 @@
                     <div class="row mb-3">
                       <div class="col">
                           <h2>{{PersonalCard.Name}}</h2>
-                          <h6 class="text-muted">
+                          <!-- <h6 class="text-muted">
                             Sport
-                          </h6>
+                          </h6> -->
                       </div>
-                      <div class="col text-end mt-2">
+                      <!-- <div class="col text-end mt-2">
                         <span class="favriout active">
                           <i class="fa fa-heart" aria-hidden="true"></i>
                         </span>
-                      </div>
+                      </div> -->
                     </div>
 
                    <div class="slider-img">
@@ -48,9 +49,9 @@
                   <div class="row mb-4">
                     <div class="col">
                         <h2>{{PersonalCard.Name}}</h2>
-                        <h6 class="text-muted">
+                        <!-- <h6 class="text-muted">
                           Sport
-                        </h6>
+                        </h6> -->
                     </div>
                     
                   </div>
@@ -66,7 +67,7 @@
                         {{PersonalCard.CarType}}
                       </div>
                       <div class="col">
-                        Capacity
+                        Kapasitet
                       </div>
                       <div class="col text-end">
                         <i class="fa fa-users" aria-hidden="true"></i> 2 People
@@ -75,7 +76,7 @@
                  <div class="row mt-3 gray">
                      
                     <div class="col">
-                        Steering 
+                      Styring 
                       </div>
                       <div class="col">
                         <i class="fa fa-support" aria-hidden="true"></i> {{PersonalCard.SteeringType}}
@@ -95,7 +96,7 @@
                     </div> -->
                   
                     <div class="col text-end">
-                       <a  routerLink="/Electricdetails" class="btn btn-lg btn-danger mb-2">Check price and order </a>
+                       <a  routerLink="/Electricdetails" class="btn btn-lg btn-danger mb-2">Sjekk priser og reserver </a>
                     </div>
                   </div>
                 </div>

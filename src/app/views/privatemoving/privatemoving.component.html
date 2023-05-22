@@ -77,7 +77,7 @@ transport.
                     <div class="row justify-content-center mt-4">
                         <div class="col-6">                               
                            <div class="slider-wrap active{{sliderValue}}">
-                            <input type="range" class="form-range" [(ngModel)]="sliderValue" min="0" max="3" step="1">
+                            <input type="range" class="form-range" [(ngModel)]="sliderValue" min="0" max="2" step="1">
                            
                            </div>
                         </div>
@@ -85,42 +85,91 @@ transport.
                     <div class="setp1" *ngIf="sliderValue === 0">
                     <form class="row g-3" [formGroup]="MovingForm1">
                       <div class="row">
-                        <div class="col-sm-6">
-                          
-  
-                          <div class="mb-3 DatePicker">
-                            <label for="Name" class="form-label">Flyttedato:</label>
-                            <div class="input-group">
-                              <input
-                                   class="form-control"
-                                   placeholder="DD/MM/yyyy"
-                                   formControlName="MovingDate"[(ngModel)]="model.MovingDate"
-                                   ngbDatepicker
-                                   #dm1="ngbDatepicker"
-                               />
-                              <button class="btn btn-outline-secondary bi bi-calendar3" type="button"   (click)="dm1.toggle()">
-                                  <img src="../assets/imgs/icons/calendar.svg">
-                               </button>
-                           </div>
-                           <div class="text-danger" *ngIf="submitted && (fs1['MovingDate']?.invalid)">
-                            This value is required.
-                        </div>
+                        <div class="row">
+                          <div class="col-sm-6">                           
+                            <div class="d-flex align-items-center justify-content-between mt-5">
+                              
+                              <div class="form-check-wrap d-flex">
+                                  <div class="form-check me-3">
+                                      <input type="radio" class="form-check-input" id="ContactType" formControlName="ContactType"[(ngModel)]="model.ContactType" value="P">Privat
+                                      <label class="form-check-label" for="ContactType" ></label>
+                                    </div>
+                                    <div class="form-check ms-4">
+                                      <input type="radio" class="form-check-input" id="ContactType1" formControlName="ContactType"[(ngModel)]="model.ContactType" value="B">Bedrift
+                                      <label class="form-check-label" for="ContactType1" ></label>
+                                    </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="mb-3">
+                              <label for="Name" class="form-label">Navn</label>
+                              <input type="text" class="form-control" id=""   formControlName="Name" [(ngModel)]="model.Name">
+                              <div class="text-danger" *ngIf="submitted && (fs1['Name']?.invalid)">
+                                This value is required.
+                            </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="mb-3">
+                              <label for="Name" class="form-label">E-post</label>
+                              <input type="Email" class="form-control" id=""  formControlName="Email" [(ngModel)]="model.Email">
+                              <div class="text-danger" *ngIf="submitted && (fs1['Email']?.invalid)">
+                                This value is required.
+                            </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="mb-3">
+                              <label for="Name" class="form-label">Mobil</label>
+                              <input type="text" class="form-control" id=""  formControlName="Phone" [(ngModel)]="model.Phone">
+                                  <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.invalid)">
+                                    This value is required.
+                                </div>
+                                <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.errors?.['pattern'])">
+                                    Enter Valid Phone Numner
+                                </div>
+                            </div>
                           </div>
 
-                            <div class="d-flex align-items-center justify-content-between mt-5">
-                              <label>Ønsker du pakking?</label>
+                          <div class="col-sm-6">
+                            <div class="mb-3">
+                              <label for="Name" class="form-label">Flyttedato</label>
+                              <div class="input-group">
+                                <input
+                                     class="form-control"
+                                     placeholder="DD/MM/yyyy"
+                                     formControlName="MovingDate"[(ngModel)]="model.MovingDate"
+                                     ngbDatepicker
+                                     #dm1="ngbDatepicker"
+                                 />
+                                <button class="btn btn-outline-secondary bi bi-calendar3" type="button"   (click)="dm1.toggle()">
+                                    <img src="../assets/imgs/icons/calendar.svg">
+                                 </button>
+                             </div>
+                             <div class="text-danger" *ngIf="submitted && (fs1['MovingDate']?.invalid)">
+                              This value is required.
+                          </div>
+                            </div>
+                          </div>
+                          
+                        
+                        <div class="col-sm-6">
+                          <div class="d-flex align-items-center justify-content-between mt-5">
+                              <label>Ønsker du mellomlagring</label>
                               <div class="form-check-wrap d-flex">
                                   <div class="form-check me-3">
                                       <input type="radio" class="form-check-input" id="IsWarehousehotel" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="Yes">Ja
                                       <label class="form-check-label" for="IsWarehousehotel" ></label>
                                     </div>
                                     <div class="form-check ms-4">
-                                      <input type="radio" class="form-check-input" id="IsWarehousehotel" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="No">Nei
-                                      <label class="form-check-label" for="IsWarehousehotel2" ></label>
+                                      <input type="radio" class="form-check-input" id="IsWarehousehotel1" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="No">Nei
+                                      <label class="form-check-label" for="IsWarehousehotel1" ></label>
                                     </div>
                               </div>
                             </div>
                         </div>
+                      
                         <div class="col-sm-6">
                           <div class="d-flex align-items-center justify-content-between mt-5">
                               <label>Ønsker du pakking?</label>
@@ -135,7 +184,8 @@ transport.
                                     </div>
                               </div>
                             </div>
-  
+                        </div>
+                        <div class="col-sm-6">
                             <div class="d-flex align-items-center justify-content-between mt-5">
                               <label>Har du piano?</label>
                               <div class="form-check-wrap d-flex">
@@ -150,9 +200,14 @@ transport.
                               </div>
                             </div>
                         </div>
-  
-  
-  
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label"> Annen informasjon</label>
+                          <textarea class="form-control" rows="5" id="" formControlName="AdditionalInfo" [(ngModel)]="model.AdditionalInfo" placeholder="Type Here..."></textarea>
+
+                        </div>
+                      </div>
                       </div>
                     </form>
                       <div class="d-flex justify-content-end">
@@ -366,64 +421,7 @@ transport.
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(3)">Neste</button>
                         </div>
                       </div>
-                      <div class="setp4"  *ngIf="sliderValue === 3">
-                        <form class="row g-3" [formGroup]="MovingForm4">
-                        <div class="row">
-
-                            
-                            <div class="col-sm-6">
-                             
-
-                              <div class="mb-3">
-                                  <label>
-                                    Annen informasjon
-                                  </label>
-                                <textarea class="form-control" rows="5" id="" formControlName="AdditionalInfo" [(ngModel)]="model.AdditionalInfo" placeholder="Type Here..."></textarea>
-                              </div>
-
-
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="mb-3">
-                                    <label for="Name" class="form-label">Navn</label>
-                                    <input type="text" class="form-control" id=""   formControlName="Name" [(ngModel)]="model.Name">
-                                    <div class="text-danger" *ngIf="submitted && (fs4['Name']?.invalid)">
-                                      This value is required.
-                                  </div>
-                                  </div>
-
-                                  <div class="mb-3">
-                                    <label for="Name" class="form-label"> E-post</label>
-                                    <input type="Email" class="form-control" id=""  formControlName="Email" [(ngModel)]="model.Email">
-                                  <div class="text-danger" *ngIf="submitted && (fs4['Email']?.invalid)">
-                                    This value is required.
-                                </div>
-                                <div class="text-danger" *ngIf="submitted && (fs4['Email']?.errors?.['Email'] ||fs4['Email']?.errors?.['pattern'])">
-                                    Enter Valid Email
-                                </div>
-
-                                  </div>
-
-                                  <div class="mb-3">
-                                    <label for="Name" class="form-label">Mobil</label>
-                                    <input type="text" class="form-control" id=""  formControlName="Phone" [(ngModel)]="model.Phone">
-                                    <div class="text-danger" *ngIf="submitted && (fs4['Phone']?.invalid)">
-                                      This value is required.
-                                  </div>
-                                  <div class="text-danger" *ngIf="submitted && (fs4['Phone']?.errors?.['pattern'])">
-                                      Enter Valid Phone Numner
-                                  </div>
-                                  </div>
-
-                            </div>
-                           
-                          </div>
-                        </form>
-    
-                        <div class="d-flex justify-content-end">
-                            <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(4)">Neste</button>
-                        </div>
-                      </div>
+                     
                   </div>
                 </div>
             </div>

@@ -35,29 +35,54 @@ export class HomeComponent {
   };
   products: any[] = [
     { 
-      title:'Albus Dumbledore',
-      description:'“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
-      designation: 'Manager @ Howarts',
-      img:'user1.png'
+      title:'Atle Solgård',
+      description:'Hadde hjelp av Flyttom i dag,Meget flinke og effektive.folk .stor takk til Mr Georgia...Nr 1 😊',
+
      },
      { 
-      title:'Albus Dumbledore',
-      description:'““Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry,s standard dummy text ever since the 1500s.”',
-      designation: 'Manager @ Howarts',
-      img:'user2.png'
+      title:'Rolf Anda',
+      description:'Gode råd angående leie leie av bil.👍😊',
+   
      },
      { 
-      title:'Albus Dumbledore',
-      description:'“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
-      designation: 'Manager @ Howarts',
-      img:'user3.png'
+      title:'Dream Events',
+      description:'Vi anbefaler Flyttom på det sterkeste for deres profesjonelle service, raske svar, beste priser og nye kjøretøy. Vi bruker Flyttom-tjenester fra de siste fire årene og har aldri hatt noen tvist.',
+  
      },
      { 
-      title:'Albus Dumbledore',
-      description:'“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
-      designation: 'Manager @ Howarts',
-      img:'user2.png'
+      title:'David Dave',
+      description:'Vi benyttet Riktige valg både til flytting og flyttevask og er veldig fornøyd. God oppfølging, løsningsorienterte, møtte opp som avtalt og veldig hyggelige ansatte. Anbefales!',
+   
+     },
+     { 
+      title:'Anette Iversen',
+      description:'Veldig god service Veldig god hjelp når eg trengte leie bil',
+   
+     },
+     { 
+      title:'Emma',
+      description:'Fast movers, polite service',
+   
      }
+
+     ,
+     { 
+      title:'Akin Anli',
+      description:'Trengte flyttebil på kort varsel, dette ordnet Daglig leder innen kort tid selv om det meste allerede var utleid. Takk for hjelpen',
+   
+     }
+     ,
+     { 
+      title:'Olav Jessheim',
+      description:'Rask og god service,og god pris! Anbefales! Ekstra pluss for at jeg alltid kan sette fra meg min egen bil ved leie av større bil.',
+   
+     },
+     { 
+      title:'Eigil Bjørnarson Bø',
+      description:'Bra løsning for studenter som skal bytte leilighet eller lignende. Raskt og enkelt, anbefales absolutt!',
+   
+     }
+     
     
   ];
 }

@@ -30,7 +30,7 @@ ngOnInit(): void {
       let param = 
       {
         Id: params['id'],
-        Type:"P"
+        Type:"E"
       };
       this.http.Get(this.urlToApi + '/GetVehicleById', param).subscribe(
         data => {
