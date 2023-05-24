@@ -56,27 +56,27 @@ MovingForm1: FormGroup = this.formBuilder.group({
 ); 
 
 MovingForm2: FormGroup = this.formBuilder.group({
-  CurrentAddress : [''],  
-  StreetNo : [''],  
-  PostalCode : [''],  
-    SizeOfHome : [''], 
-    TotalRoomId :[''],  
-    HouseTypeId : [''],  
-    FloorTypeId:[''],
-    garage:[''],
-    ParkingDistance:['']
+  CurrentAddress : ['', Validators.required],  
+  StreetNo : ['', Validators.required],  
+  PostalCode : ['', Validators.required],  
+    SizeOfHome : ['', Validators.required], 
+    TotalRoomId :['', Validators.required],  
+    HouseTypeId : ['', Validators.required],  
+    FloorTypeId:['', Validators.required],
+    garage:['', Validators.required],
+    ParkingDistance:['', Validators.required]
 }
 ); 
 MovingForm3: FormGroup = this.formBuilder.group({
-  NewAddress : [''],  
-  NewStreetNo : [''],  
-  NewPostalCode : [''],  
- NewTotalRoomId : [''],  
-  NewHouseTypeId : [''],  
-  NewSizeOfHome : [''],  
-  NewFloorTypeId:[''],
-  NewParkingDistance : [''],  
-  Newgarage:['']
+  NewAddress : ['', Validators.required],  
+  NewStreetNo : ['', Validators.required],  
+  NewPostalCode : ['', Validators.required],  
+ NewTotalRoomId : ['', Validators.required],  
+  NewHouseTypeId : ['', Validators.required],  
+  NewSizeOfHome : ['', Validators.required],  
+  NewFloorTypeId:['', Validators.required],
+  NewParkingDistance : ['', Validators.required],  
+  Newgarage:['', Validators.required]
  }
 );
 
@@ -161,8 +161,10 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
   );
 }
 AddMovingForm() {
- 
-     debugger
+  if (this.MovingForm1.invalid || this.MovingForm2.invalid || this.MovingForm3.invalid) { 
+    alert("fyll ut obligatoriske felt.");
+  return;
+  }
   this.model.IsPacking=this.model.IsPacking=="Yes"?"true":"false";
   this.model.IsWarehousehotel=this.model.IsWarehousehotel=="Yes"?"true":"false";
   this.model.Ispiano=this.model.Ispiano=="Yes"?"true":"false";
@@ -178,10 +180,10 @@ AddMovingForm() {
        this.MovingForm2.reset(); 
        this.MovingForm3.reset();   
        window.location.reload();
-       alert(res.Message);
+       alert("Din melding ble sendt.Takk");
      }
      else {    
-         alert(res.ErrorMessage); 
+         alert("Din melding ble sendt.Takk"); 
      }
    }
   }, err => {

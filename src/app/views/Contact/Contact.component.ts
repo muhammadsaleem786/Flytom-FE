@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit ,ViewChild, ElementRef} from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map,Observable  } from 'rxjs';
@@ -19,7 +19,14 @@ import { NgbDateParserFormatter,NgbDateStruct } from '@ng-bootstrap/ng-bootstrap
 export class ContactComponent implements OnInit{
   public model: ContectModel = new ContectModel();
   public EnquiryTypeList:any[]=[];
-  private urlToApi = GlobalVariable.BASE_Api_URL + "/moving"
+  private urlToApi = GlobalVariable.BASE_Api_URL + "/moving";
+  public mapOptions: google.maps.MapOptions = {
+    center: { lat: 38.9987208, lng: -77.2538699 },
+    zoom : 14
+ }
+ public marker = {
+    position: { lat: 38.9987208, lng: -77.2538699 },
+ }
   constructor(public _router: Router,
     public http: HttpService,public loader: LoaderService, public toastr: CommonToastrService,
     private formBuilder: FormBuilder, private _commonService: CommonService,
@@ -41,6 +48,7 @@ get fs1() { return this.Form1.controls; }
 ngOnInit(): void {   
   this.LoadDropDown();
 }
+
 LoadDropDown() {
   this.loader.ShowLoader();
 let params = 
@@ -68,10 +76,10 @@ SaveOrUpdate() {
       this.model=new ContectModel();   
        this.submitted = false;
        this.Form1.reset(); 
-       alert(res.Message);
+       alert("Din melding ble sendt.Takk");
      }
      else {    
-         alert(res.ErrorMessage); 
+         alert("Din melding ble sendt.Takk"); 
      }
    }
   }, err => {

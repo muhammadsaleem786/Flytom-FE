@@ -1,7 +1,8 @@
 import { Component,OnInit} from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map,Observable  } from 'rxjs';
-import { PaginationModel, PaginationConfig } from '../../../views/common/PaginationComponentConfig';
+import { PaginationModel, PaginationConfig,FilterModel } from '../../../views/common/PaginationComponentConfig';
 import { GlobalVariable } from '../../../AngularConfig/global';
 import { HttpService } from '../../../CommonService/HttpService';
 import { LoaderService } from '../../../CommonService/LoaderService';
@@ -22,17 +23,21 @@ export class RentalPersonalCarComponent implements OnInit{
   public SteeringTypeModel:any;
   public FuelTypeModel:any;
   public DriveWheelTypeModel:any;
-
+public model=new FilterModel();
   public FuelTypeList: any[] = [];
   public SteeringTypeList: any[] = [];
   public DriveWheelTypeList:any[]=[];
 public SeatList:any[]=[];
-  public model:any ;
   constructor(public _router: Router,
     public http: HttpService,public loader: LoaderService, public toastr: CommonToastrService,
-     ) {
+    private formBuilder: FormBuilder) {
     this.loader.ShowLoader();
 }
+Form1: FormGroup = this.formBuilder.group({
+  WheelTypeId : [''],  
+  FuelTypeId : [''],  
+  
+}); 
   ngOnInit(): void {  
     this.LoadDropDown(); 
     this.Refresh(); 

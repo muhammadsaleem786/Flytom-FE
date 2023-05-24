@@ -29,12 +29,12 @@
 
     <div class="container">
      
-        <h1 class="mt-5">
+        <h5 class="mt-5">
           Bedriftsflytting
-        </h1>
-        <h1 class="mt-5">
+        </h5>
+        <h5 class="mt-5">
           Skal firmaet inn i nye lokaler?
-      </h1>
+      </h5>
         <p>         
          
           Ved flytting av kontorer og hele bedrifter vil vi etter en befaring kunne gi en fastpris – eller
@@ -67,345 +67,367 @@ med å finne riktig volum. </p>
                  </div>
               </div>
                </div>
-          <div class="setp1" *ngIf="sliderValue === 0">
-          <form class="row g-3" [formGroup]="MovingForm1">
-            <div class="row">
-              <div class="row">
-                <div class="col-sm-6">                           
-                  <div class="d-flex align-items-center justify-content-between mt-5">
-                    
-                    <div class="form-check-wrap d-flex">
-                        <div class="form-check me-3">
-                            <input type="radio" class="form-check-input" id="ContactType" formControlName="ContactType"[(ngModel)]="model.ContactType" value="P">Privat
-                            <label class="form-check-label" for="ContactType" ></label>
+               <div class="setp1" *ngIf="sliderValue === 0">
+                <form class="row g-3" [formGroup]="MovingForm1">
+                  <div class="row">
+                    <div class="row">
+                      <div class="col-sm-6">                           
+                        <div class="d-flex align-items-center justify-content-between mt-5">
+                          
+                          <div class="form-check-wrap d-flex">
+                              <div class="form-check me-3">
+                                  <input type="radio" class="form-check-input" id="ContactType" formControlName="ContactType"[(ngModel)]="model.ContactType" value="P">Privat
+                                  <label class="form-check-label" for="ContactType" ></label>
+                                </div>
+                                <div class="form-check ms-4">
+                                  <input type="radio" class="form-check-input" id="ContactType1" formControlName="ContactType"[(ngModel)]="model.ContactType" value="B">Bedrift
+                                  <label class="form-check-label" for="ContactType1" ></label>
+                                </div>
                           </div>
-                          <div class="form-check ms-4">
-                            <input type="radio" class="form-check-input" id="ContactType1" formControlName="ContactType"[(ngModel)]="model.ContactType" value="B">Bedrift
-                            <label class="form-check-label" for="ContactType1" ></label>
-                          </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="mb-3">
-                    <label for="Name" class="form-label">Navn</label>
-                    <input type="text" class="form-control" id=""   formControlName="Name" [(ngModel)]="model.Name">
-                    <div class="text-danger" *ngIf="submitted && (fs1['Name']?.invalid)">
-                      This value is required.
-                  </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="mb-3">
-                    <label for="Name" class="form-label">E-post</label>
-                    <input type="Email" class="form-control" id=""  formControlName="Email" [(ngModel)]="model.Email">
-                    <div class="text-danger" *ngIf="submitted && (fs1['Email']?.invalid)">
-                      This value is required.
-                  </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="mb-3">
-                    <label for="Name" class="form-label">Mobil</label>
-                    <input type="text" class="form-control" id=""  formControlName="Phone" [(ngModel)]="model.Phone">
-                        <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.invalid)">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label">Navn<sup class="star">★</sup></label>
+                          <input type="text" class="form-control" id=""   formControlName="Name" [(ngModel)]="model.Name">
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs1['Name']?.invalid)">
+                            This value is required.
+                        </div> -->
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label">E-post<sup class="star">★</sup></label>
+                          <input type="Email" class="form-control" id=""  formControlName="Email" [(ngModel)]="model.Email">
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs1['Email']?.invalid)">
+                            This value is required.
+                        </div> -->
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label">Mobil<sup class="star">★</sup></label>
+                          <input type="text" class="form-control" id=""  formControlName="Phone" [(ngModel)]="model.Phone">
+                              <!-- <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.invalid)">
+                                This value is required.
+                            </div>
+                            <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.errors?.['pattern'])">
+                                Enter Valid Phone Numner
+                            </div> -->
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label">Flyttedato<sup class="star">★</sup> </label>
+                          <div class="input-group">
+                            <input
+                                 class="form-control"
+                                 placeholder="DD/MM/yyyy"
+                                 formControlName="MovingDate"[(ngModel)]="model.MovingDate"
+                                 ngbDatepicker
+                                 #dm1="ngbDatepicker"
+                             />
+                            <button class="btn btn-outline-secondary bi bi-calendar3" type="button"   (click)="dm1.toggle()">
+                                <img src="../assets/imgs/icons/calendar.svg">
+                             </button>
+                         </div>
+                         <!-- <div class="text-danger" *ngIf="submitted && (fs1['MovingDate']?.invalid)">
                           This value is required.
+                      </div> -->
+                        </div>
                       </div>
-                      <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.errors?.['pattern'])">
-                          Enter Valid Phone Numner
-                      </div>
-                  </div>
-                </div>
-
-                <div class="col-sm-6">
-                  <div class="mb-3">
-                    <label for="Name" class="form-label">Flyttedato</label>
-                    <div class="input-group">
-                      <input
-                           class="form-control"
-                           placeholder="DD/MM/yyyy"
-                           formControlName="MovingDate"[(ngModel)]="model.MovingDate"
-                           ngbDatepicker
-                           #dm1="ngbDatepicker"
-                       />
-                      <button class="btn btn-outline-secondary bi bi-calendar3" type="button"   (click)="dm1.toggle()">
-                          <img src="../assets/imgs/icons/calendar.svg">
-                       </button>
-                   </div>
-                   <div class="text-danger" *ngIf="submitted && (fs1['MovingDate']?.invalid)">
-                    This value is required.
-                </div>
-                  </div>
-                </div>
-                
-              
-              <div class="col-sm-6">
-                <div class="d-flex align-items-center justify-content-between mt-5">
-                    <label>Ønsker du mellomlagring</label>
-                    <div class="form-check-wrap d-flex">
-                        <div class="form-check me-3">
-                            <input type="radio" class="form-check-input" id="IsWarehousehotel" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="Yes">Ja
-                            <label class="form-check-label" for="IsWarehousehotel" ></label>
+                      
+                    
+                    <div class="col-sm-6">
+                      <div class="d-flex align-items-center justify-content-between mt-5">
+                          <label>Ønsker du mellomlagring</label>
+                          <div class="form-check-wrap d-flex">
+                              <div class="form-check me-3">
+                                  <input type="radio" class="form-check-input" id="IsWarehousehotel" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="Yes">Ja
+                                  <label class="form-check-label" for="IsWarehousehotel" ></label>
+                                </div>
+                                <div class="form-check ms-4">
+                                  <input type="radio" class="form-check-input" id="IsWarehousehotel1" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="No">Nei
+                                  <label class="form-check-label" for="IsWarehousehotel1" ></label>
+                                </div>
                           </div>
-                          <div class="form-check ms-4">
-                            <input type="radio" class="form-check-input" id="IsWarehousehotel1" formControlName="IsWarehousehotel"[(ngModel)]="model.IsWarehousehotel" value="No">Nei
-                            <label class="form-check-label" for="IsWarehousehotel1" ></label>
+                        </div>
+                    </div>
+                  
+                    <div class="col-sm-6">
+                      <div class="d-flex align-items-center justify-content-between mt-5">
+                          <label>Ønsker du pakking?</label>
+                          <div class="form-check-wrap d-flex">
+                              <div class="form-check me-3">
+                                  <input type="radio" class="form-check-input" id="IsPacking" formControlName="IsPacking"[(ngModel)]="model.IsPacking" value="Yes">Ja
+                                  <label class="form-check-label" for="IsPacking" ></label>
+                                </div>
+                                <div class="form-check ms-4">
+                                  <input type="radio" class="form-check-input" id="IsPacking" formControlName="IsPacking"[(ngModel)]="model.IsPacking" value="No">Nei
+                                  <label class="form-check-label" for="IsPacking2" ></label>
+                                </div>
                           </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-between mt-5">
+                          <label>Har du piano?</label>
+                          <div class="form-check-wrap d-flex">
+                              <div class="form-check me-3">
+                                  <input type="radio" class="form-check-input" id="radio2" formControlName="Ispiano"[(ngModel)]="model.Ispiano" value="Yes">Ja
+                                  <label class="form-check-label" for="radio2" ></label>
+                                </div>
+                                <div class="form-check ms-4">
+                                  <input type="radio" class="form-check-input" id="radio" formControlName="Ispiano"[(ngModel)]="model.Ispiano" value="No">Nei
+                                  <label class="form-check-label" for="radio" ></label>
+                                </div>
+                          </div>
+                        </div>
                     </div>
                   </div>
-              </div>
-            
-              <div class="col-sm-6">
-                <div class="d-flex align-items-center justify-content-between mt-5">
-                    <label>Ønsker du pakking?</label>
-                    <div class="form-check-wrap d-flex">
-                        <div class="form-check me-3">
-                            <input type="radio" class="form-check-input" id="IsPacking" formControlName="IsPacking"[(ngModel)]="model.IsPacking" value="Yes">Ja
-                            <label class="form-check-label" for="IsPacking" ></label>
-                          </div>
-                          <div class="form-check ms-4">
-                            <input type="radio" class="form-check-input" id="IsPacking" formControlName="IsPacking"[(ngModel)]="model.IsPacking" value="No">Nei
-                            <label class="form-check-label" for="IsPacking2" ></label>
-                          </div>
-                    </div>
-                  </div>
-              </div>
-              <div class="col-sm-6">
-                  <div class="d-flex align-items-center justify-content-between mt-5">
-                    <label>Har du piano?</label>
-                    <div class="form-check-wrap d-flex">
-                        <div class="form-check me-3">
-                            <input type="radio" class="form-check-input" id="radio2" formControlName="Ispiano"[(ngModel)]="model.Ispiano" value="Yes">Ja
-                            <label class="form-check-label" for="radio2" ></label>
-                          </div>
-                          <div class="form-check ms-4">
-                            <input type="radio" class="form-check-input" id="radio" formControlName="Ispiano"[(ngModel)]="model.Ispiano" value="No">Nei
-                            <label class="form-check-label" for="radio" ></label>
-                          </div>
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <div class="col-sm-12">
-              <div class="mb-3">
-                <label for="Name" class="form-label"> Annen informasjon</label>
-                <textarea class="form-control" rows="5" id="" formControlName="AdditionalInfo" [(ngModel)]="model.AdditionalInfo" placeholder="Type Here..."></textarea>
-
-              </div>
-            </div>
-            </div>
-          </form>
-            <div class="d-flex justify-content-end">
-                <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(1)">Neste</button>
-            </div>
-          </div>
-        
-          <div class="setp2"  *ngIf="sliderValue === 1">
-            <form class="row g-3" [formGroup]="MovingForm2">
-              <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-12">
                     <div class="mb-3">
-                      <label for="Name" class="form-label">Nåværende Adresse</label>
-                      <input type="text" class="form-control" id=""  formControlName="CurrentAddress" [(ngModel)]="model.CurrentAddress">
-                    </div>
+                      <label for="Name" class="form-label"> Annen informasjon</label>
+                      <textarea class="form-control" rows="5" id="" formControlName="AdditionalInfo" [(ngModel)]="model.AdditionalInfo" placeholder="Type Here..."></textarea>
 
+                    </div>
                   </div>
+                  </div>
+                </form>
+                  <div class="d-flex justify-content-end">
+                      <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(1)">Neste</button>
+                  </div>
+                </div>
+              
+                <div class="setp2"  *ngIf="sliderValue === 1">
+                  <form class="row g-3" [formGroup]="MovingForm2">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <div class="mb-3">
+                            <label for="Name" class="form-label">Henteadresse<sup class="star">★</sup></label>
+                            <input type="text" class="form-control" id=""  formControlName="CurrentAddress" [(ngModel)]="model.CurrentAddress">
+                          </div>
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs2['CurrentAddress']?.invalid)">
+                            This value is required.
+                        </div> -->
+                        </div>
+                       
+
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                              <label for="Name" class="form-label">Hus Nr.<sup class="star">★</sup></label>
+                            <input type="text" class="form-control" id=""  formControlName="StreetNo" [(ngModel)]="model.StreetNo">
+                              
+                            </div>
+                            <!-- <div class="text-danger" *ngIf="submitted && (fs2['StreetNo']?.invalid)">
+                              This value is required.
+                          </div> -->
+                         </div>
+                         <div class="col-sm-6">
+                          <div class="mb-3">
+                            <label for="Name" class="form-label">Post Nr <sup class="star">★</sup></label>
+                          <input type="text" class="form-control" id=""  formControlName="PostalCode" [(ngModel)]="model.PostalCode"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                            
+                          </div>
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs2['PostalCode']?.invalid)">
+                            This value is required.
+                        </div> -->
+                       </div>
+
+                         <div class="col-sm-6">
+                            <div class="mb-3">
+                              <label for="Name" class="form-label">Boligareal<sup class="star">★</sup></label>
+                            <input type="text" class="form-control" id=""  formControlName="SizeOfHome" [(ngModel)]="model.SizeOfHome"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                            <!-- <div class="text-danger" *ngIf="submitted && (fs2['SizeOfHome']?.invalid)">
+                              This value is required.
+                          </div> -->
+                            </div>
+                         </div>
+
+                         
+                         <div class="col-sm-6">
+                            <div class="mb-3">
+                              <label for="Name" class="form-label">Antall Rom<sup class="star">★</sup></label>                                 
+                              <select class="form-control form-control-sm form-control-alternative" formControlName="TotalRoomId" [(ngModel)]="model.TotalRoomId">
+                                <option *ngFor="let item of TotalRoomList" [value]="item.ID">
+                                    {{item.Name}}
+                                </option>
+                            </select> 
+                            <!-- <div class="text-danger" *ngIf="submitted && (fs2['TotalRoomId']?.invalid)">
+                              This value is required.
+                          </div> -->
+                            </div>
+                         </div>
+
+
+                         
+                         <div class="col-sm-6">
+                            <div class="mb-3">
+                              <label for="Name" class="form-label">Hustype<sup class="star">★</sup></label>
+                              <select class="form-control form-control-sm form-control-alternative" formControlName="HouseTypeId" [(ngModel)]="model.HouseTypeId">
+                                <option *ngFor="let item of HouseTypeList" [value]="item.ID">
+                                    {{item.Name}}
+                                </option>
+                            </select> 
+                            <!-- <div class="text-danger" *ngIf="submitted && (fs2['HouseTypeId']?.invalid)">
+                              This value is required.
+                          </div> -->
+                            </div>
+                         </div>
+                         <div class="col-sm-6">
+                          <div class="mb-3">
+                            <label for="Name" class="form-label">Hvor mange etasjer<sup class="star">★</sup></label>                                 
+                            <select class="form-control form-control-sm form-control-alternative" formControlName="FloorTypeId" [(ngModel)]="model.FloorTypeId">
+                              <option *ngFor="let item of FloorsList" [value]="item.ID">
+                                  {{item.Name}}
+                              </option>
+                          </select> 
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs2['FloorTypeId']?.invalid)">
+                            This value is required.
+                        </div> -->
+                          </div>
+                       </div>
+
+                       <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label">Noe flytte fra garasjen?<sup class="star">★</sup></label>
+                        <input type="text" class="form-control" id=""  formControlName="garage" [(ngModel)]="model.garage">
+                          
+                        </div>
+                        <!-- <div class="text-danger" *ngIf="submitted && (fs2['garage']?.invalid)">
+                          This value is required.
+                      </div> -->
+                     </div>
+                     <div class="mb-3">
+                      <label for="Name" class="form-label">Avstand til parkering<sup class="star">★</sup></label>
+                      <input type="text" class="form-control" id=""  formControlName="ParkingDistance" [(ngModel)]="model.ParkingDistance">
+                      <!-- <div class="text-danger" *ngIf="submitted && (fs2['ParkingDistance']?.invalid)">
+                        This value is required.
+                    </div> -->
+                    </div>
+                      </div>
+                  </form>
                  
 
-                  <div class="col-sm-6">
+                 
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(2)">Neste</button>
+                    </div>
+                  </div>
+                <div class="setp3"  *ngIf="sliderValue === 2">
+                 
+                  <form class="row g-3" [formGroup]="MovingForm3">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label">Leveringsadresse<sup class="star">★</sup></label>
+                          <input type="text" class="form-control" id=""  formControlName="NewAddress" [(ngModel)]="model.NewAddress">
+                        </div>
+                        <!-- <div class="text-danger" *ngIf="submitted && (fs3['NewAddress']?.invalid)">
+                          This value is required.
+                      </div> -->
+                      </div>
+                     
+
+                      <div class="col-sm-6">
+                          <div class="mb-3">
+                            <label for="Name" class="form-label">Hus Nr.<sup class="star">★</sup></label>
+                          <input type="text" class="form-control" id=""  formControlName="NewStreetNo" [(ngModel)]="model.NewStreetNo">
+                            
+                          </div>
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs3['NewStreetNo']?.invalid)">
+                            This value is required.
+                        </div> -->
+                       </div>
+                       <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label">Post Nr <sup class="star">★</sup></label>
+                        <input type="text" class="form-control" id=""  formControlName="NewPostalCode" [(ngModel)]="model.NewPostalCode"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                          
+                        </div>
+                        <!-- <div class="text-danger" *ngIf="submitted && (fs3['NewPostalCode']?.invalid)">
+                          This value is required.
+                      </div> -->
+                     </div>
+
+                       <div class="col-sm-6">
+                          <div class="mb-3">
+                            <label for="Name" class="form-label">Boligareal<sup class="star">★</sup></label>
+                          <input type="text" class="form-control" id=""  formControlName="NewSizeOfHome" [(ngModel)]="model.NewSizeOfHome"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs3['NewSizeOfHome']?.invalid)">
+                            This value is required.
+                        </div> -->
+                          </div>
+                       </div>
+
+                       
+                       <div class="col-sm-6">
+                          <div class="mb-3">
+                            <label for="Name" class="form-label">Antall Rom<sup class="star">★</sup></label>                                 
+                            <select class="form-control form-control-sm form-control-alternative" formControlName="NewTotalRoomId" [(ngModel)]="model.NewTotalRoomId">
+                              <option *ngFor="let item of TotalRoomList" [value]="item.ID">
+                                  {{item.Name}}
+                              </option>
+                          </select> 
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs3['NewTotalRoomId']?.invalid)">
+                            This value is required.
+                        </div> -->
+                          </div>
+                       </div>
+
+
+                       
+                       <div class="col-sm-6">
+                          <div class="mb-3">
+                            <label for="Name" class="form-label">Hustype<sup class="star">★</sup></label>
+                            <select class="form-control form-control-sm form-control-alternative" formControlName="NewHouseTypeId" [(ngModel)]="model.NewHouseTypeId">
+                              <option *ngFor="let item of HouseTypeList" [value]="item.ID">
+                                  {{item.Name}}
+                              </option>
+                          </select> 
+                          <!-- <div class="text-danger" *ngIf="submitted && (fs3['NewHouseTypeId']?.invalid)">
+                            This value is required.
+                        </div> -->
+                          </div>
+                       </div>
+                       <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="Name" class="form-label">Hvor mange etasjer<sup class="star">★</sup></label>                                 
+                          <select class="form-control form-control-sm form-control-alternative" formControlName="NewFloorTypeId" [(ngModel)]="model.NewFloorTypeId">
+                            <option *ngFor="let item of FloorsList" [value]="item.ID">
+                                {{item.Name}}
+                            </option>
+                        </select> 
+                        <!-- <div class="text-danger" *ngIf="submitted && (fs3['NewFloorTypeId']?.invalid)">
+                          This value is required.
+                      </div> -->
+                        </div>
+                     </div>
+
+                     <div class="col-sm-6">
                       <div class="mb-3">
-                        <label for="Name" class="form-label">Hus Nr.</label>
-                      <input type="text" class="form-control" id=""  formControlName="StreetNo" [(ngModel)]="model.StreetNo">
+                        <label for="Name" class="form-label">Noe flytte fra garasjen?<sup class="star">★</sup></label>
+                      <input type="text" class="form-control" id=""  formControlName="Newgarage" [(ngModel)]="model.Newgarage">
                         
                       </div>
-                   </div>
-                   <div class="col-sm-6">
-                    <div class="mb-3">
-                      <label for="Name" class="form-label">Post Nr </label>
-                    <input type="text" class="form-control" id=""  formControlName="PostalCode" [(ngModel)]="model.PostalCode"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                      
-                    </div>
-                 </div>
-
-                   <div class="col-sm-6">
-                      <div class="mb-3">
-                        <label for="Name" class="form-label">Boligareal</label>
-                      <input type="text" class="form-control" id=""  formControlName="SizeOfHome" [(ngModel)]="model.SizeOfHome"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                      <div class="text-danger" *ngIf="submitted && (fs2['SizeOfHome']?.invalid)">
+                      <!-- <div class="text-danger" *ngIf="submitted && (fs3['Newgarage']?.invalid)">
                         This value is required.
-                    </div>
-                      </div>
+                    </div> -->
                    </div>
-
-                   
-                   <div class="col-sm-6">
-                      <div class="mb-3">
-                        <label for="Name" class="form-label">Antall Rom</label>                                 
-                        <select class="form-control form-control-sm form-control-alternative" formControlName="TotalRoomId" [(ngModel)]="model.TotalRoomId">
-                          <option *ngFor="let item of TotalRoomList" [value]="item.ID">
-                              {{item.Name}}
-                          </option>
-                      </select> 
-                      <div class="text-danger" *ngIf="submitted && (fs2['TotalRoomId']?.invalid)">
-                        This value is required.
-                    </div>
-                      </div>
-                   </div>
-
-
-                   
-                   <div class="col-sm-6">
-                      <div class="mb-3">
-                        <label for="Name" class="form-label">Hustype</label>
-                        <select class="form-control form-control-sm form-control-alternative" formControlName="HouseTypeId" [(ngModel)]="model.HouseTypeId">
-                          <option *ngFor="let item of HouseTypeList" [value]="item.ID">
-                              {{item.Name}}
-                          </option>
-                      </select> 
-                      <div class="text-danger" *ngIf="submitted && (fs2['HouseTypeId']?.invalid)">
-                        This value is required.
-                    </div>
-                      </div>
-                   </div>
-                   <div class="col-sm-6">
-                    <div class="mb-3">
-                      <label for="Name" class="form-label">Hvor mange etasjer</label>                                 
-                      <select class="form-control form-control-sm form-control-alternative" formControlName="FloorTypeId" [(ngModel)]="model.FloorTypeId">
-                        <option *ngFor="let item of FloorsList" [value]="item.ID">
-                            {{item.Name}}
-                        </option>
-                    </select> 
-                    <div class="text-danger" *ngIf="submitted && (fs2['FloorTypeId']?.invalid)">
+                   <div class="mb-3">
+                    <label for="Name" class="form-label">Avstand til parkering<sup class="star">★</sup></label>
+                    <input type="text" class="form-control" id=""  formControlName="NewParkingDistance" [(ngModel)]="model.NewParkingDistance"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <!-- <div class="text-danger" *ngIf="submitted && (fs3['NewParkingDistance']?.invalid)">
                       This value is required.
+                  </div> -->
                   </div>
                     </div>
-                 </div>
-
-                 <div class="col-sm-6">
-                  <div class="mb-3">
-                    <label for="Name" class="form-label">Noe flytte fra garasjen?</label>
-                  <input type="text" class="form-control" id=""  formControlName="garage" [(ngModel)]="model.garage">
-                    
-                  </div>
-               </div>
-               <div class="mb-3">
-                <label for="Name" class="form-label">Avtand til Parkering</label>
-                <input type="text" class="form-control" id=""  formControlName="ParkingDistance" [(ngModel)]="model.ParkingDistance">
-                <div class="text-danger" *ngIf="submitted && (fs2['ParkingDistance']?.invalid)">
-                  This value is required.
-              </div>
-              </div>
-                </div>
-            </form>
-           
-
-           
-              <div class="d-flex justify-content-end">
-                  <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(2)">Neste</button>
-              </div>
-            </div>
-          <div class="setp3"  *ngIf="sliderValue === 2">
-           
-            <form class="row g-3" [formGroup]="MovingForm3">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="mb-3">
-                    <label for="Name" class="form-label">Nåværende Adresse</label>
-                    <input type="text" class="form-control" id=""  formControlName="NewAddress" [(ngModel)]="model.NewAddress">
-                  </div>
-
-                </div>
-               
-
-                <div class="col-sm-6">
-                    <div class="mb-3">
-                      <label for="Name" class="form-label">Hus Nr.</label>
-                    <input type="text" class="form-control" id=""  formControlName="NewStreetNo" [(ngModel)]="model.NewStreetNo">
-                      
+                  </form>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(3)">Neste</button>
                     </div>
-                 </div>
-                 <div class="col-sm-6">
-                  <div class="mb-3">
-                    <label for="Name" class="form-label">Post Nr </label>
-                  <input type="text" class="form-control" id=""  formControlName="NewPostalCode" [(ngModel)]="model.NewPostalCode"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                    
                   </div>
-               </div>
-
-                 <div class="col-sm-6">
-                    <div class="mb-3">
-                      <label for="Name" class="form-label">Boligareal</label>
-                    <input type="text" class="form-control" id=""  formControlName="NewSizeOfHome" [(ngModel)]="model.NewSizeOfHome"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                    <div class="text-danger" *ngIf="submitted && (fs3['NewSizeOfHome']?.invalid)">
-                      This value is required.
-                  </div>
-                    </div>
-                 </div>
-
-                 
-                 <div class="col-sm-6">
-                    <div class="mb-3">
-                      <label for="Name" class="form-label">Antall Rom</label>                                 
-                      <select class="form-control form-control-sm form-control-alternative" formControlName="NewTotalRoomId" [(ngModel)]="model.NewTotalRoomId">
-                        <option *ngFor="let item of TotalRoomList" [value]="item.ID">
-                            {{item.Name}}
-                        </option>
-                    </select> 
-                    <div class="text-danger" *ngIf="submitted && (fs3['NewTotalRoomId']?.invalid)">
-                      This value is required.
-                  </div>
-                    </div>
-                 </div>
-
-
-                 
-                 <div class="col-sm-6">
-                    <div class="mb-3">
-                      <label for="Name" class="form-label">Hustype</label>
-                      <select class="form-control form-control-sm form-control-alternative" formControlName="NewHouseTypeId" [(ngModel)]="model.NewHouseTypeId">
-                        <option *ngFor="let item of HouseTypeList" [value]="item.ID">
-                            {{item.Name}}
-                        </option>
-                    </select> 
-                    <div class="text-danger" *ngIf="submitted && (fs3['NewHouseTypeId']?.invalid)">
-                      This value is required.
-                  </div>
-                    </div>
-                 </div>
-                 <div class="col-sm-6">
-                  <div class="mb-3">
-                    <label for="Name" class="form-label">Hvor mange etasjer</label>                                 
-                    <select class="form-control form-control-sm form-control-alternative" formControlName="NewFloorTypeId" [(ngModel)]="model.NewFloorTypeId">
-                      <option *ngFor="let item of FloorsList" [value]="item.ID">
-                          {{item.Name}}
-                      </option>
-                  </select> 
-                  <div class="text-danger" *ngIf="submitted && (fs3['NewFloorTypeId']?.invalid)">
-                    This value is required.
-                </div>
-                  </div>
-               </div>
-
-               <div class="col-sm-6">
-                <div class="mb-3">
-                  <label for="Name" class="form-label">Noe flytte fra garasjen?</label>
-                <input type="text" class="form-control" id=""  formControlName="Newgarage" [(ngModel)]="model.Newgarage">
-                  
-                </div>
-             </div>
-             <div class="mb-3">
-              <label for="Name" class="form-label">Avtand til Parkering</label>
-              <input type="text" class="form-control" id=""  formControlName="NewParkingDistance" [(ngModel)]="model.NewParkingDistance"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-              <div class="text-danger" *ngIf="submitted && (fs3['NewParkingDistance']?.invalid)">
-                This value is required.
-            </div>
-            </div>
-              </div>
-            </form>
-              <div class="d-flex justify-content-end">
-                  <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(3)">Neste</button>
-              </div>
-            </div>
            
         </div>
       </div>

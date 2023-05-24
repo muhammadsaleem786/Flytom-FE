@@ -17,7 +17,6 @@ import { OurservicesComponent } from './views/common/ourservices/ourservices.com
 import { RentalPersonalCarComponent } from './views/RentalPersonalCar/rental-personal-car/rental-personal-car.component';
 import { ElectricCarComponent } from './views/ElectricCar/Electric-car/Electric-car.component';
 import { ElectricCardetailpageComponent } from './views/ElectricCar/Electriccardetailpage/Electric-detailpage.component';
-
 import { RentalvansComponent } from './views/RentalVans/rentalvans/rentalvans.component';
 import { VansdetailComponent } from './views/RentalVans/vansdetail/vansdetail.component';
 import { LongTermRentalComponent } from './views/LongTermRental/longtermrental/longtermrental.component';
@@ -30,6 +29,12 @@ import { LoaderService } from './CommonService/LoaderService';
 import { PrivatemovingComponent } from './views/privatemoving/privatemoving.component';
 import { ContactComponent } from './views/Contact/Contact.component';
 import { CompanymovingComponent } from './views/companymoving/companymoving.component';
+import { GoogleMapsModule } from '@angular/google-maps'
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +55,7 @@ import { CompanymovingComponent } from './views/companymoving/companymoving.comp
     RouterModule,
     HttpClientModule,
     BrowserAnimationsModule,ToastrModule.forRoot(),
+    GoogleMapsModule ,
     CarouselModule,NgbDatepickerModule,NgbTooltipModule, NgbAlertModule, FormsModule,
    ],
   providers: [HttpService,CommonToastrService,LoaderService,CommonService],

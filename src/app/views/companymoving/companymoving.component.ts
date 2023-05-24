@@ -57,27 +57,27 @@ export class CompanymovingComponent implements OnInit{
 ); 
 
 MovingForm2: FormGroup = this.formBuilder.group({
-  CurrentAddress : [''],  
-  StreetNo : [''],  
-  PostalCode : [''],  
-    SizeOfHome : [''], 
-    TotalRoomId :[''],  
-    HouseTypeId : [''],  
-    FloorTypeId:[''],
-    garage:[''],
-    ParkingDistance:['']
+  CurrentAddress : ['', Validators.required],  
+  StreetNo : ['', Validators.required],  
+  PostalCode : ['', Validators.required],  
+    SizeOfHome : ['', Validators.required], 
+    TotalRoomId :['', Validators.required],  
+    HouseTypeId : ['', Validators.required],  
+    FloorTypeId:['', Validators.required],
+    garage:['', Validators.required],
+    ParkingDistance:['', Validators.required]
 }
 ); 
 MovingForm3: FormGroup = this.formBuilder.group({
-  NewAddress : [''],  
-  NewStreetNo : [''],  
-  NewPostalCode : [''],  
- NewTotalRoomId : [''],  
-  NewHouseTypeId : [''],  
-  NewSizeOfHome : [''],  
-  NewFloorTypeId:[''],
-  NewParkingDistance : [''],  
-  Newgarage:['']
+  NewAddress : ['', Validators.required],  
+  NewStreetNo : ['', Validators.required],  
+  NewPostalCode : ['', Validators.required],  
+ NewTotalRoomId : ['', Validators.required],  
+  NewHouseTypeId : ['', Validators.required],  
+  NewSizeOfHome : ['', Validators.required],  
+  NewFloorTypeId:['', Validators.required],
+  NewParkingDistance : ['', Validators.required],  
+  Newgarage:['', Validators.required]
  }
 );
 
@@ -87,6 +87,7 @@ get fs1() { return this.MovingForm1.controls; }
 get fs2() { return this.MovingForm2.controls; }
 get fs3() { return this.MovingForm3.controls; }
   ngOnInit(): void {  
+    this.model.ContactType="B";
     this.ngbDateParserFormatter.format = (date: NgbDateStruct | null) => {
       if (date) {
         const day = date.day < 10 ? `0${date.day}` : date.day;
@@ -153,7 +154,10 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
   );
 }
 AddMovingForm() {
- 
+  if (this.MovingForm1.invalid || this.MovingForm2.invalid || this.MovingForm3.invalid) {
+    alert("fyll ut obligatoriske felt.");
+    return;
+    }
      
   this.model.IsPacking=this.model.IsPacking=="Yes"?"true":"false";
   this.model.IsWarehousehotel=this.model.IsWarehousehotel=="Yes"?"true":"false";
@@ -169,10 +173,10 @@ AddMovingForm() {
        this.MovingForm2.reset(); 
        this.MovingForm3.reset(); 
        window.location.reload();
-       alert(res.Message);
+       alert("Din melding ble sendt.Takk");
      }
      else {    
-         alert(res.ErrorMessage); 
+         alert("Din melding ble sendt.Takk"); 
      }
    }else
    window.location.reload();

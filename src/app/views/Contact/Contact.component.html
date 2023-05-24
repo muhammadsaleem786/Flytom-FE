@@ -4,9 +4,9 @@
       
             <div class="row justify-content-center">
               <div class="col-sm-9 text-white">
-                <h1 class="mt-5">
+                <h5 class="mt-5">
                   Kontakt oss
-                </h1>
+                </h5>
               </div>
               
                 <div class="col-sm-9 mt-4 mb-5">
@@ -25,11 +25,12 @@
                                 <div class="d-flex input-border">
                                   <div class="custom-control custom-radio mb-3">
                                       <input type="radio" class="custom-control-input" id="ContactType" value="P" formControlName="ContactType" [(ngModel)]="model.ContactType">
-                                      <label class="custom-control-label ml-1" for="ContactType">Privat</label>
+                                      <label class="custom-control-label ml-1" for="ContactType" style="margin-left: 10px;
+margin-right: 10px;">Privat</label>
                                   </div>
                                   <div class="custom-control custom-radio">
                                       <input type="radio" class="custom-control-input"id="ContactType1" value="B" formControlName="ContactType" [(ngModel)]="model.ContactType">
-                                      <label class="custom-control-label ml-1" for="ContactType1">Bedrift</label>
+                                      <label class="custom-control-label ml-1" for="ContactType1" style="margin-left:10px">Bedrift</label>
                                   </div>
                                  </div>
                                 </div>
@@ -99,6 +100,10 @@
             </div>
     
     </div>
-  
- 
+    <!-- <div class="my-google-map">
+      <google-map [options]="mapOptions">
+         <map-marker [position]="marker.position"></map-marker>
+      </google-map>
+   </div> -->
+
 </div>

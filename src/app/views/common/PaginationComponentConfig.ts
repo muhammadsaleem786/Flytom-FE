@@ -60,3 +60,11 @@ export class ActionField {
     ScreenName: string = "";
     PrintP: string = "";
 }
+
+export class FilterModel {
+
+    FuelTypeId: string='';
+    WheelTypeId: string='';
+    SeatId:string='';
+    VehicleId:string='';
+}

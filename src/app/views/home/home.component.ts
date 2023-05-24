@@ -34,16 +34,8 @@ export class HomeComponent {
     }
   };
   products: any[] = [
-    { 
-      title:'Atle Solgård',
-      description:'Hadde hjelp av Flyttom i dag,Meget flinke og effektive.folk .stor takk til Mr Georgia...Nr 1 😊',
-
-     },
-     { 
-      title:'Rolf Anda',
-      description:'Gode råd angående leie leie av bil.👍😊',
-   
-     },
+    
+     
      { 
       title:'Dream Events',
       description:'Vi anbefaler Flyttom på det sterkeste for deres profesjonelle service, raske svar, beste priser og nye kjøretøy. Vi bruker Flyttom-tjenester fra de siste fire årene og har aldri hatt noen tvist.',
@@ -54,18 +46,6 @@ export class HomeComponent {
       description:'Vi benyttet Riktige valg både til flytting og flyttevask og er veldig fornøyd. God oppfølging, løsningsorienterte, møtte opp som avtalt og veldig hyggelige ansatte. Anbefales!',
    
      },
-     { 
-      title:'Anette Iversen',
-      description:'Veldig god service Veldig god hjelp når eg trengte leie bil',
-   
-     },
-     { 
-      title:'Emma',
-      description:'Fast movers, polite service',
-   
-     }
-
-     ,
      { 
       title:'Akin Anli',
       description:'Trengte flyttebil på kort varsel, dette ordnet Daglig leder innen kort tid selv om det meste allerede var utleid. Takk for hjelpen',
@@ -81,8 +61,22 @@ export class HomeComponent {
       title:'Eigil Bjørnarson Bø',
       description:'Bra løsning for studenter som skal bytte leilighet eller lignende. Raskt og enkelt, anbefales absolutt!',
    
+     },
+     { 
+      title:'Anette Iversen',
+      description:'Veldig god service Veldig god hjelp når eg trengte leie bil',
+   
+     }, { 
+      title:'Rolf Anda',
+      description:'Gode råd angående leie leie av bil.👍😊',
+   
+     },
+     { 
+      title:'Emma',
+      description:'Fast movers, polite service',
+   
      }
-     
+    
     
   ];
 }
