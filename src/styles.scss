@@ -2,6 +2,7 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+@import '../src/assets/main.scss';
 .flytomApp{
 .pos-rel{
     position: relative;
@@ -60,15 +61,17 @@ li.breadcrumb-item a {
     &.Vans{
 
         background-image: url('assets/imgs/icons/delivery-van.svg');
-            
         background-size: 32px;
         background-position: 11px center;
 
     }
     &.LongTermRent{
         
-        background-image: url('assets/imgs/icons/rent.svg');
+        background-image: url('assets/imgs/icons/edit.svg');
+
+        background-size:26px;
     }
+
 
     &.Dodsbo{
 
@@ -95,9 +98,13 @@ li.breadcrumb-item a {
 
     }
     &.battery{
-        background-image: url('assets/imgs/icons/battery.png');
-        background-size: 15px;
-        background-position: 21px center;
+        // background-image: url('assets/imgs/icons/battery.png');
+        // background-size: 15px;
+        // background-position: 21px center;
+        background-image: url(https://flyttom.no/wp-content/plugins/carrental/assets/images/bilu-2.png);
+        background-size: 54px;
+        background-position: 4px;
+        filter: grayscale(1);
 
     }
 }
@@ -205,9 +212,9 @@ li.breadcrumb-item a {
 // filter
 
 
-ngb-datepicker.dropdown-menu.show {
-    margin-left: -41px !important;
-}
+// ngb-datepicker.dropdown-menu.show {
+//     margin-left: -41px !important;
+// }
 
 .DatePicker ngb-datepicker.dropdown-menu.show {
     margin-left: 0px !important;
@@ -465,27 +472,38 @@ ngb-datepicker.dropdown-menu.show {
 .Starchecked {
     color: orange;
   }
-  .fa {
-    padding: 0px;
-    font-size: 25px;
-    width: 27px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 12%;
+  .nav{
+    .fa {
+        
+        margin: 5px 2px;
+        padding: 4px;
+        width: 25px;
+        text-align: center;
+        margin-top: 9px;
+        border: 1px solid #fff;
+        border-radius: 2px;
+      }
+      
+      .fa:hover {
+          opacity: 0.7;
+      }
+
   }
   
-  .fa:hover {
-      opacity: 0.7;
-  }
   
   .fa-facebook {
-    background: #3B5998;
     color: white;
+    &:hover{
+        
+    background: #3B5998;
+    }
   }
   .fa-instagram {
-    background: #125688;
     color: white;
+    &:hover{
+        
+    background: #d41a5e;
+    }
   }
   .star{
     color:red;font-size: 136%

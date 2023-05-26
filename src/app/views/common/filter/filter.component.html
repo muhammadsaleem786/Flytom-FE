@@ -7,24 +7,23 @@
             <label for="sel1" class="form-label">Hentested</label>
             
             <div class="input-group">
-                <span class="input-group-text">
-                    <img src="../assets/imgs/icons/map.svg">
-                </span>
+              
                 <select class="form-select">
                     <option>Location</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                   </select>
+                  <span class="input-group-text">
+                    <img src="../assets/imgs/icons/map.svg">
+                </span>
               </div>
             
          </div>
        <div class="col">           
             <label class="form-label">Fra dato</label>
-             <div class="input-group"  (click)="d.toggle()">
-                <button class="btn btn-outline-secondary bi bi-calendar3" type="button">
-                    <img src="../assets/imgs/icons/calendar.svg">
-                 </button>
+             <div class="input-group" >
+              
                  <input
                      class="form-control"
                      placeholder="yyyy-mm-dd"
@@ -33,24 +32,28 @@
                      ngbDatepicker
                      #d="ngbDatepicker"
                  />
+                 <button class="btn btn-outline-secondary bi bi-calendar3"  (click)="d.toggle()" type="button">
+                    <img src="../assets/imgs/icons/calendar.svg">
+                 </button>
                 
              </div>
          </div>
   
          <div class="col">
             <label class="form-label">Til dato</label>
-             <div class="input-group" (click)="d1.toggle()">
-                <button class="btn btn-outline-secondary bi bi-calendar3"  type="button">
-                    <img src="../assets/imgs/icons/calendar.svg">
-                </button>
+             <div class="input-group" >
+              
                  <input
                      class="form-control"
                      placeholder="yyyy-mm-dd"
                      name="dp1"
-                     [(ngModel)]="model"
+                     [(ngModel)]="model1"
                      ngbDatepicker
                      #d1="ngbDatepicker"
                  />
+                 <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d1.toggle()"  type="button">
+                    <img src="../assets/imgs/icons/calendar.svg">
+                </button>
                 
              </div>
          </div> 

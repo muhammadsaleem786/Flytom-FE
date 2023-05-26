@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class FilterComponent {
 	model:any ;
+  model1:any ;
 }
