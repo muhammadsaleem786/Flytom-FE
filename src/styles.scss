@@ -7,6 +7,9 @@
 .pos-rel{
     position: relative;
 }
+p {
+    line-height: 26px;
+}
 li.breadcrumb-item a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5);
@@ -46,13 +49,13 @@ li.breadcrumb-item a {
 //header
 .link-w-icon{
     
-    padding-left: 64px;
+    padding: 10px 10px 10px 64px;
     background-repeat: no-repeat;
     background-position: 17px center;
     background-size: 24px;
     border-radius: 4px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 
     &.PersonalCars{
         background-image: url('assets/imgs/icons/sedan.svg');
@@ -101,7 +104,7 @@ li.breadcrumb-item a {
         // background-image: url('assets/imgs/icons/battery.png');
         // background-size: 15px;
         // background-position: 21px center;
-        background-image: url(https://flyttom.no/wp-content/plugins/carrental/assets/images/bilu-2.png);
+        background-image: url('assets/imgs/icons/batry.png');
         background-size: 54px;
         background-position: 4px;
         filter: grayscale(1);
@@ -292,7 +295,7 @@ li.breadcrumb-item a {
             font-size: 12px;
             background: #fff;
             padding: 2px 5px;
-            z-index: 1;
+            z-index: 10;
     }
 }
 .toast-top-right {
@@ -473,7 +476,7 @@ li.breadcrumb-item a {
     color: orange;
   }
   .nav{
-    .fa {
+    .fa.border {
         
         margin: 5px 2px;
         padding: 4px;
@@ -506,9 +509,25 @@ li.breadcrumb-item a {
     }
   }
   .star{
-    color:red;font-size: 136%
+    
+    color: red;
+    font-size: 9px;
+    margin-left: 3px;
     }
     
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Inter', "Helvetica Neue", sans-serif; }
 
+
+
+hr {
+    border-top: 1px solid #b2afaf;
+}
+
+.btn.btn-outline-secondary{
+    border-color: #c5c5c5;
+    &:hover {
+        color: var(--bs-btn-hover-color);
+        background-color: transparent;
+    }
+}

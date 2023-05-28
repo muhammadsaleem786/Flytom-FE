@@ -83,9 +83,9 @@ transport.
                         </div>
                          </div>
                     <div class="setp1" *ngIf="sliderValue === 0">
-                    <form class="row g-3" [formGroup]="MovingForm1">
-                      <div class="row">
-                        <div class="row">
+                    <form class="p-3" [formGroup]="MovingForm1">
+                     
+                       <div class="row">
                           <div class="col-sm-6">                           
                             <div class="d-flex align-items-center justify-content-between mt-5">
                               
@@ -201,6 +201,7 @@ transport.
                             </div>
                         </div>
                       </div>
+                     <div class="row">
                       <div class="col-sm-12">
                         <div class="mb-3">
                           <label for="Name" class="form-label"> Annen informasjon</label>
@@ -208,15 +209,15 @@ transport.
 
                         </div>
                       </div>
-                      </div>
+                     </div>
                     </form>
-                      <div class="d-flex justify-content-end">
+                      <div class="d-flex justify-content-end pe-3">
                           <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(1)">Neste</button>
                       </div>
                     </div>
                   
                     <div class="setp2"  *ngIf="sliderValue === 1">
-                      <form class="row g-3" [formGroup]="MovingForm2">
+                      <form class="p-3" [formGroup]="MovingForm2">
                         <div class="row">
                             <div class="col-sm-6">
                               <div class="mb-3">
@@ -326,13 +327,13 @@ transport.
                      
 
                      
-                        <div class="d-flex justify-content-end">
+                        <div class="d-flex justify-content-end pe-3">
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(2)">Neste</button>
                         </div>
                       </div>
                     <div class="setp3"  *ngIf="sliderValue === 2">
                      
-                      <form class="row g-3" [formGroup]="MovingForm3">
+                      <form class="p-3" [formGroup]="MovingForm3">
                         <div class="row">
                           <div class="col-sm-6">
                             <div class="mb-3">
@@ -439,7 +440,7 @@ transport.
                       </div>
                         </div>
                       </form>
-                        <div class="d-flex justify-content-end">
+                        <div class="d-flex justify-content-end  pe-3">
                             <button class="btn btn-danger mb-4 mt-3"  (click)="updateSliderValue(3)">Neste</button>
                         </div>
                       </div>

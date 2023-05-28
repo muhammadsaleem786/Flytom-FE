@@ -35,7 +35,7 @@ ul.dropdown-menu:after {
   
   display: inline-block;
   color: #fff;
-  padding: 2px 8px;
+  padding: 2px 10px;
   border: 0px solid #fff;
   border-radius: 14px;
   box-shadow:0px 0px 0px 1.5px #fff;
@@ -44,6 +44,24 @@ ul.dropdown-menu:after {
   a{
     text-decoration: none;
     color: #fff;
+  }
+}
+.border-se{
+  padding: 0 15px;
+  position: relative;
+  &::before,
+  &::after{
+    width: 1px;
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 12px;
+    height: 20px;
+    background: #49576c;
+  }
+  &:after{
+    left: inherit;
+    right: 0;
   }
 }
 
@@ -58,4 +76,14 @@ ul.dropdown-menu:after {
   .navbar .navbar-brand img {
     max-height: 58px;
   }
+  .border-se{
+    padding: 0;
+    &:before, &:after{
+      display: none;
+    }
+  }
+}
+.dropdown-item, .nav-link{
+  
+  color: #111B29;
 }
