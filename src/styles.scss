@@ -129,12 +129,30 @@ li.breadcrumb-item a {
 .text-muted{
     color:#677489;
 }
-.home-baner{
+.Mainhome-baner{
     background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('assets/imgs/Hero-BG.jpg');
    // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
-    background-position: center;
+    // background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 578px;
+}
+.home-baner{
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('assets/imgs/NewBanner/imagePersonbiler.jpg');
+   // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
+    // background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 578px;
+}
+
+.electric-baner{
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('assets/imgs/NewBanner/imageelbiler.jpg');
+   // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
+    // background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 578px;
 }
 
 .baner-rounded{
@@ -275,12 +293,12 @@ li.breadcrumb-item a {
     height: 578px;
 }
 .storage, .van-baner{
-    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('assets/imgs/Hero-BG.jpg');
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('assets/imgs/NewBanner/imagevarebiler.jpg');
    // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 578px;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // height: 578px;
 }
 
 .form-card{
