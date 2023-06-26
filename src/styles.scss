@@ -531,3 +531,15 @@ hr {
         background-color: transparent;
     }
 }
+
+.ContactBaner{
+    .form-card .form-control,  .form-card .form-select {
+       
+        border-radius: 2px;
+        border: 1px solid #d4d4d4;
+        background: transparent;
+        color: #fff;
+        option{
+            color: #000
+        }
+    }}

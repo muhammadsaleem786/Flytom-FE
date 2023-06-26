@@ -15,6 +15,12 @@
   width: 300px;
   box-shadow: 0px 24px 32px 4px rgba(167, 174, 186, 0.12);
 }
+.nav-item.dropdown{
+  & > a{
+    color: #000;
+    font-weight: bold;
+  }
+}
 ul.dropdown-menu:after {
   position: absolute;
   width: 22.5px;

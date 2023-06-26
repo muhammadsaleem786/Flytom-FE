@@ -1,16 +1,17 @@
 .ContactBaner{
-    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('../../../assets/imgs/ContactUs.png');
+    background: linear-gradient(106.34deg, rgba(0, 0, 0, 0.4) 31.76%, rgba(0, 0, 0, 0) 84.65%),url('../../../assets/imgs/faq.png');
    // background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('assets/imgs/Hero-BG.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 #accordion{
     .card {
             
             border: 0px;
-            min-height: 170px;
+            min-height: 70px;
             border-radius: 0px;
             border-bottom: 1px solid #efefef;
             margin-bottom: 0;
@@ -23,11 +24,11 @@
                 
             a{
 
-                font-size: 22px;
-                font-weight: bold;
-                width: 100%;
-                text-align: left;
-                padding: 20px 30px 20px 100px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            text-align: left;
+            padding: 15px 30px 15px 100px;
                 &.btn:not(.collapsed){
                     background: #C8E4EB;
                     border-radius: 0px;
@@ -57,8 +58,8 @@
         span.number {
             position: absolute;
             left: 35px;
-            font-size: 30px;
-            margin-top: -6px;
+            font-size: 26px;
+            margin-top: -4px;
         }
     }
 }
