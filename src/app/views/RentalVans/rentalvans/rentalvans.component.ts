@@ -31,6 +31,7 @@ public SeatList:any[]=[];
     this.loader.ShowLoader();
 }
 ngOnInit(): void {  
+  this.SeatList.push({"Name":"3"})
   this.LoadDropDown();
   this.Refresh(); 
 }
@@ -84,7 +85,7 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
       data => {
   if(data.IsSuccess){
     this.SteeringTypeList = data.ResultSet.SteeringTypeList;
-    this.SeatList=data.ResultSet.SeatList;
+    //this.SeatList=data.ResultSet.SeatList;
     this.FuelTypeList = data.ResultSet.FuelTypeList;
     this.DriveWheelTypeList=data.ResultSet.DriveWheelTypeList;
 

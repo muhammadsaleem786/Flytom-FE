@@ -47,10 +47,10 @@ Elbil passer perfekt for korte eller lange kjørerturer.</p> -->
           <div class="col-sm-12 col-lg-9 mt-4 text-center">
             <div class="filter-scroll">
             <div class="btn-group advanceFilter" role="group" aria-label="Button group with nested dropdown">
-              <button disabled class="btn btn-dark btn-heading">Filter</button>
+              <button disabled class="btn btn-dark btn-heading">Sorter etter</button>
               <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  SeterFilter <span class="filtered_value">{{SeatListModel.Name}}</span>
+                  Seter <span class="filtered_value">{{SeatListModel.Name}}</span>
                 </button>
                 <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
                   <li *ngFor="let s of SeatList"><a class="dropdown-item" (click)="selectSeat(s)">{{s.Name}}</a></li>
@@ -83,20 +83,20 @@ Elbil passer perfekt for korte eller lange kjørerturer.</p> -->
           
                   <!-- ====== -->
           
-               <div class="btn-group" role="group">
+               <!-- <div class="btn-group" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Brensel <span class="filtered_value">{{FuelTypeModel.Name}}</span>
+                    Drivstoff <span class="filtered_value">{{FuelTypeModel.Name}}</span>
                   </button>
                   <ul class="dropdown-menu animate__animated animate__fadeInDown " aria-labelledby="btnGroupDrop1">
                     <li *ngFor="let s of FuelTypeList"(click)="selectFuel(s)"><a class="dropdown-item">{{s.Name}}</a></li>
                        </ul>
-                </div>
+                </div> -->
           
                    <!-- ====== -->
           
                <div class="btn-group no-border" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Hjuldrift  <span class="filtered_value">{{DriveWheelTypeModel.Name}} </span>
+                    Bakhjulsdrift  <span class="filtered_value">{{DriveWheelTypeModel.Name}} </span>
                   </button>
                   <ul class="dropdown-menu animate__animated animate__fadeInDown" aria-labelledby="btnGroupDrop1">
                     <li *ngFor="let s of DriveWheelTypeList" (click)="selectWheelDrive(s)"><a class="dropdown-item">{{s.Name}}</a></li>

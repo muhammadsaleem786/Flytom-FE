@@ -4,18 +4,18 @@
         <ul class="nav me-auto">
           <li class="nav-item me-3"><a href="#" class="nav-link text-white px-2">Hjem</a></li>
           <li class="nav-item me-3">            
-              <a routerLinkActive="active" routerLink="/about" class="nav-link text-white px-2">                 
+              <a routerLinkActive="active" routerLink="/Om-oss" class="nav-link text-white px-2">                 
                 Om oss</a>          
           </li>
           <li class="nav-item">
-              <a routerLinkActive="active" routerLink="/contact" class="nav-link text-white px-2">                 
+              <a routerLinkActive="active" routerLink="/Kontakt" class="nav-link text-white px-2">                 
 
                 Kontakt</a></li>
         
         </ul>
         <ul class="nav">
-          <li class="nav-item me-3"><a routerLinkActive="active" routerLink="/Help" class="nav-link text-white px-2">Veihjelp</a></li>
-          <li class="nav-item me-3"><a href="mailto:Post@flyttom.no" class="nav-link text-white px-2"><i class="fa fa-envelope-o" style="font-size:16px" aria-hidden="true"></i> Post@flyttom.no</a></li>
+          <li class="nav-item me-3"><a routerLinkActive="active" routerLink="/Veihjelp" class="nav-link text-white px-2">Veihjelp</a></li>
+          <li class="nav-item me-3"><a href="mailto:post@flyttom.no" class="nav-link text-white px-2"><i class="fa fa-envelope-o" style="font-size:16px" aria-hidden="true"></i> post@flyttom.no</a></li>
           
           <!-- <div id="google_translate_element"></div> -->
         
@@ -51,25 +51,25 @@
                 <!-- <li>
                   <a  class="dropdown-item text-muted">Bilutleie</a>
                 </li> -->
-                <li class=""><a routerLinkActive="active" routerLink="/RentalVans"  class="link-w-icon Vans dropdown-item" href="#">
+                <li class=""><a routerLinkActive="active" routerLink="/Varebiler"  class="link-w-icon Vans dropdown-item" href="#">
                   Varebiler
                 </a></li>
 
                 <li class="">
-                  <a routerLinkActive="active" routerLink="/RentalPersonalCar" class="link-w-icon PersonalCars dropdown-item">
+                  <a routerLinkActive="active" routerLink="/Personbiler" class="link-w-icon PersonalCars dropdown-item">
                     Personbiler
                 </a>
               </li>
               <li class="">
-                <a routerLinkActive="active" routerLink="/ElectricCar" class="link-w-icon battery dropdown-item">
+                <a routerLinkActive="active" routerLink="/Elbiler" class="link-w-icon battery dropdown-item">
                   Elbiler
               </a>
             </li>
-                <li class=""><a routerLinkActive="active" routerLink="/LongTermRental"   class="link-w-icon hand dropdown-item" href="#">
+                <li class=""><a routerLinkActive="active" routerLink="/Bilabonnement"   class="link-w-icon hand dropdown-item" href="#">
                   Bilabonnement
                 </a></li>
 
-                <li class=""><a routerLinkActive="active" routerLink="/Agreement"   class="link-w-icon LongTermRent dropdown-item" href="#">
+                <li class=""><a routerLinkActive="active" routerLink="/Bedriftsavtale"   class="link-w-icon LongTermRent dropdown-item" href="#">
                   Bedriftsavtale
                 </a></li>
                 
@@ -85,24 +85,24 @@
             <!-- <li>
               <a class="dropdown-item text-muted">Car Rental</a>
             </li> -->
-            <li class=""><a [routerLink]="['/Privatemoving']" routerLinkActive="active"  class="link-w-icon PrivateMoving dropdown-item" href="#">
+            <li class=""><a [routerLink]="['/Privatflytting']" routerLinkActive="active"  class="link-w-icon PrivateMoving dropdown-item" href="#">
               Privatflytting
             </a></li>
 
-            <li class=""><a routerLinkActive="active" routerLink="/ServicePacking"  class="link-w-icon Packing dropdown-item" href="#">
+            <li class=""><a routerLinkActive="active" routerLink="/Pakking"  class="link-w-icon Packing dropdown-item" href="#">
               Pakking
             </a></li>
             
-            <li class=""><a [routerLink]="['/Companymoving']" routerLinkActive="active"  class="link-w-icon CompanyMoving dropdown-item" href="#">
+            <li class=""><a [routerLink]="['/Bedriftsflytting']" routerLinkActive="active"  class="link-w-icon CompanyMoving dropdown-item" href="#">
               Bedriftsflytting
             </a></li>
-            <li class=""><a [routerLink]="['/Dodsbo']" routerLinkActive="active" class="link-w-icon Dodsbo dropdown-item" href="#">
+            <li class=""><a [routerLink]="['/Dødsbo']" routerLinkActive="active" class="link-w-icon Dodsbo dropdown-item" href="#">
               Dødsbo
             </a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" [routerLink]="['/Storage']"  role="button" data-bs-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" [routerLink]="['/Lagerhotell']"  role="button" data-bs-toggle="dropdown">
             <img class="me-2"  src="../assets/imgs/icons/package.svg"> Lagerhotell </a>
           <!-- <ul class="dropdown-menu dropdown-menu-end">
             <li>

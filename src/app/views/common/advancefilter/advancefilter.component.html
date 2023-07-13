@@ -1,6 +1,6 @@
 <div class="filter-scroll">
   <div class="btn-group advanceFilter" role="group" aria-label="Button group with nested dropdown">
-    <button disabled class="btn btn-dark btn-heading">Filter</button>
+    <button disabled class="btn btn-dark btn-heading">Sorter etter</button>
     <div class="btn-group" role="group">
       <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         Seter
@@ -37,7 +37,7 @@
 
      <div class="btn-group" role="group">
         <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Brensel
+          Drivstoff
         </button>
         <ul class="dropdown-menu animate__animated animate__fadeInDown " aria-labelledby="btnGroupDrop1">
           <li *ngFor="let s of FuelTypeList"><a class="dropdown-item">{{s.Name}}</a></li>
