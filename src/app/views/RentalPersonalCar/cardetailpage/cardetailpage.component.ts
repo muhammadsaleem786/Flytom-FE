@@ -1,4 +1,4 @@
-import { Component,OnInit ,Input} from '@angular/core';
+import { Component,OnInit ,Input } from '@angular/core';
 import { map,Observable  } from 'rxjs';
 import { GlobalVariable } from '../../../AngularConfig/global';
 import { HttpService } from '../../../CommonService/HttpService';
@@ -23,7 +23,9 @@ export class CardetailpageComponent implements OnInit{
     //this.loader.ShowLoader();
 }
 ngOnInit(): void {  
- 
+  
+      document.documentElement.scrollTop = 0; 
+  
   this.sub = this.route.queryParams
   .subscribe(params => {
       let Id = params['id'];

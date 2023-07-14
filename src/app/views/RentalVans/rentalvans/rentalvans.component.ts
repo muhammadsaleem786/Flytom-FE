@@ -2,7 +2,7 @@ import { Component ,OnInit} from '@angular/core';
 import { PaginationModel, PaginationConfig } from '../../../views/common/PaginationComponentConfig';
 import { GlobalVariable } from '../../../AngularConfig/global';
 import { HttpService } from '../../../CommonService/HttpService';
-import { Router } from '@angular/router';
+import { Router ,NavigationEnd } from '@angular/router';
 import { LoaderService } from '../../../CommonService/LoaderService';
 import { CommonToastrService } from '../../../CommonService/CommonToastrService';
 
@@ -31,6 +31,7 @@ public SeatList:any[]=[];
     this.loader.ShowLoader();
 }
 ngOnInit(): void {  
+ 
   this.SeatList.push({"Name":"3"})
   this.LoadDropDown();
   this.Refresh(); 

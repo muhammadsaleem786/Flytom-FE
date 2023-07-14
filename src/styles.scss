@@ -12,7 +12,8 @@ p {
 }
 li.breadcrumb-item a {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.5);
+    color: black;
+    font-weight: bold;
 }
 .text-overflow{
     white-space: nowrap;
@@ -26,7 +27,7 @@ li.breadcrumb-item a {
     }
 }
 .gray{
-    color:#90A3BF;
+    color:#000;
 }
 .icon-sm{
     width: 22px;
@@ -281,7 +282,8 @@ li.breadcrumb-item a {
 }
 
 .breadcrumb-item.active {
-    font-weight: 600;
+    color: black;
+    font-weight: bold;
 }
 
 

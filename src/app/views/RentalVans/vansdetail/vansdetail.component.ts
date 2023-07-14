@@ -23,7 +23,7 @@ export class VansdetailComponent implements OnInit{
     //this.loader.ShowLoader();
 }
 ngOnInit(): void {  
- 
+  document.documentElement.scrollTop = 0; 
   this.sub = this.route.queryParams
   .subscribe(params => {
       let Id = params['id'];
