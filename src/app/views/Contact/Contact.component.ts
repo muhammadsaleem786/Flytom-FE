@@ -38,6 +38,7 @@ Form1: FormGroup = this.formBuilder.group({
   Name : [''],  
   Description:[''],
   ContactType:[''],
+  CompanyName:[''],
   Phone : ['', Validators.required], 
   Email : ['', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
   EnquiryTypeId : [''],  
@@ -45,7 +46,8 @@ Form1: FormGroup = this.formBuilder.group({
 
 submitted = false;
 get fs1() { return this.Form1.controls; }
-ngOnInit(): void {   
+ngOnInit(): void {     
+  this.loader.HideLoader();
   this.LoadDropDown();
 }
 
@@ -58,31 +60,38 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
       data => {
   if(data.IsSuccess){
     this.EnquiryTypeList = data.ResultSet.ContactList;
+    this.loader.HideLoader();
   }
       },
       error => {
+        this.loader.HideLoader();
         console.log(error);
       }
   );
 }
 SaveOrUpdate() {
+  this.loader.ShowLoader();
  if (this.Form1.invalid){
   this.submitted=true;
   return;
  }
   this.http.Post(this.urlToApi + '/ContactAddUpdate', this.model).subscribe((res) => {
    if(res!=undefined){
-     if (res.IsSuccess) {     
-      this.model=new ContectModel();   
+     if (res.IsSuccess) {  
+      this.loader.HideLoader();  
+      this.Form1.reset();  
        this.submitted = false;
-       this.Form1.reset(); 
-       alert("Din melding ble sendt.Takk");
+       this.model=new ContectModel();
+       this.toastr.Success("Takk for prisforespørsel, vi behandler dette så fort vi har kapasitet og vil ta kontakt med deg på din oppgitte kontaktinformasjon."
+ +"Har du noen spørsmål utenom kan du ta kontakt med oss på telefon 51542400 i åpningstidene våre eller sende e-post til post@flyttom.no"
+  +"There is to different form which has to switch. It means when people click on Bedrift.");
      }
      else {    
-         alert("Din melding ble sendt.Takk"); 
+      this.loader.HideLoader();
      }
    }
   }, err => {
+    this.loader.HideLoader();
     console.log(err);
   }); 
 

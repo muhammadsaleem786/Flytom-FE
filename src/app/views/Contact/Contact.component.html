@@ -127,8 +127,7 @@ margin-right: 10px;">Privat</label>
                               <div class="d-flex input-border">
                                 <div class="custom-control custom-radio mb-3">
                                     <input type="radio" class="custom-control-input" id="ContactType" value="P" formControlName="ContactType" [(ngModel)]="model.ContactType">
-                                    <label class="custom-control-label ml-1 text-white" for="ContactType" style="margin-left: 10px;
-margin-right: 10px;">Privat</label>
+                                    <label class="custom-control-label ml-1 text-white" for="ContactType" style="margin-left: 10px;margin-right: 10px;">Privat</label>
                                 </div>
                                 <div class="custom-control custom-radio ms-3">
                                     <input type="radio" class="custom-control-input"id="ContactType1" value="B" formControlName="ContactType" [(ngModel)]="model.ContactType">
@@ -136,12 +135,12 @@ margin-right: 10px;">Privat</label>
                                 </div>
                                </div>
                               </div>
-                              <div class="col-sm-6 my-3">
+                              <div class="col-sm-6 my-3"*ngIf="model.ContactType =='P'">
                                 <div class="mb-3">
-                                  <input type="text" class="form-control"formControlName="Name" [(ngModel)]="model.Name" placeholder="Navn" name="Name">
+                                  <input type="text" class="form-control"formControlName="Name" [(ngModel)]="model.Name" placeholder="Kontaktperson" name="Name">
                                 </div>
                               </div>
-                              <div class="col-sm-6 my-3">
+                              <div class="col-sm-6 my-3"*ngIf="model.ContactType =='P'">
                                 <div class="mb-3">
                                   <input type="text" class="form-control"formControlName="Phone" [(ngModel)]="model.Phone" placeholder="Mobil" name="Name">
                                   <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.invalid)">
@@ -152,7 +151,7 @@ margin-right: 10px;">Privat</label>
                                 </div>
                                 </div>
                               </div>
-                              <div class="col-sm-6  my-3">
+                              <div class="col-sm-6  my-3"*ngIf="model.ContactType =='P'">
                                 <div class="mb-3">
                                   <input type="email" class="form-control"formControlName="Email" [(ngModel)]="model.Email"  placeholder="E-post" name="email">
                                   <div class="text-danger" *ngIf="submitted && (fs1['Email']?.invalid)">
@@ -164,7 +163,7 @@ margin-right: 10px;">Privat</label>
                                 </div>
                                
                               </div>
-                              <div class="col-sm-6  my-3">
+                              <div class="col-sm-6  my-3"*ngIf="model.ContactType =='P'">
                                 <div class="mb-3">
                                   <select class="form-control form-control-sm form-control-alternative" formControlName="EnquiryTypeId" [(ngModel)]="model.EnquiryTypeId">
                                     <option value="0">Velg tjeneste</option>
@@ -174,13 +173,67 @@ margin-right: 10px;">Privat</label>
                                 </select> 
                                 </div>
                               </div>
-                              <div class="col-sm-12  my-3">
+                              <div class="col-sm-12  my-3"*ngIf="model.ContactType =='P'">
                                 <div class="mb-3">
                                   <textarea type="text" class="form-control m-input" placeholder="Din melding" formControlName="Description" [(ngModel)]="model.Description"></textarea>
                                  
                                 </div>
                                
                               </div>
+                               <!-- ---Bedrift---- -->
+                               <div class="col-sm-6 my-3"*ngIf="model.ContactType =='B'">
+                                <div class="mb-3">
+                                  <input type="text" class="form-control"formControlName="Name" [(ngModel)]="model.Name" placeholder="Kontaktperson" name="Name">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 my-3"*ngIf="model.ContactType =='B'">
+                                <div class="mb-3">
+                                  <input type="text" class="form-control"formControlName="CompanyName" [(ngModel)]="model.CompanyName" placeholder="Bedriftsnavn" name="Name">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 my-3"*ngIf="model.ContactType =='B'">
+                                <div class="mb-3">
+                                  <input type="text" class="form-control"formControlName="Phone" [(ngModel)]="model.Phone" placeholder="Tlf" name="Name">
+                                  <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.invalid)">
+                                    This value is required.
+                                </div>
+                                <div class="text-danger" *ngIf="submitted && (fs1['Phone']?.errors?.['pattern'])">
+                                    Enter Valid Phone Numner
+                                </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-6  my-3"*ngIf="model.ContactType =='B'">
+                                <div class="mb-3">
+                                  <input type="email" class="form-control"formControlName="Email" [(ngModel)]="model.Email"  placeholder="Epost" name="email">
+                                  <div class="text-danger" *ngIf="submitted && (fs1['Email']?.invalid)">
+                                    This value is required.
+                                </div>
+                                <div class="text-danger" *ngIf="submitted && (fs1['Email']?.errors?.['Email'] ||fs1['Email']?.errors?.['pattern'])">
+                                  Enter Valid Email
+                              </div>
+                                </div>
+                               
+                              </div>
+                              <div class="col-sm-12  my-3"*ngIf="model.ContactType =='B'">
+                                <div class="mb-3">
+                                  <select class="form-control form-control-sm form-control-alternative" formControlName="EnquiryTypeId" [(ngModel)]="model.EnquiryTypeId">
+                                    <option value="0">Velg tjeneste</option>
+                                    <option *ngFor="let item of EnquiryTypeList" [value]="item.ID">
+                                        {{item.Name}}
+                                    </option>
+                                </select> 
+                                </div>
+                              </div>
+                              <div class="col-sm-12  my-3"*ngIf="model.ContactType =='B'">
+                                <div class="mb-3">
+                                  <textarea type="text" class="form-control m-input" placeholder="Din melding" formControlName="Description" [(ngModel)]="model.Description"></textarea>
+                                 
+                                </div>
+                               
+                              </div> 
+
+
+
 
                               <div class="col-sm-12  my-3 mb-0 text-end">
                                 <button type="submit" class="btn btn-danger px-5 btn-lg">SEND</button>

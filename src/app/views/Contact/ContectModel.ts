@@ -6,4 +6,5 @@ export class ContectModel {
         Description:string="";
         EnquiryTypeId:string="0";
         ContactType:string="P";
+        CompanyName:string="";
 }

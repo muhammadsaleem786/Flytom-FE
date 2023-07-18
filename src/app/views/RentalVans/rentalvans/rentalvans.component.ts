@@ -31,7 +31,7 @@ public SeatList:any[]=[];
     this.loader.ShowLoader();
 }
 ngOnInit(): void {  
- 
+  this.loader.HideLoader();
   this.SeatList.push({"Name":"3"})
   this.LoadDropDown();
   this.Refresh(); 
@@ -61,6 +61,7 @@ ngOnInit(): void {
   this.http.Get(this.urlToApi + '/GetWebVehicleList',params).subscribe(
           data => {
       if(data.IsSuccess){
+        this.loader.HideLoader();
 this.RentalCard=data.Data;
 this.RentalCard.forEach((item, index) => {
 if(item.VehicleImage.length != 0)
@@ -85,6 +86,7 @@ let params =
 this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
       data => {
   if(data.IsSuccess){
+    this.loader.HideLoader();
     this.SteeringTypeList = data.ResultSet.SteeringTypeList;
     //this.SeatList=data.ResultSet.SeatList;
     this.FuelTypeList = data.ResultSet.FuelTypeList;

@@ -338,8 +338,13 @@ li.breadcrumb-item a {
     }
 }
 .toast-top-right {
-    top: 12px;
-    right: 12px;
+    top: 52px;
+    right: 0px;
+    text-align: center;
+    background-color: darkblue;
+    color: #f8f9fa;
+    /* top: 232px; */
+    height: 1000px;
 }
 
 @media (max-width: 575.98px) {
@@ -366,7 +371,7 @@ li.breadcrumb-item a {
 }
 
 #toast-container > div {
-    opacity: 1;
+    opacity: 10000;
 }
 //=========================================advance filter css
 

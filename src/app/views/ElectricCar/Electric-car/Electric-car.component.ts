@@ -34,6 +34,7 @@ public SeatList:any[]=[];
     this.loader.ShowLoader();
 }
   ngOnInit(): void {  
+    this.loader.HideLoader();
     this.SeatList.push({"Name":"5"})
     this.LoadDropDown(); 
     this.Refresh(); 
@@ -65,6 +66,7 @@ public SeatList:any[]=[];
     this.http.Get(this.urlToApi + '/GetWebVehicleList',params).subscribe(
             data => {
         if(data.IsSuccess){
+          this.loader.HideLoader();
 this.PersonalCard=data.Data;
 this.PersonalCard.forEach((item, index) => {
 if(item.VehicleImage.length != 0)
@@ -76,6 +78,7 @@ this.PersonalCard[index].CarImage="assets/imgs/feature/Car.png";
         }
             },
             error => {
+              this.loader.HideLoader();
               console.log(error);
             }
         );
@@ -88,6 +91,7 @@ let params =
 this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
       data => {
   if(data.IsSuccess){
+    this.loader.HideLoader();
     this.SteeringTypeList = data.ResultSet.SteeringTypeList;
     //this.SeatList=data.ResultSet.SeatList;
     this.FuelTypeList = data.ResultSet.FuelTypeList;
@@ -96,6 +100,7 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
   }
       },
       error => {
+        this.loader.HideLoader();
         console.log(error);
       }
   );

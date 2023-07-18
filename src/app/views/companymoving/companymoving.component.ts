@@ -87,6 +87,7 @@ get fs1() { return this.MovingForm1.controls; }
 get fs2() { return this.MovingForm2.controls; }
 get fs3() { return this.MovingForm3.controls; }
   ngOnInit(): void {  
+    this.loader.HideLoader();
     this.model.ContactType="B";
     this.ngbDateParserFormatter.format = (date: NgbDateStruct | null) => {
       if (date) {
@@ -136,6 +137,7 @@ let params =
 this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
       data => {
   if(data.IsSuccess){
+    this.loader.HideLoader();
     this.FlexibleMovingLoadList = data.ResultSet.FlexibleMovingLoadList;
     this.ApproximatelyList=data.ResultSet.ApproximatelyList;
     this.peopleList = data.ResultSet.peopleList;
@@ -149,6 +151,7 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
   }
       },
       error => {
+        this.loader.HideLoader();
         console.log(error);
       }
   );
