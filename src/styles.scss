@@ -338,13 +338,28 @@ li.breadcrumb-item a {
     }
 }
 .toast-top-right {
-    top: 52px;
-    right: 0px;
-    text-align: center;
+    
+    top: 62px;
+    right: 10px;
+    text-align: left;
     background-color: darkblue;
     color: #f8f9fa;
-    /* top: 232px; */
-    height: 1000px;
+    height: auto;
+    border-radius: 5px;
+    width: 350px;
+    & > div{
+        
+    padding: 15px;
+    }
+    .toast-close-button {
+        background: transparent;
+        color: #fff;
+        float: right;
+        box-shadow: none;
+        font-size: 28px;
+        border: 0px;
+        margin-top: -10px;
+    }
 }
 
 @media (max-width: 575.98px) {

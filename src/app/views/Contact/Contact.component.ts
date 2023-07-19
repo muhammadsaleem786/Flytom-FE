@@ -46,7 +46,7 @@ Form1: FormGroup = this.formBuilder.group({
 
 submitted = false;
 get fs1() { return this.Form1.controls; }
-ngOnInit(): void {     
+ngOnInit(): void {    
   this.loader.HideLoader();
   this.LoadDropDown();
 }
@@ -70,7 +70,6 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
   );
 }
 SaveOrUpdate() {
-  this.loader.ShowLoader();
  if (this.Form1.invalid){
   this.submitted=true;
   return;
