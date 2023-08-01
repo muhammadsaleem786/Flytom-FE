@@ -71,6 +71,7 @@ Form1: FormGroup = this.formBuilder.group({
             data => {
         if(data.IsSuccess){
           this.loader.HideLoader();
+          debugger
 this.PersonalCard=data.Data;
 this.PersonalCard.forEach((item, index) => {
 if(item.VehicleImage.length != 0)
