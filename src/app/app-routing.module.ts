@@ -14,6 +14,7 @@ import { CompanymovingComponent } from './views/companymoving/companymoving.comp
 import { AgreementComponent } from './views/Agreement/Agreement.component';
 import { FaqComponent } from './views/Faq/Faq.component';
 import { DodsboComponent } from './views/Dodsbo/Dodsbo.component';
+import { SuccessComponent } from './views/SuccessSMS/Success.component';
 import { ElectricCarComponent } from './views/ElectricCar/Electric-car/Electric-car.component';
 import { ElectricCardetailpageComponent } from './views/ElectricCar/Electriccardetailpage/Electric-detailpage.component';
 import { HelpComponent } from './views/Help/Help.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
    { path: 'Bedriftsavtale', component: AgreementComponent },
    { path: 'Faq', component: FaqComponent },
    { path: 'Dødsbo', component: DodsboComponent },
+   { path: 'success', component: SuccessComponent },
    { path: 'Lagerhotell', component: StorageComponent },      
    { path: 'Veihjelp', component: HelpComponent },
    { path: 'Insurance', component: InsuranceComponent },   

@@ -70,20 +70,19 @@ this.http.Get(this.urlToApi + '/GetDropdown',params).subscribe(
   );
 }
 SaveOrUpdate() {
+  this.loader.ShowLoader(); 
  if (this.Form1.invalid){
   this.submitted=true;
   return;
- }
+ }else
+ this.loader.HideLoader(); 
   this.http.Post(this.urlToApi + '/ContactAddUpdate', this.model).subscribe((res) => {
    if(res!=undefined){
-     if (res.IsSuccess) {  
-      this.loader.HideLoader();  
+     if (res.IsSuccess) {        
       this.Form1.reset();  
        this.submitted = false;
        this.model=new ContectModel();
-       this.toastr.Success("Takk for prisforespørsel, vi behandler dette så fort vi har kapasitet og vil ta kontakt med deg på din oppgitte kontaktinformasjon."
- +"Har du noen spørsmål utenom kan du ta kontakt med oss på telefon 51542400 i åpningstidene våre eller sende e-post til post@flyttom.no"
-  +"There is to different form which has to switch. It means when people click on Bedrift.");
+       this._router.navigate(['/success']);
      }
      else {    
       this.loader.HideLoader();
